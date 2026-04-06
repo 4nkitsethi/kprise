@@ -101,6 +101,16 @@ Route::get('/site-map',[LegalController::class, 'sitemap'])->name('sitemap');
 Route::post('/contact-us', [AboutController::class, 'submitContact'])->name('contact.submit');
 
 /* ----------------------------------------------------------------
+   Clear Caches (for development)
+---------------------------------------------------------------- */
+   Route::get('/clear-everything', function() {
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return "All caches cleared!";
+});
+
+/* ----------------------------------------------------------------
    XML Sitemap (for search engines)
 ---------------------------------------------------------------- */
 use App\Http\Controllers\SitemapController;
