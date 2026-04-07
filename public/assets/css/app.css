@@ -983,7 +983,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .footer__main {    
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
     padding: var(--space-16) 0 var(--space-10);
 }
 .footer__grid {
@@ -1040,7 +1040,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .footer__nav-link:hover { color: var(--color-primary); }
 
 .footer__bottom {
-    background: #f9f9f9;
+    background: #f1f1f1;
     padding: var(--space-4) 0;
     border-top: 1px solid rgba(255,255,255,0.08);
 }

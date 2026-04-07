@@ -110,6 +110,8 @@ Route::post('/contact-us', [AboutController::class, 'submitContact'])->name('con
     return "All caches cleared!";
 });
 
+
+
 /* ----------------------------------------------------------------
    XML Sitemap (for search engines)
 ---------------------------------------------------------------- */
