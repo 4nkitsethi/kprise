@@ -565,8 +565,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 @media (max-width: 640px) {
   .section        { padding: 64px 0; }
-  .hero, .slide   { min-height: 80vh; }
+  .hero, .slide   { min-height: 70vh; }
   .hero-scroll    { display: none; }
+  .hide-on-mobile { display: none; }
   .slider-dots    { bottom: 16px; }
   .purpose-grid   { grid-template-columns: 1fr; }
   .courses-grid   { grid-template-columns: 1fr; }

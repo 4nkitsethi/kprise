@@ -7,7 +7,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/home.css?v=1.0') }}">
 @endpush
 
 @section('content')
@@ -28,7 +28,7 @@
           <p class="slide-sub">The AI-powered LMS that builds courses, assigns learners, and sends reminders — all from a single conversation.</p>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Start Free Trial</a>
-            <a href="#video" class="btn btn-ghost btn-lg">
+            <a href="#video" class="btn btn-ghost btn-lg hide-on-mobile">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
               Watch Demo
             </a>
@@ -91,7 +91,7 @@
           <p class="slide-sub">Design, deliver, and measure every training program — onboarding to compliance — from a single AI-powered command center.</p>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Explore Features</a>
-            <a href="#" class="btn btn-ghost btn-lg">See Pricing</a>
+            <a href="#" class="btn btn-ghost btn-lg hide-on-mobile">See Pricing</a>
           </div>
           <div class="slide-stats">
             <div><div class="slide-stat-val">5,000</div><div class="slide-stat-label">Free Credits</div></div>
@@ -146,7 +146,7 @@
           <p class="slide-sub">No per-user fees. Credits are consumed only when a learner completes something. Roll unused credits forward — zero wastage.</p>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Get 5K Free Credits</a>
-            <a href="#comparison" class="btn btn-ghost btn-lg">Compare Plans</a>
+            <a href="#comparison" class="btn btn-ghost btn-lg hide-on-mobile ">Compare Plans</a>
           </div>
           <div class="slide-stats">
             <div><div class="slide-stat-val">No</div><div class="slide-stat-label">Per-User Fees</div></div>
