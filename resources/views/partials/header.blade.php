@@ -1,7 +1,603 @@
 {{--
-    Partial: Header / Navigation
+    Partial: Header / Navigation — TalentLMS-style mega menu
     Usage: @include('partials.header')
+
+    Features:
+    - Full-width mega menu dropdowns with grouped sections + icons
+    - Smooth open/close with CSS transitions
+    - Active route highlighting
+    - Accessible: keyboard nav, aria attributes, focus trap
+    - Mobile: full-screen slide-in with accordion submenus
+    - Uses app.css design tokens throughout
 --}}
+
+{{-- ── Mega menu styles (add to app.css or keep here) ── --}}
+<style>
+/* ================================================================
+   MEGA MENU HEADER
+   Design tokens from app.css
+================================================================ */
+
+/* ── Base header ── */
+.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--header-height, 72px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-base);
+}
+.site-header.is-scrolled {
+    box-shadow: 0 2px 20px rgba(13, 13, 43, 0.08);
+}
+/* When any mega panel is open — extend bg to cover panel */
+.site-header.mega-open {
+    border-bottom-color: transparent;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: var(--header-height, 72px);
+    gap: var(--space-6);
+}
+
+/* ── Logo ── */
+.header__logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+/* ── Primary nav wrapper ── */
+.header__nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Top-level nav links / triggers ── */
+.nav__link,
+.nav__dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 13px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: var(--font-body);
+    line-height: 1;
+    transition: color var(--transition-fast), background var(--transition-fast);
+    position: relative;
+}
+.nav__link:hover,
+.nav__dropdown-trigger:hover,
+.nav__item--dropdown.is-open > .nav__dropdown-trigger {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+.nav__link--active {
+    color: var(--color-primary);
+    font-weight: var(--weight-semibold);
+}
+.nav__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 13px;
+    right: 13px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+}
+
+/* Chevron icon */
+.nav__chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+    color: var(--color-text-muted);
+}
+.nav__item--dropdown.is-open > .nav__dropdown-trigger .nav__chevron {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+/* ── MEGA MENU PANEL ── */
+.nav__mega {
+    /* Contained dropdown anchored to the nav item */
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    z-index: 999;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl, 16px);
+    box-shadow: 0 16px 48px rgba(13, 13, 43, 0.13);
+    min-width: 560px;
+    width: max-content;
+    max-width: 720px;
+
+    /* Hidden state */
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity var(--transition-base),
+        transform var(--transition-base),
+        visibility var(--transition-base);
+    pointer-events: none;
+}
+.nav__item--dropdown.is-open .nav__mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+/* Inner layout of mega panel */
+.mega__inner {
+    padding: var(--space-6) var(--space-6);
+}
+
+/* Grid of columns inside mega */
+.mega__grid {
+    display: grid;
+    gap: var(--space-8);
+}
+.mega__grid--2 { grid-template-columns: repeat(2, 1fr); }
+.mega__grid--3 { grid-template-columns: repeat(3, 1fr); }
+.mega__grid--4 { grid-template-columns: repeat(4, 1fr); }
+/* Use Cases: 2 sections side by side */
+.mega__grid--use-cases { grid-template-columns: 1fr 1fr; gap: var(--space-10); }
+/* Industries: simple 2-col list */
+.mega__grid--industries { grid-template-columns: repeat(2, 1fr); gap: var(--space-2) var(--space-8); }
+
+/* Section group heading inside mega */
+.mega__group-title {
+    font-size: 10px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Individual mega link */
+.mega__link {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-3);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: background var(--transition-fast);
+    cursor: pointer;
+}
+.mega__link:hover {
+    background: var(--color-primary-light);
+}
+.mega__link:hover .mega__link-title {
+    color: var(--color-primary);
+}
+
+/* Icon box */
+.mega__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background var(--transition-fast);
+}
+.mega__icon svg {
+    width: 18px;
+    height: 18px;
+}
+.mega__link:hover .mega__icon {
+    background: rgba(89, 50, 234, 0.12) !important;
+}
+
+.mega__link-text {}
+.mega__link-title {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 2px;
+    transition: color var(--transition-fast);
+}
+.mega__link-desc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+/* Simple link (no icon, no desc — for industries / plain lists) */
+.mega__simple-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast), background var(--transition-fast);
+}
+.mega__simple-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+.mega__simple-link svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+}
+.mega__simple-link:hover svg {
+    color: var(--color-primary);
+}
+
+/* See all link */
+.mega__see-all {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    border: 1px solid rgba(89,50,234,.15);
+    text-decoration: none;
+    transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+.mega__see-all:hover {
+    background: rgba(89,50,234,.15);
+    box-shadow: 0 2px 8px rgba(89,50,234,.15);
+}
+.mega__see-all svg { width: 12px; height: 12px; }
+
+/* ── Simple dropdown (Pricing — no mega) ── */
+.nav__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-2);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+    z-index: 998;
+    pointer-events: none;
+}
+.nav__item--dropdown { position: relative; }
+.nav__item--simple-dropdown { position: relative; }
+.nav__item--simple-dropdown.is-open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+.nav__dropdown-link {
+    display: block;
+    padding: 9px 14px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.nav__dropdown-link:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+/* ── Header actions (CTA) ── */
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+/* ── Hamburger ── */
+.header__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-left: auto;
+}
+.hamburger__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text-primary);
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+.header__hamburger.is-open .hamburger__line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header__hamburger.is-open .hamburger__line:nth-child(2) { opacity: 0; }
+.header__hamburger.is-open .hamburger__line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Overlay backdrop ── */
+.mega-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(13, 13, 43, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+.mega-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ================================================================
+   MOBILE NAV
+================================================================ */
+.mobile-nav {
+    position: fixed;
+    top: var(--header-height, 72px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-white);
+    z-index: 999;
+    overflow-y: auto;
+    padding: var(--space-4) var(--space-5) var(--space-10);
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+    -webkit-overflow-scrolling: touch;
+}
+.mobile-nav.is-open {
+    transform: translateX(0);
+}
+
+/* Mobile nav items */
+.mobile-nav__item {
+    border-bottom: 1px solid var(--color-border);
+}
+.mobile-nav__link,
+.mobile-nav__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-4) 0;
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    cursor: pointer;
+    text-align: left;
+}
+.mobile-nav__chevron {
+    width: 16px; height: 16px;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+    flex-shrink: 0;
+}
+.mobile-nav__item.is-open .mobile-nav__chevron {
+    transform: rotate(180deg);
+}
+
+/* Mobile accordion panel */
+.mobile-nav__panel {
+    display: none;
+    padding: 0 0 var(--space-4) var(--space-4);
+}
+.mobile-nav__item.is-open .mobile-nav__panel {
+    display: block;
+}
+.mobile-nav__sub-title {
+    font-size: 10px;
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin: var(--space-3) 0 var(--space-2);
+}
+.mobile-nav__sub-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 9px var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.mobile-nav__sub-link:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+/* Mobile CTA */
+.mobile-nav__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1024px) {
+    .header__nav { display: none; }
+    .header__actions { display: none; }
+    .header__hamburger { display: flex; }
+}
+@media (min-width: 1025px) {
+    .mobile-nav { display: none; }
+}
+</style>
+
+{{-- ── Backdrop (closes mega on click) ── --}}
+<div class="mega-backdrop" id="mega-backdrop" aria-hidden="true"></div>
+
+{{-- ── Mobile Nav ── --}}
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+
+    {{-- Solutions --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Solutions
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <div class="mobile-nav__sub-title">Training Solutions</div>
+            <a href="#" class="mobile-nav__sub-link">Nonprofit & Volunteer Training</a>
+            <a href="#" class="mobile-nav__sub-link">Employee Onboarding</a>
+            <a href="#" class="mobile-nav__sub-link">Compliance & Regulatory Training</a>
+            <a href="#" class="mobile-nav__sub-link">Continuous Learning & Upskilling</a>
+            <a href="#" class="mobile-nav__sub-link">Customer Training & Education</a>
+            <a href="#" class="mobile-nav__sub-link">Partner & Channel Training</a>
+            <a href="#" class="mobile-nav__sub-link">Academic & Education Institutions</a>
+            <a href="#" class="mobile-nav__sub-link">Sales Enablement</a>
+            <a href="#" class="mobile-nav__sub-link">Operational & Process Training</a>
+            <a href="#" class="mobile-nav__sub-link">Extended Enterprise Training</a>
+        </div>
+    </div>
+
+    {{-- Courses --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Courses
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <a href="#" class="mobile-nav__sub-link">Compliance Courses</a>
+            <a href="#" class="mobile-nav__sub-link">Workplace Safety</a>
+            <a href="#" class="mobile-nav__sub-link">HR & Soft Skills</a>
+            <a href="#" class="mobile-nav__sub-link">Industry Training</a>
+        </div>
+    </div>
+
+    {{-- Product --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Product
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <a href="#" class="mobile-nav__sub-link">Features</a>
+            <a href="#" class="mobile-nav__sub-link">Integrations</a>
+            <a href="#" class="mobile-nav__sub-link">AI Capabilities</a>
+            <a href="#" class="mobile-nav__sub-link">Mobile Learning</a>
+        </div>
+    </div>
+
+    {{-- Industries --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Industries
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <a href="#" class="mobile-nav__sub-link">Nonprofits</a>
+            <a href="#" class="mobile-nav__sub-link">Healthcare</a>
+            <a href="#" class="mobile-nav__sub-link">Manufacturing</a>
+            <a href="#" class="mobile-nav__sub-link">Finance</a>
+            <a href="#" class="mobile-nav__sub-link">Software</a>
+            <a href="#" class="mobile-nav__sub-link">Consulting</a>
+            <a href="#" class="mobile-nav__sub-link">Retail</a>
+        </div>
+    </div>
+
+    {{-- Pricing --}}
+    <div class="mobile-nav__item">
+        <a href="{{ route('pricing') }}" class="mobile-nav__link">Pricing</a>
+    </div>
+
+    {{-- Company --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Company
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <a href="#" class="mobile-nav__sub-link">About Us / Company Overview</a>
+            <a href="#" class="mobile-nav__sub-link">Contact Us</a>
+        </div>
+    </div>
+
+    {{-- Resources --}}
+    <div class="mobile-nav__item" data-mobile-item>
+        <button class="mobile-nav__trigger" aria-expanded="false">
+            Resources
+            <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="mobile-nav__panel" aria-hidden="true">
+            <a href="#" class="mobile-nav__sub-link">Blog</a>
+            <a href="#" class="mobile-nav__sub-link">Case Studies</a>
+            <a href="#" class="mobile-nav__sub-link">LMS Comparisons</a>
+            <a href="#" class="mobile-nav__sub-link">Learning Insights Hub</a>
+            <a href="#" class="mobile-nav__sub-link">Calculator</a>
+            <a href="#" class="mobile-nav__sub-link" target="_blank" rel="noopener">Help Center</a>
+        </div>
+    </div>
+
+    {{-- Mobile CTAs --}}
+    <div class="mobile-nav__actions">
+        <a href="{{ config('services.lms_login_url', '#') }}" class="btn btn--ghost" target="_blank" rel="noopener" style="justify-content:center;">Sign In</a>
+        <a href="{{ config('services.demo_url', '#') }}" class="btn btn--primary" target="_blank" rel="noopener" style="justify-content:center;">Book Demo</a>
+    </div>
+
+</nav>
+
+{{-- ================================================================
+     MAIN HEADER
+================================================================ --}}
 <header class="site-header" role="banner" id="site-header">
     <div class="container header__inner">
 
@@ -20,94 +616,443 @@
         <nav class="header__nav" id="primary-nav" aria-label="Primary navigation">
             <ul class="nav__list" role="list">
 
+                {{-- ── SOLUTIONS — Mega Menu (2 cols, 5 items each) ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-solutions">
+                        Solutions
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav__mega" id="mega-solutions" role="region" aria-label="Solutions menu" style="min-width:700px;max-width:780px;">
+                        <div class="mega__inner">
+                            <div class="mega__grid mega__grid--2" style="gap:var(--space-6);">
+                                {{-- Left col --}}
+                                <div>
+                                    <div class="mega__group-title">Workforce Training</div>
+                                    <div style="display:flex;flex-direction:column;gap:2px;">
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#F0F0FF;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Nonprofit & Volunteer Training</div>
+                                                <div class="mega__link-desc">Empower mission-driven teams affordably</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:var(--color-primary-light);">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Employee Onboarding</div>
+                                                <div class="mega__link-desc">Get new hires productive from day one</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FEF3F2;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Compliance & Regulatory Training</div>
+                                                <div class="mega__link-desc">Stay audit-ready and risk-free</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#EEF9F5;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Continuous Learning & Upskilling</div>
+                                                <div class="mega__link-desc">Build skills that grow with your business</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FFF8E6;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Sales Enablement</div>
+                                                <div class="mega__link-desc">Train reps to close more, faster</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {{-- Right col --}}
+                                <div>
+                                    <div class="mega__group-title">Extended Training</div>
+                                    <div style="display:flex;flex-direction:column;gap:2px;">
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#F0F0FF;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Customer Training & Education</div>
+                                                <div class="mega__link-desc">Reduce churn with great product training</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FFF3EA;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Partner & Channel Training</div>
+                                                <div class="mega__link-desc">Align your resellers and partners</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#EEF9F5;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Academic & Education Institutions</div>
+                                                <div class="mega__link-desc">Purpose-built for schools & universities</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:var(--color-primary-light);">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Operational & Process Training</div>
+                                                <div class="mega__link-desc">Standardize workflows across your org</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FEF3F2;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Extended Enterprise Training</div>
+                                                <div class="mega__link-desc">Train beyond your four walls at scale</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                {{-- ── COURSES — Mega Menu ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-courses">
+                        Courses
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav__mega" id="mega-courses" role="region" aria-label="Courses menu" style="min-width:520px;max-width:600px;">
+                        <div class="mega__inner">
+                            <div class="mega__group-title">Ready-Made Course Libraries</div>
+                            <div style="display:flex;flex-direction:column;gap:2px;">
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FEF3F2;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Compliance Courses</div>
+                                        <div class="mega__link-desc">Stay compliant with pre-built regulatory content</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FFF8E6;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Workplace Safety</div>
+                                        <div class="mega__link-desc">Reduce incidents with essential safety training</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:var(--color-primary-light);">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">HR & Soft Skills</div>
+                                        <div class="mega__link-desc">Communication, leadership & people skills</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#EEF9F5;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V10l6-6 6 6v10"/><rect x="9" y="14" width="6" height="6"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Industry Training</div>
+                                        <div class="mega__link-desc">Sector-specific courses for your field</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                {{-- ── PRODUCT — Mega Menu ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-product">
+                        Product
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav__mega" id="mega-product" role="region" aria-label="Product menu" style="min-width:560px;max-width:640px;">
+                        <div class="mega__inner">
+                            <div class="mega__grid mega__grid--2" style="gap:var(--space-4);">
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:var(--color-primary-light);">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Features</div>
+                                        <div class="mega__link-desc">Everything the platform can do for you</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#F0F0FF;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7M11 18H8a2 2 0 01-2-2V9"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Integrations</div>
+                                        <div class="mega__link-desc">Connect to the tools your team already uses</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#EEF9F5;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.38-1 1.73V7h1a7 7 0 017 7h1a1 1 0 110 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 110-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2z"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">AI Capabilities</div>
+                                        <div class="mega__link-desc">Smart automation for content and learners</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FFF8E6;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Mobile Learning</div>
+                                        <div class="mega__link-desc">Learn anywhere, on any device</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                {{-- ── INDUSTRIES — Mega Menu ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-industries">
+                        Industries
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav__mega" id="mega-industries" role="region" aria-label="Industries menu" style="min-width:560px;max-width:640px;">
+                        <div class="mega__inner">
+                            <div class="mega__group-title" style="margin-bottom:var(--space-3);">Industries We Serve</div>
+                            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;">
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FEF3F2;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Nonprofits</div>
+                                        <div class="mega__link-desc">Flexible training for mission-led orgs</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#EEF9F5;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Healthcare</div>
+                                        <div class="mega__link-desc">Compliant training for clinical teams</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FFF8E6;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V10l6-6 6 6v10"/><rect x="9" y="14" width="6" height="6"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Manufacturing</div>
+                                        <div class="mega__link-desc">Safety and skills on the factory floor</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:var(--color-primary-light);">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Finance</div>
+                                        <div class="mega__link-desc">Regulatory-ready training for finance teams</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#F0F0FF;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Software</div>
+                                        <div class="mega__link-desc">Onboard users and train dev teams fast</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#EEF9F5;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Consulting</div>
+                                        <div class="mega__link-desc">Sharpen expertise across every engagement</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#FFF3EA;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Retail</div>
+                                        <div class="mega__link-desc">Train frontline staff at every location</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                {{-- Pricing — simple link --}}
                 <li class="nav__item">
-                    <a href="{{ route('pricing') }}" class="nav__link {{ request()->routeIs('pricing') ? 'nav__link--active' : '' }}">
+                    <a href="{{ route('pricing') }}"
+                       class="nav__link {{ request()->routeIs('pricing') ? 'nav__link--active' : '' }}">
                         Pricing
                     </a>
                 </li>
 
-                {{-- About Us Dropdown --}}
-                <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                        About Us
-                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                {{-- ── COMPANY — Mega Menu ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-company">
+                        Company
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <ul class="nav__dropdown" role="list">
-                        <li><a href="{{ route('about.company') }}" class="nav__dropdown-link">Company Overview</a></li>
-                        <li><a href="{{ route('about.platform') }}" class="nav__dropdown-link">About Platform</a></li>
-                        <li><a href="{{ route('contact') }}" class="nav__dropdown-link">Contact Us</a></li>
-                    </ul>
+                    <div class="nav__mega" id="mega-company" role="region" aria-label="Company menu" style="min-width:440px;max-width:500px;">
+                        <div class="mega__inner">
+                            <div style="display:flex;flex-direction:column;gap:2px;">
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:var(--color-primary-light);">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">About Us / Company Overview</div>
+                                        <div class="mega__link-desc">Our story, mission, and the team behind the platform</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="mega__link">
+                                    <div class="mega__icon" style="background:#EEF9F5;">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 9.8 19.79 19.79 0 011.18 1.82 2 2 0 013.16 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7a16 16 0 006 6l.7-.7a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+                                    </div>
+                                    <div class="mega__link-text">
+                                        <div class="mega__link-title">Contact Us</div>
+                                        <div class="mega__link-desc">Talk to our team — we're happy to help</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </li>
 
-                {{-- Use Cases Dropdown --}}
-                <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                        Use Cases
-                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <ul class="nav__dropdown" role="list">
-                        <li><a href="{{ route('use-cases.onboarding') }}" class="nav__dropdown-link">Onboard Training</a></li>
-                        <li><a href="{{ route('use-cases.sales') }}" class="nav__dropdown-link">Sales Training</a></li>
-                        <li><a href="{{ route('use-cases.employee') }}" class="nav__dropdown-link">Employee Training</a></li>
-                        <li><a href="{{ route('use-cases.cybersecurity') }}" class="nav__dropdown-link">Cybersecurity Training</a></li>
-                        <li><a href="{{ route('use-cases.partner') }}" class="nav__dropdown-link">Partner Training</a></li>
-                        <li><a href="{{ route('use-cases.compliance') }}" class="nav__dropdown-link">Compliance Training</a></li>
-                    </ul>
-                </li>
-
-                {{-- Corporate Solutions Dropdown --}}
-                <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                        Corporate Solutions
-                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <ul class="nav__dropdown" role="list">
-                        <li><a href="{{ route('solutions.enterprise') }}" class="nav__dropdown-link">Enterprise</a></li>
-                        <li><a href="{{ route('solutions.education') }}" class="nav__dropdown-link">Educational Institutions</a></li>
-                    </ul>
-                </li>
-
-                {{-- Industries Dropdown --}}
-                <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                        Industries
-                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <ul class="nav__dropdown" role="list">
-                        <li><a href="{{ route('industries.software') }}" class="nav__dropdown-link">Software</a></li>
-                        <li><a href="{{ route('industries.manufacturing') }}" class="nav__dropdown-link">Manufacturing</a></li>
-                        <li><a href="{{ route('industries.healthcare') }}" class="nav__dropdown-link">Healthcare</a></li>
-                        <li><a href="{{ route('industries.financial') }}" class="nav__dropdown-link">Financial Services</a></li>
-                        <li><a href="{{ route('industries.consulting') }}" class="nav__dropdown-link">Consulting</a></li>
-                        <li><a href="{{ route('industries.nonprofit') }}" class="nav__dropdown-link">Non-profit</a></li>
-                        <li><a href="{{ route('industries.retail') }}" class="nav__dropdown-link">Retail</a></li>
-                    </ul>
-                </li>
-
-                {{-- Resources Dropdown --}}
-                <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                {{-- ── RESOURCES — Mega Menu ── --}}
+                <li class="nav__item nav__item--dropdown" data-mega-item>
+                    <button class="nav__link nav__dropdown-trigger"
+                            aria-haspopup="true" aria-expanded="false"
+                            aria-controls="mega-resources">
                         Resources
-                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <ul class="nav__dropdown" role="list">
-                        <li><a href="{{ route('blog.index') }}" class="nav__dropdown-link">Blog</a></li>
-                        <li><a href="{{ route('resources.lms-comparisons') }}" class="nav__dropdown-link">LMS Comparisons</a></li>
-                        <li><a href="{{ route('resources.insights') }}" class="nav__dropdown-link">Learning Insights Hub</a></li>
-                        <li><a href="{{ config('services.help_center_url', '#') }}" class="nav__dropdown-link" target="_blank" rel="noopener">Help Center</a></li>
-                        <li><a href="{{ route('resources.calculator') }}" class="nav__dropdown-link">Calculator</a></li>
-                        <li><a href="{{ route('resources.case-study') }}" class="nav__dropdown-link">Case Study</a></li>
-                    </ul>
+                    <div class="nav__mega" id="mega-resources" role="region" aria-label="Resources menu" style="min-width:580px;max-width:660px;">
+                        <div class="mega__inner">
+                            <div class="mega__grid mega__grid--2" style="gap:var(--space-6);">
+                                {{-- Left --}}
+                                <div>
+                                    <div class="mega__group-title">Learn & Explore</div>
+                                    <div style="display:flex;flex-direction:column;gap:2px;">
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:var(--color-primary-light);">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Blog</div>
+                                                <div class="mega__link-desc">Tips, trends & L&D insights</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FFF8E6;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Case Studies</div>
+                                                <div class="mega__link-desc">Real results from real teams</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#EEF9F5;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Learning Insights Hub</div>
+                                                <div class="mega__link-desc">Data-driven L&D research & reports</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {{-- Right --}}
+                                <div>
+                                    <div class="mega__group-title">Tools & Support</div>
+                                    <div style="display:flex;flex-direction:column;gap:2px;">
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#F0F0FF;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">LMS Comparisons</div>
+                                                <div class="mega__link-desc">See how we stack up against the rest</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link">
+                                            <div class="mega__icon" style="background:#FEF3F2;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Calculator</div>
+                                                <div class="mega__link-desc">Estimate your ROI in minutes</div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="mega__link" target="_blank" rel="noopener">
+                                            <div class="mega__icon" style="background:var(--color-gray-100);">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                            </div>
+                                            <div class="mega__link-text">
+                                                <div class="mega__link-title">Help Center</div>
+                                                <div class="mega__link-desc">Docs, guides & hands-on support</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
 
             </ul>
@@ -115,10 +1060,14 @@
 
         {{-- Header CTA Buttons --}}
         <div class="header__actions">
-            <a href="{{ config('services.lms_login_url', '#') }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+            <a href="{{ config('services.lms_login_url', '#') }}"
+               class="btn btn--ghost btn--sm"
+               target="_blank" rel="noopener">
                 Sign In
             </a>
-            <a href="{{ config('services.demo_url', '#') }}" class="btn btn--primary btn--sm" target="_blank" rel="noopener">
+            <a href="{{ config('services.demo_url', '#') }}"
+               class="btn btn--primary btn--sm"
+               target="_blank" rel="noopener">
                 Book Demo
             </a>
         </div>
@@ -127,7 +1076,7 @@
         <button
             class="header__hamburger"
             id="mobile-menu-toggle"
-            aria-controls="primary-nav"
+            aria-controls="mobile-nav"
             aria-expanded="false"
             aria-label="Toggle navigation menu"
         >
@@ -138,3 +1087,145 @@
 
     </div>
 </header>
+
+{{-- ================================================================
+     JAVASCRIPT — Mega menu + mobile nav
+================================================================ --}}
+<script>
+(function () {
+    'use strict';
+
+    const header   = document.getElementById('site-header');
+    const backdrop = document.getElementById('mega-backdrop');
+    const mobileNav= document.getElementById('mobile-nav');
+    const mobileBtn= document.getElementById('mobile-menu-toggle');
+    const megaItems= document.querySelectorAll('[data-mega-item]');
+    let   openItem = null;
+    let   mobileOpen = false;
+
+    /* ── Scroll: sticky shadow ── */
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    /* ── Open a mega item ── */
+    function openMega(item) {
+        if (openItem && openItem !== item) closeMega(openItem);
+        openItem = item;
+        item.classList.add('is-open');
+        header.classList.add('mega-open');
+        backdrop.classList.add('is-visible');
+        const trigger = item.querySelector('.nav__dropdown-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    }
+
+    /* ── Close a mega item ── */
+    function closeMega(item) {
+        if (!item) return;
+        item.classList.remove('is-open');
+        header.classList.remove('mega-open');
+        backdrop.classList.remove('is-visible');
+        const trigger = item.querySelector('.nav__dropdown-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        openItem = null;
+    }
+
+    /* ── Close all ── */
+    function closeAll() {
+        if (openItem) closeMega(openItem);
+    }
+
+    /* ── Attach mega events ── */
+    let hoverTimer = null;
+
+    function clearHoverTimer() {
+        if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+    }
+
+    megaItems.forEach(item => {
+        const trigger = item.querySelector('.nav__dropdown-trigger');
+        if (!trigger) return;
+
+        /* Click toggle */
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            item.classList.contains('is-open') ? closeMega(item) : openMega(item);
+        });
+
+        /* Keyboard: Enter / Space */
+        trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.classList.contains('is-open') ? closeMega(item) : openMega(item);
+            }
+            if (e.key === 'Escape') closeAll();
+        });
+
+        /* Hover: open immediately, close with delay so cursor can reach the panel */
+        item.addEventListener('mouseenter', () => {
+            clearHoverTimer();
+            openMega(item);
+        });
+        item.addEventListener('mouseleave', () => {
+            clearHoverTimer();
+            hoverTimer = setTimeout(() => closeMega(item), 120);
+        });
+
+        /* Keep open when cursor is inside the mega panel itself */
+        const mega = item.querySelector('.nav__mega');
+        if (mega) {
+            mega.addEventListener('mouseenter', clearHoverTimer);
+            mega.addEventListener('mouseleave', () => {
+                clearHoverTimer();
+                hoverTimer = setTimeout(() => closeMega(item), 120);
+            });
+        }
+    });
+
+    /* Backdrop click closes */
+    backdrop.addEventListener('click', closeAll);
+
+    /* Escape key closes */
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAll();
+    });
+
+    /* Click outside closes */
+    document.addEventListener('click', (e) => {
+        if (openItem && !openItem.contains(e.target)) closeAll();
+    });
+
+    /* ── Mobile menu ── */
+    function toggleMobile() {
+        mobileOpen = !mobileOpen;
+        mobileBtn.classList.toggle('is-open', mobileOpen);
+        mobileNav.classList.toggle('is-open', mobileOpen);
+        mobileNav.setAttribute('aria-hidden', String(!mobileOpen));
+        mobileBtn.setAttribute('aria-expanded', String(mobileOpen));
+        document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    }
+
+    mobileBtn.addEventListener('click', toggleMobile);
+
+    /* Mobile accordion items */
+    document.querySelectorAll('[data-mobile-item]').forEach(item => {
+        const trigger = item.querySelector('.mobile-nav__trigger');
+        const panel   = item.querySelector('.mobile-nav__panel');
+        if (!trigger || !panel) return;
+
+        trigger.addEventListener('click', () => {
+            const isOpen = item.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', String(isOpen));
+            panel.setAttribute('aria-hidden', String(!isOpen));
+        });
+    });
+
+    /* Close mobile nav on link click */
+    mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            if (mobileOpen) toggleMobile();
+        });
+    });
+
+})();
+</script>

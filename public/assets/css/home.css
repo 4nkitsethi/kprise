@@ -347,10 +347,10 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: 14px; font-weight: 700; color: var(--text-4); white-space: nowrap;
 }
 .marquee-logo {
-  width: 32px; height: 32px; border-radius: 8px;
+  width: 50px; height: 50px; border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
 }
-.marquee-logo svg { width: 18px; height: 18px; }
+
 
 /* ================================================================
    PLATFORM SECTION
@@ -585,4 +585,5 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .slide-sub { font-size: 16px; }
   .platform-ctas { flex-direction: column; }
   .platform-ctas .btn { width: 100%; justify-content: center; }
+  .mobile-my-3 { margin-block: 12px; }
 }

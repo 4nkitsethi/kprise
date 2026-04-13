@@ -25,7 +25,7 @@
         <div class="slide-copy fade-up">
           <div class="slide-badge"><span></span> New · Agentic AI Powered</div>
           <h1 class="slide-heading">Train Smarter.<br><em>Scale Faster.</em><br>Zero Admin Grind.</h1>
-          <p class="slide-sub">The AI-powered LMS that builds courses, assigns learners, and sends reminders — all from a single conversation.</p>
+          <p class="slide-sub mobile-my-3">The AI-powered LMS that builds courses, assigns learners, and sends reminders — all from a single conversation.</p>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Start Free Trial</a>
             <a href="#video" class="btn btn-ghost btn-lg hide-on-mobile">
@@ -33,7 +33,7 @@
               Watch Demo
             </a>
           </div>
-          <div class="slide-stats">
+          <div class="slide-stats mobile-my-3">
             <div><div class="slide-stat-val">70%</div><div class="slide-stat-label">Less Admin Work</div></div>
             <div><div class="slide-stat-val">90 Days</div><div class="slide-stat-label">Free Trial</div></div>
           </div>
@@ -88,12 +88,12 @@
             <span style="background:#10B981;"></span> Built for Enterprise Teams
           </div>
           <h1 class="slide-heading">One Platform.<br><em style="background:linear-gradient(135deg,#34D399,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Endless</em> Possibilities.</h1>
-          <p class="slide-sub">Design, deliver, and measure every training program — onboarding to compliance — from a single AI-powered command center.</p>
+          <p class="slide-sub mobile-my-3 ">Design, deliver, and measure every training program — onboarding to compliance — from a single AI-powered command center.</p>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Explore Features</a>
             <a href="#" class="btn btn-ghost btn-lg hide-on-mobile">See Pricing</a>
           </div>
-          <div class="slide-stats">
+          <div class="slide-stats mobile-my-3">
             <div><div class="slide-stat-val">5,000</div><div class="slide-stat-label">Free Credits</div></div>
             <div><div class="slide-stat-val">4×</div><div class="slide-stat-label">Faster Launch</div></div>
             <div><div class="slide-stat-val">99.9%</div><div class="slide-stat-label">Uptime SLA</div></div>
@@ -143,12 +143,13 @@
             <span style="background:#8B5CF6;"></span> Credit-Based Pricing
           </div>
           <h1 class="slide-heading">Pay For<br><em style="background:linear-gradient(135deg,#A78BFA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Learning Done.</em> Not Seats Idle.</h1>
-          <p class="slide-sub">No per-user fees. Credits are consumed only when a learner completes something. Roll unused credits forward — zero wastage.</p>
+          <!-- Roll unused credits forward — zero wastage. -->
+          <p class="slide-sub mobile-my-3">No per-user fees. Credits are consumed only when a learner completes something.</p>          
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Get 5K Free Credits</a>
             <a href="#comparison" class="btn btn-ghost btn-lg hide-on-mobile ">Compare Plans</a>
           </div>
-          <div class="slide-stats">
+          <div class="slide-stats mobile-my-3">
             <div><div class="slide-stat-val">No</div><div class="slide-stat-label">Per-User Fees</div></div>
             <div><div class="slide-stat-val">35%</div><div class="slide-stat-label">Better Completion</div></div>
             <div><div class="slide-stat-val">2×</div><div class="slide-stat-label">Faster Decisions</div></div>
@@ -200,7 +201,7 @@
 {{-- ============================================================
      VIDEO SHOWCASE
 ============================================================ --}}
-<section style="padding-top: 60px;" id="video" aria-label="Product walkthrough video">
+<!-- <section style="padding-top: 60px;" id="video" aria-label="Product walkthrough video">
   <div class="container">
     <div class="hero-showcase">
       <div class="hero-video-wrap">
@@ -221,7 +222,271 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+
+{{--
+  ════════════════════════════════════════════════════════════
+  REPLACE your current video section block:
+      <section style="padding-top: 60px;" id="video" ...>
+
+  WITH THIS entire block below.
+
+  Also add the CSS into your <style> tag in home.blade.php
+  (or into app.css — clearly marked below)
+  ════════════════════════════════════════════════════════════
+--}}
+
+
+{{-- ============================================================
+     ADD THIS CSS (inside your page <style> block OR app.css)
+============================================================ --}}
+<style>
+
+/* ================================================================
+   VIDEO SHOWCASE — Semrush-style light gradient + stripe background
+================================================================ */
+
+/* The outer wrapper that creates the background */
+.video-showcase-outer {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 0;
+
+    /*
+     * SEMRUSH-STYLE BACKGROUND:
+     * - Soft mint green top-left glow
+     * - Lavender/purple top-right glow
+     * - Fades clean to white at the bottom
+     */
+    background:
+        radial-gradient(ellipse 90% 65% at 15% 0%,
+            rgba(234, 228, 247, 0.45) 0%,     /* mint green — top left */
+            transparent 65%
+        ),
+        radial-gradient(ellipse 70% 55% at 85% 0%,
+            rgba(196, 181, 253, 0.45) 0%,     /* lavender — top right */
+            transparent 60%
+        ),
+        radial-gradient(ellipse 60% 40% at 50% 20%,
+            rgba(147, 197, 253, 0.20) 0%,     /* soft blue center */
+            transparent 60%
+        ),
+        linear-gradient(180deg,
+            #edfaf4 0%,      /* very light mint at top */
+            #f3f0fe 30%,     /* soft lavender mid */
+            #f0f7ff 60%,     /* light sky blue */
+            #ffffff 100%     /* pure white at bottom */
+        );
+}
+
+
+/* ── LEFT side: vertical stripe bars (like Semrush) ── */
+.video-showcase-outer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+
+    /* Repeating thin vertical lines */
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.13) 0px,
+        rgba(139, 92, 246, 0.13) 1px,
+        transparent 1px,
+        transparent 20px
+    );
+
+    /* Fade stripes: visible at far left → invisible toward center */
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0, 0.7) 0%,
+        rgba(0,0,0, 0.4) 40%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0, 0.7) 0%,
+        rgba(0,0,0, 0.4) 40%,
+        transparent 100%
+    );
+}
+
+
+/* ── RIGHT side: vertical stripe bars ── */
+.video-showcase-outer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(99, 102, 241, 0.12) 0px,
+        rgba(99, 102, 241, 0.12) 1px,
+        transparent 1px,
+        transparent 20px
+    );
+
+    /* Fade stripes: visible at far right → invisible toward center */
+    mask-image: linear-gradient(
+        to left,
+        rgba(0,0,0, 0.7) 0%,
+        rgba(0,0,0, 0.4) 40%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to left,
+        rgba(0,0,0, 0.7) 0%,
+        rgba(0,0,0, 0.4) 40%,
+        transparent 100%
+    );
+}
+
+
+/* ── Subtle dot noise texture (optional depth) ── */
+.vso-dots {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image: radial-gradient(
+        circle, rgba(99, 102, 241, 0.30) 1px, transparent 1px
+    );
+    background-size: 32px 32px;
+    opacity: 0.045;
+}
+
+
+/* ── Bottom fade — smooth handoff to next section ── */
+.vso-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    z-index: 4;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+}
+
+
+/* ── Inner content sits above all overlays ── */
+.vso-content {
+    position: relative;
+    z-index: 5;
+    padding-top: 60px;
+}
+
+
+/* ── The hero-showcase card — light version ── */
+.video-showcase-outer .hero-showcase {
+    position: relative;
+    z-index: 5;
+
+    /* Override the dark background — now uses light card on light bg */
+    background: #0f172a;  /* keep dark so video shows well */
+
+    border-radius: 20px 20px 0 0;
+    border: 1px solid rgba(89, 50, 234, 0.15);
+    border-bottom: none;
+
+    box-shadow:
+        0 -1px 0 rgba(89, 50, 234, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.6),
+        0 24px 64px rgba(15, 23, 42, 0.14),
+        0 8px 24px rgba(89, 50, 234, 0.08);
+}
+
+
+/* ── hero-video-badge: update to match light bg ── */
+.video-showcase-outer .hero-video-badge {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ── Stats bar at the bottom of the showcase ── */
+.video-showcase-outer .hero-stats-bar {
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .video-showcase-outer::before,
+    .video-showcase-outer::after {
+        width: 80px;
+    }
+}
+
+</style>
+
+
+{{-- ============================================================
+     REPLACE THE VIDEO SECTION HTML WITH THIS
+============================================================ --}}
+
+<div class="video-showcase-outer" id="video" aria-label="Product walkthrough video">
+
+    {{-- Background decorations --}}
+    <div class="vso-dots" aria-hidden="true"></div>
+    <div class="vso-bottom-fade" aria-hidden="true"></div>
+
+    {{-- Content (your existing container + hero-showcase stays unchanged) --}}
+    <div class="vso-content">
+        <div class="container">
+            <div class="hero-showcase">
+                <div class="hero-video-wrap">
+                    <div class="hero-video-inner">
+                        <span class="hero-video-badge">
+                            <span class="live-dot"></span>
+                            Live product walkthrough · 2 min
+                        </span>
+                        <video
+                            src="https://kprise.com/wp-content/uploads/2025/10/WhatsApp-Video-2025-10-06-at-12.39.50_fe04276f.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            aria-label="MyPass LMS platform walkthrough showing course creation, enrollment automation, and compliance reporting"
+                        ></video>
+                    </div>
+                </div>
+                <div class="hero-stats-bar">
+                    <div class="hero-stat-item">
+                        <div class="stat-value blue">70%</div>
+                        <div class="stat-label">Less admin work</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="stat-value green">4x</div>
+                        <div class="stat-label">Faster courses</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="stat-value amber">+35%</div>
+                        <div class="stat-label">Compliance rates</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="stat-value purple">35K+</div>
+                        <div class="stat-label">Active learners</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>{{-- /.vso-content --}}
+
+</div>{{-- /.video-showcase-outer --}}
 
 {{-- ============================================================
      PLATFORM SECTION
@@ -350,22 +615,24 @@
       <div class="marquee-track" aria-hidden="true">
         @php
           $logos = [
-            ['bg'=>'#EEF2FF','stroke'=>'#4F46E5','name'=>'Acme Corp','icon'=>'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/>'],
-            ['bg'=>'#D1FAE5','stroke'=>'#10B981','name'=>'NovaTech', 'icon'=>'<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>'],
-            ['bg'=>'#FEF3C7','stroke'=>'#F59E0B','name'=>'Buildify', 'icon'=>'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/>'],
-            ['bg'=>'#FEE2E2','stroke'=>'#EF4444','name'=>'HealthPlus','icon'=>'<path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>'],
-            ['bg'=>'#EDE9FE','stroke'=>'#7C3AED','name'=>'PeopleFirst','icon'=>'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>'],
-            ['bg'=>'#CFFAFE','stroke'=>'#0891B2','name'=>'CallMax',   'icon'=>'<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>'],
-            ['bg'=>'#F0FDF4','stroke'=>'#16A34A','name'=>'HomeBase',  'icon'=>'<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>'],
-            ['bg'=>'#FFF7ED','stroke'=>'#EA580C','name'=>'StarReach', 'icon'=>'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'],
+            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/1.webp", "alt"=>"MyPass LMS rated on Capterra 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/2.webp", "alt"=>"MyPass LMS listed as GetApp Leader 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/3.webp", "alt"=>"MyPass LMS named Software Advice FrontRunner 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://brand-assets.capterra.com/badge/65ccdf80-7500-42bf-8e6f-aaa875f7613c.svg", "alt"=>"MyPass LMS Capterra verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://brand-assets.getapp.com/badge/f7329061-8cc8-4015-8dbd-9c68980f086d.png", "alt"=>"MyPass LMS GetApp verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://brand-assets.softwareadvice.com/badge/6aeb2175-cd8d-4d46-b212-ddd1b623365b.png", "alt"=>"MyPass LMS Software Advice verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://elearningindustry.com/content/product-listings/399529/badges/rating", "alt"=>"MyPass LMS eLearning Industry rating badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/highly-recommended-winter-2025.png", "alt"=>"SoftwareSuggest Highly Recommended Winter 2025", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/easy-usability-winter-2025.png", "alt"=>"SoftwareSuggest Easy Usability Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/best-support-winter-2025.png", "alt"=>"SoftwareSuggest Best Support Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
+            ['bg'=>'transparent', "image"=>"https://www.softwareworld.co/customer-choice.png", "alt"=>"SoftwareWorld Customer Choice Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"]
           ];
         @endphp
         @foreach(array_merge($logos, $logos) as $logo)
           <div class="marquee-item">
             <div class="marquee-logo" style="background:{{ $logo['bg'] }};">
-              <svg viewBox="0 0 24 24" fill="none" stroke="{{ $logo['stroke'] }}" stroke-width="2">{!! $logo['icon'] !!}</svg>
-            </div>
-            {{ $logo['name'] }}
+              <img src="{{ $logo['image'] }}" alt="{{ $logo['alt'] }}" loading="lazy" width="120" height="80">
+            </div>            
           </div>
         @endforeach
       </div>
@@ -476,7 +743,7 @@
     <div class="courses-grid">
       <article class="course-card">
         <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#1E1B4B,#4F46E5);">🤖</div>
+          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#1E1B4B,#4F46E5);">+</div>
           <div class="course-thumb-overlay"></div>
           <span class="course-level level-beginner">Beginner</span>
         </div>
@@ -496,7 +763,7 @@
 
       <article class="course-card">
         <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#042F2E,#10B981);">🔒</div>
+          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#042F2E,#10B981);">+</div>
           <div class="course-thumb-overlay"></div>
           <span class="course-level level-inter">Intermediate</span>
         </div>
@@ -516,7 +783,7 @@
 
       <article class="course-card">
         <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#451A03,#F59E0B);">📊</div>
+          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#451A03,#F59E0B);">+</div>
           <div class="course-thumb-overlay"></div>
           <span class="course-level level-all">All Levels</span>
         </div>
