@@ -179,9 +179,7 @@
 
                 
                 <address class="footer__address">
-                    MyPass LMS is a training management platform that cuts admin work by up to 70%, built for associations, enterprises, and growing teams.<br><br>
-                    3905 National Drive, Suite 330<br>
-                    Burtonsville MD, 20866
+                    MyPass LMS is a training management platform that cuts admin work by up to 70%. Built for associations, enterprises, and growing teams — with AMS integration, automated enrollments, compliance tracking, and built-in SCORM authoring.
                 </address>
                 <a href="tel:+12403164903" class="footer__phone">(240) 316-4903</a>
                 

@@ -84,7 +84,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
    HERO SLIDER
 ================================================================ */
 .hero {
-  position: relative; min-height: 60vh; overflow: hidden;
+  position: relative; min-height: 75vh; overflow: hidden;
   display: flex; align-items: center;
   padding-top: var(--nav-h);
 }
@@ -155,7 +155,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .slide-sub    { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.7); margin-bottom: 36px; max-width: 48ch; }
-.slide-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.slide-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top:30px }
 
 .slide-stats {
   display: flex; gap: 28px; margin-top: 44px;
@@ -791,7 +791,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white
 /* ══════════════════════════════
    HERO SLIDER
 ══════════════════════════════ */
-.sb{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;}
+.sb{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;margin-bottom: 10px;}
 .sb-check{width:20px;height:20px;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .sb-check-dark{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);}
 .sb-check-light{background:var(--brand-lt);border:1px solid var(--brand-mid);}

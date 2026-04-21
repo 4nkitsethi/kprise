@@ -23,9 +23,23 @@
       <div class="slide-grid" aria-hidden="true"></div>
       <div class="slide-content">
         <div class="slide-copy fade-up">
-          <div class="slide-badge"><span></span> New · Agentic AI Powered</div>
-          <h1 class="slide-heading">Train Smarter.<br><em>Scale Faster.</em><br>Zero Admin Grind.</h1>
-          <p class="slide-sub mobile-my-3">The AI-powered LMS that builds courses, assigns learners, and sends reminders — all from a single conversation.</p>
+          <div class="slide-badge"><span></span> Nonprofits &amp; Associations</div>
+          <h1 class="slide-heading">Training That Works<br>With Your AMS.<br><em>Or Replaces It.</em></h1>
+          <p class="slide-sub mobile-my-3">Run certifications, manage members, and deliver training — all in one connected platform. No system overhaul required.</p>
+          <div class="slide-bullets">
+            <div class="sb">
+              <div class="sb-check sb-check-dark"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Integrates directly with your existing AMS
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-dark"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Or use MyPass as your built-in AMS — no extra system needed
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-dark"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Manage members, volunteers, and learning in one place
+            </div>
+          </div>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Start Free Trial</a>
             <a href="#video" class="btn btn-ghost btn-lg hide-on-mobile">
@@ -85,10 +99,24 @@
       <div class="slide-content">
         <div class="slide-copy fade-up">
           <div class="slide-badge" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.25);color:#6EE7B7;">
-            <span style="background:#10B981;"></span> Built for Enterprise Teams
+            <span style="background:#10B981;"></span> Ready-to-Deploy LMS
           </div>
-          <h1 class="slide-heading">One Platform.<br><em style="background:linear-gradient(135deg,#34D399,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Endless</em> Possibilities.</h1>
-          <p class="slide-sub mobile-my-3 ">Design, deliver, and measure every training program — onboarding to compliance — from a single AI-powered command center.</p>
+          <h1 class="slide-heading">Launch an LMS With<br>Courses Ready to Go<br><em>From Day One.</em></h1>
+          <p class="slide-sub mobile-my-3 ">No setup battles. No content creation delays. Start with a fully structured LMS and a library of pre-built courses — assign and go.</p>
+          <div class="slide-bullets">
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Ready course library — compliance, ethics, leadership, and more
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Start from day one — assign courses without creating anything
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Live in minutes — from signup to active learners, instantly
+            </div>
+          </div>
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Explore Features</a>
             <a href="#" class="btn btn-ghost btn-lg hide-on-mobile">See Pricing</a>
@@ -140,11 +168,25 @@
       <div class="slide-content">
         <div class="slide-copy fade-up">
           <div class="slide-badge" style="background:rgba(139,92,246,.2);border-color:rgba(139,92,246,.3);color:#C4B5FD;">
-            <span style="background:#8B5CF6;"></span> Credit-Based Pricing
+            <span style="background:#8B5CF6;"></span> Still Running Training Manually?
           </div>
-          <h1 class="slide-heading">Pay For<br><em style="background:linear-gradient(135deg,#A78BFA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Learning Done.</em> Not Seats Idle.</h1>
+          <h1 class="slide-heading">Emails. Spreadsheets.<br>PDFs. That Is Not<br><em>a Training System.</em></h1>
           <!-- Roll unused credits forward — zero wastage. -->
-          <p class="slide-sub mobile-my-3">No per-user fees. Credits are consumed only when a learner completes something.</p>          
+          <p class="slide-sub mobile-my-3">If you cannot see who completed what, cannot send reminders automatically, and cannot prove compliance instantly — you are managing risk, not training.</p>  
+          <div class="slide-bullets">
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              No visibility into who has completed training
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              No consistency across teams or locations
+            </div>
+            <div class="sb">
+              <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              No control when compliance deadlines arrive
+            </div>
+          </div>        
           <div class="slide-actions">
             <a href="#" class="btn btn-white btn-lg">Get 5K Free Credits</a>
             <a href="#comparison" class="btn btn-ghost btn-lg hide-on-mobile ">Compare Plans</a>
