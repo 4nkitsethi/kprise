@@ -620,55 +620,7 @@
       </div>
     </section>
   </main>
-  <footer class="bg-[#f6f1ff] w-full py-16">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <div class="md:col-span-1">
-        <div class="text-2xl font-bold text-primary font-headline mb-4">MyPass LMS</div>
-        <p class="text-on-surface-variant text-sm leading-relaxed">Redefining enterprise learning through transparency
-          and scale.</p>
-      </div>
-      <div>
-        <h5 class="font-bold text-sm mb-6 uppercase tracking-widest text-on-surface-variant">Platform</h5>
-        <ul class="space-y-4">
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Course
-              Builder</a></li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
-          </li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">API and
-              Integrations</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-bold text-sm mb-6 uppercase tracking-widest text-on-surface-variant">Resources</h5>
-        <ul class="space-y-4">
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Blog</a></li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a>
-          </li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-bold text-sm mb-6 uppercase tracking-widest text-on-surface-variant">Legal</h5>
-        <ul class="space-y-4">
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy
-              Policy</a></li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of
-              Service</a></li>
-          <li><a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Trust Center</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div
-      class="max-w-7xl mx-auto px-8 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-on-surface-variant text-xs font-medium">© 2024 MyPass LMS Inc. Built with Trust.</p>
-      <div class="flex gap-6">
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span
-            class="material-symbols-outlined text-xl">public</span></a>
-      </div>
-    </div>
-  </footer>
+
   <script>
     // Logic Configuration
     const pricingData = {
