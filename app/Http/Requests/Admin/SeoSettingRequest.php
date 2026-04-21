@@ -15,7 +15,7 @@ class SeoSettingRequest extends FormRequest
 
     public function rules(): array
     {
-        $id = $this->route('seo')?->id;
+       $id = $this->route('seo')?->id;
 
         return [
             'route_name'          => "required|string|max:150|unique:seo_settings,route_name,{$id}",

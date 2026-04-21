@@ -201,47 +201,48 @@
 
                 <h3 class="footer__nav-heading">Corporate Solutions</h3>
                 <ul class="footer__nav-list" role="list">
-                    <li><a href="{{ route('solutions.enterprise') }}" class="footer__nav-link">Enterprises</a></li>
-                    <li><a href="{{ route('solutions.education') }}" class="footer__nav-link">Educational Institutions</a></li>
+                    <li><a href="#" class="footer__nav-link">Enterprises</a></li>
+                    <li><a href="#" class="footer__nav-link">Customer Training & Education</a></li>
+                    <li><a href="#" class="footer__nav-link">Educational Institutions</a></li>
                 </ul>
             </div>
 
             <div class="footer__nav-col">
                 <h3 class="footer__nav-heading">Use Cases</h3>
                 <ul class="footer__nav-list" role="list">
-                    <li><a href="{{ route('use-cases.onboarding') }}" class="footer__nav-link">Onboarding Training</a></li>
-                    <li><a href="{{ route('use-cases.employee') }}" class="footer__nav-link">Employee Training</a></li>
-                    <li><a href="{{ route('use-cases.compliance') }}" class="footer__nav-link">Compliance Training</a></li>
-                    <li><a href="{{ route('use-cases.sales') }}" class="footer__nav-link">Sales Training</a></li>
-                    <li><a href="{{ route('use-cases.cybersecurity') }}" class="footer__nav-link">Cybersecurity Training</a></li>
-                    <li><a href="{{ route('use-cases.partner') }}" class="footer__nav-link">Partner Training</a></li>
+                    <li><a href="{{ route('industries.nonprofit') }}" class="footer__nav-link">Onboarding Training</a></li>
+                    <li><a href="{{ route('solutions.employee-onboarding') }}" class="footer__nav-link">Employee Training</a></li>
+                    <li><a href="{{ route('solutions.compliance-training') }}" class="footer__nav-link">Compliance Training</a></li>
+                    <li><a href="{{ route('solutions.sales-enablement') }}" class="footer__nav-link">Sales Training</a></li>
+                    <li><a href="#" class="footer__nav-link">Cybersecurity Training</a></li>
+                    <li><a href="{{ route('solutions.partner-channel-training') }}" class="footer__nav-link">Partner Training</a></li>
                 </ul>
             </div>
 
             <div class="footer__nav-col">
                 <h3 class="footer__nav-heading">Industries</h3>
                 <ul class="footer__nav-list" role="list">
-                    <li><a href="{{ route('industries.software') }}" class="footer__nav-link">Software</a></li>
-                    <li><a href="{{ route('industries.manufacturing') }}" class="footer__nav-link">Manufacturing</a></li>
-                    <li><a href="{{ route('industries.healthcare') }}" class="footer__nav-link">Healthcare</a></li>
-                    <li><a href="{{ route('industries.consulting') }}" class="footer__nav-link">Consulting</a></li>
-                    <li><a href="{{ route('industries.financial') }}" class="footer__nav-link">Financial Services</a></li>
+                    <li><a href="#" class="footer__nav-link">Software</a></li>
+                    <li><a href="#" class="footer__nav-link">Manufacturing</a></li>
+                    <li><a href="#" class="footer__nav-link">Healthcare</a></li>
+                    <li><a href="#" class="footer__nav-link">Consulting</a></li>
+                    <li><a href="#" class="footer__nav-link">Financial Services</a></li>
                     <li><a href="{{ route('industries.nonprofit') }}" class="footer__nav-link">Non-Profit</a></li>
-                    <li><a href="{{ route('industries.retail') }}" class="footer__nav-link">Retail</a></li>
+                    <li><a href="#" class="footer__nav-link">Retail</a></li>
                 </ul>
             </div>
 
             <div class="footer__nav-col">
                 <h3 class="footer__nav-heading">About Us</h3>
                 <ul class="footer__nav-list" role="list">
-                    <li><a href="{{ route('about.company') }}" class="footer__nav-link">Company Overview</a></li>
-                    <li><a href="{{ route('about.platform') }}" class="footer__nav-link">About Platform</a></li>
+                    <li><a href="#" class="footer__nav-link">Company Overview</a></li>
+                    <li><a href="#" class="footer__nav-link">About Platform</a></li>
                 </ul>
 
                 <h3 class="footer__nav-heading">Resources</h3>
                 <ul class="footer__nav-list" role="list">
-                    <li><a href="{{ route('blog.index') }}" class="footer__nav-link">Blog</a></li>
-                    <li><a href="{{ route('sitemap') }}" class="footer__nav-link">Site Map</a></li>
+                    <li><a href="#" class="footer__nav-link">Blog</a></li>
+                    <li><a href="#" class="footer__nav-link">Site Map</a></li>
                 </ul>
             </div>
 
@@ -260,8 +261,8 @@
             {{-- Legal links --}}
             <nav aria-label="Legal">
                 <ul class="lms-footer__legal">
-                    <li><a href="{{ route('legal.privacy') }}">Privacy Policy</a></li>
-                    <li><a href="{{ route('legal.terms') }}">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
                 </ul>
             </nav>
 

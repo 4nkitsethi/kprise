@@ -14,6 +14,7 @@ use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LegalController;
+use App\Http\Controllers\ProductController;
 
 /* ----------------------------------------------------------------
    Home
@@ -54,7 +55,16 @@ Route::prefix('use-cases')->name('use-cases.')->group(function () {
 ---------------------------------------------------------------- */
 Route::prefix('solutions')->name('solutions.')->group(function () {
     Route::get('/enterprise',  [SolutionController::class, 'enterprise'])->name('enterprise');
-    Route::get('/education',   [SolutionController::class, 'education'])->name('education');
+    Route::get('/employee-onboarding',  [SolutionController::class, 'employeeOnboarding'])->name('employee-onboarding');
+    Route::get('/academic-education-institutions',  [SolutionController::class, 'academicEducationInstitutions'])->name('academic-education-institutions');
+    Route::get('/continuous-learning-upskilling', [SolutionController::class, 'continuousLearningUpskilling'])->name('continuous-learning-upskilling');
+    Route::get('/customer-training-education',   [SolutionController::class, 'customerTrainingEducation'])->name('customer-training-education');
+    Route::get("/extended-enterprise-training", [SolutionController::class, 'extendedEnterpriseTraining'])->name('extended-enterprise-training'); 
+    Route::get('/operational-process-training', [SolutionController::class, 'operationalProcessTraining'])->name('operational-process-training');
+    Route::get('/partner-channel-training', [SolutionController::class, 'partnerChannelTraining'])->name('partner-channel-training');
+    Route::get('/sales-enablement', [SolutionController::class, 'salesEnablement'])->name('sales-enablement');
+    Route::get('/compliance-training', [SolutionController::class, 'complianceTraining'])->name('compliance-training');
+    
 });
 
 /* ----------------------------------------------------------------
@@ -69,6 +79,25 @@ Route::prefix('industries')->name('industries.')->group(function () {
     Route::get('/nonprofit',     [IndustryController::class, 'nonprofit'])->name('nonprofit');
     Route::get('/retail',        [IndustryController::class, 'retail'])->name('retail');
 });
+
+/* ----------------------------------------------------------------
+   Product
+---------------------------------------------------------------- */
+Route::prefix('product')->name('product.')->group(function () {
+    Route::get('/features', [ProductController::class, 'features'])->name('features');
+    Route::get('/integrations', [ProductController::class, 'integrations'])->name('integrations');
+});
+
+
+/**
+ * ----------------------------------------------------------------
+ * Additional Routes (e.g. contact form submission, sitemap, etc.)
+ * Courses
+ * 
+ */
+Route::get('/courses', [ProductController::class, 'courses'])->name('courses');
+
+
 
 /* ----------------------------------------------------------------
    Resources

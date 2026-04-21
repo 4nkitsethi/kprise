@@ -92,4 +92,114 @@ class SolutionController extends Controller
             'integrationLogos' => [],
         ]);
     }
+
+
+    public function customerTrainingEducation(): View
+    {
+        return view('pages.solutions.customer_training_education', [
+            'seo' => [
+                'title'       => 'Customer Training & Education — MyPass LMS',
+                'description' => 'Deliver engaging customer training and education programs with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive adoption and success.',
+                'canonical'   => route('solutions.customer-training-education'),
+            ],                  
+
+            'breadcrumbs' => [
+                ['label' => 'Home',               'url' => route('home')],
+                ['label' => 'Corporate Solutions', 'url' => null],
+                ['label' => 'Customer Training & Education'],
+            ],      
+
+        ]); 
+    }
+
+
+    public function employeeOnboarding(): View
+    {
+        return view('pages.solutions.employee_onboarding', [
+            'seo' => [
+                'title'       => 'Employee Onboarding Solution — MyPass LMS',
+                'description' => 'Streamline employee onboarding with MyPass LMS. Custom branding, interactive content, and seamless integrations to get new hires up to speed and productive faster.',
+                'canonical'   => route('solutions.employee-onboarding'),
+            ],   
+        ]);
+    }   
+    
+    public function academicEducationInstitutions(): View
+    {
+        return view('pages.solutions.academic_education_institutions', [
+            'seo' => [
+                'title'       => 'LMS for Academic & Education Institutions — MyPass LMS',
+                'description' => 'MyPass LMS helps academic institutions deliver engaging courses, manage accreditation, and automate administrative tasks with custom branding and AI-powered content creation.',
+                'canonical'   => route('solutions.academic-education-institutions'),
+            ],   
+        ]);
+    }
+
+    public function continuousLearningUpskilling(): View
+    {
+        return view('pages.solutions.continuous_learning_upskilling', [
+            'seo' => [
+                'title'       => 'Continuous Learning & Upskilling — MyPass LMS',
+                'description' => 'Empower continuous learning and upskilling with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive employee development and retention.',
+                'canonical'   => route('solutions.continuous-learning-upskilling'),
+            ],   
+        ]);
+    }
+
+
+    public function extendedEnterpriseTraining(): View
+    {
+        return view('pages.solutions.extended_enterprise_training', [
+            'seo' => [
+                'title'       => 'Extended Enterprise Training — MyPass LMS',
+                'description' => 'Deliver training to customers, partners, and external stakeholders with MyPass LMS. Custom branding, multi-tenant portals, and seamless integrations to drive adoption and success.',
+                'canonical'   => route('solutions.extended-enterprise-training'),
+            ],   
+        ]);
+    }
+
+    public function operationalProcessTraining(): View
+    {
+        return view('pages.solutions.operational_process_training', [
+            'seo' => [
+                'title'       => 'Operational Process Training — MyPass LMS',
+                'description' => 'Streamline operational process training with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive employee proficiency and operational excellence.',
+                'canonical'   => route('solutions.operational-process-training'),
+            ],   
+        ]);
+    }
+
+    public function partnerChannelTraining(): View
+    {
+        return view('pages.solutions.partner_channel_training', [
+            'seo' => [
+                'title'       => 'Partner & Channel Training — MyPass LMS',
+                'description' => 'Empower your partners and channel teams with MyPass LMS. Custom branding, multi-tenant portals, and seamless integrations to drive partner engagement and success.',
+                'canonical'   => route('solutions.partner-channel-training'),
+            ],   
+        ]);
+    }
+
+    public function salesEnablement(): View
+    {
+        return view('pages.solutions.sales_enablement', [
+            'seo' => [
+                'title'       => 'Sales Enablement Training — MyPass LMS',
+                'description' => 'Equip your sales teams with the knowledge and skills they need to succeed with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive sales performance and revenue growth.',
+                'canonical'   => route('solutions.sales-enablement'),
+            ],   
+        ]);     
+    }
+
+    public function complianceTraining(): View
+    {
+        return view('pages.solutions.compliance_training', [
+            'seo' => [
+                'title'       => 'Compliance Training — MyPass LMS',
+                'description' => 'Ensure regulatory compliance and mitigate risk with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive employee engagement and adherence to compliance requirements.',
+                'canonical'   => route('solutions.compliance-training'),
+            ],   
+        ]);     
+    }
+
 }

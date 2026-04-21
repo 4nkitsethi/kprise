@@ -118,11 +118,11 @@ class SeoController extends Controller
 
     /* ── Edit ───────────────────────────────────────────────────── */
 
-    public function edit(SeoSetting $seo): View
+    public function edit($seo): View
     {
         $availableRoutes = $this->knownRoutes;
-        $setting = $seo;
-
+        $setting = SeoSetting::findOrFail($seo);
+        \Log::info($seo);
         return view('admin.seo.form', compact('setting', 'availableRoutes'));
     }
 

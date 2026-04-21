@@ -132,9 +132,9 @@
     transform: translateX(-50%) translateY(-8px);
     z-index: 999;
     background: var(--color-white);
-    border: 1px solid var(--color-border);
+    /* border: 1px solid var(--color-border); */
     border-radius: var(--radius-xl, 16px);
-    box-shadow: 0 16px 48px rgba(13, 13, 43, 0.13);
+    /* box-shadow: 0 16px 48px rgba(13, 13, 43, 0.13); */
     min-width: 560px;
     width: max-content;
     max-width: 720px;
@@ -496,16 +496,16 @@
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
             <div class="mobile-nav__sub-title">Training Solutions</div>
-            <a href="#" class="mobile-nav__sub-link">Nonprofit & Volunteer Training</a>
-            <a href="#" class="mobile-nav__sub-link">Employee Onboarding</a>
-            <a href="#" class="mobile-nav__sub-link">Compliance & Regulatory Training</a>
-            <a href="#" class="mobile-nav__sub-link">Continuous Learning & Upskilling</a>
-            <a href="#" class="mobile-nav__sub-link">Customer Training & Education</a>
-            <a href="#" class="mobile-nav__sub-link">Partner & Channel Training</a>
-            <a href="#" class="mobile-nav__sub-link">Academic & Education Institutions</a>
-            <a href="#" class="mobile-nav__sub-link">Sales Enablement</a>
-            <a href="#" class="mobile-nav__sub-link">Operational & Process Training</a>
-            <a href="#" class="mobile-nav__sub-link">Extended Enterprise Training</a>
+            <a href="{{ route('industries.nonprofit') }}" class="mobile-nav__sub-link">Nonprofit & Volunteer Training</a>
+            <a href="{{ route('solutions.employee-onboarding') }}" class="mobile-nav__sub-link">Employee Onboarding</a>
+            <a href="{{ route('solutions.compliance-training') }}" class="mobile-nav__sub-link">Compliance & Regulatory Training</a>
+            <a href="{{ route('solutions.continuous-learning-upskilling') }}" class="mobile-nav__sub-link">Continuous Learning & Upskilling</a>
+            <a href="{{ route('solutions.customer-training-education') }}" class="mobile-nav__sub-link">Customer Training & Education</a>
+            <a href="{{ route('solutions.partner-channel-training') }}" class="mobile-nav__sub-link">Partner & Channel Training</a>
+            <a href="{{ route('solutions.academic-education-institutions') }}" class="mobile-nav__sub-link">Academic & Education Institutions</a>
+            <a href="{{ route('solutions.sales-enablement') }}" class="mobile-nav__sub-link">Sales Enablement</a>
+            <a href="{{ route('solutions.operational-process-training') }}" class="mobile-nav__sub-link">Operational & Process Training</a>
+            <a href="{{ route('solutions.extended-enterprise-training') }}" class="mobile-nav__sub-link">Extended Enterprise Training</a>
         </div>
     </div>
 
@@ -530,8 +530,8 @@
             <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
-            <a href="#" class="mobile-nav__sub-link">Features</a>
-            <a href="#" class="mobile-nav__sub-link">Integrations</a>
+            <a href="{{ route('product.features') }}" class="mobile-nav__sub-link">Features</a>            
+            <a href="{{ route('product.integrations') }}" class="mobile-nav__sub-link">Integrations</a>
             <a href="#" class="mobile-nav__sub-link">AI Capabilities</a>
             <a href="#" class="mobile-nav__sub-link">Mobile Learning</a>
         </div>
@@ -544,7 +544,7 @@
             <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
-            <a href="#" class="mobile-nav__sub-link">Nonprofits</a>
+            <a href="{{ route('industries.nonprofit') }}" class="mobile-nav__sub-link">Nonprofits</a>
             <a href="#" class="mobile-nav__sub-link">Healthcare</a>
             <a href="#" class="mobile-nav__sub-link">Manufacturing</a>
             <a href="#" class="mobile-nav__sub-link">Finance</a>
@@ -633,7 +633,7 @@
                                 <div>
                                     <div class="mega__group-title">Workforce Training</div>
                                     <div style="display:flex;flex-direction:column;gap:2px;">
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('industries.nonprofit') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#F0F0FF;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                                             </div>
@@ -642,7 +642,7 @@
                                                 <div class="mega__link-desc">Empower mission-driven teams affordably</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.employee-onboarding') }}" class="mega__link">
                                             <div class="mega__icon" style="background:var(--color-primary-light);">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                                             </div>
@@ -651,7 +651,7 @@
                                                 <div class="mega__link-desc">Get new hires productive from day one</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.compliance-training') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FEF3F2;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                             </div>
@@ -660,7 +660,7 @@
                                                 <div class="mega__link-desc">Stay audit-ready and risk-free</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.continuous-learning-upskilling') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#EEF9F5;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                                             </div>
@@ -669,7 +669,7 @@
                                                 <div class="mega__link-desc">Build skills that grow with your business</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.sales-enablement') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FFF8E6;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                                             </div>
@@ -684,7 +684,7 @@
                                 <div>
                                     <div class="mega__group-title">Extended Training</div>
                                     <div style="display:flex;flex-direction:column;gap:2px;">
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.customer-training-education') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#F0F0FF;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                                             </div>
@@ -693,7 +693,7 @@
                                                 <div class="mega__link-desc">Reduce churn with great product training</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.partner-channel-training') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FFF3EA;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
                                             </div>
@@ -702,7 +702,7 @@
                                                 <div class="mega__link-desc">Align your resellers and partners</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.academic-education-institutions') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#EEF9F5;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                                             </div>
@@ -711,7 +711,7 @@
                                                 <div class="mega__link-desc">Purpose-built for schools & universities</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.operational-process-training') }}" class="mega__link">
                                             <div class="mega__icon" style="background:var(--color-primary-light);">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                                             </div>
@@ -720,7 +720,7 @@
                                                 <div class="mega__link-desc">Standardize workflows across your org</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('solutions.extended-enterprise-training') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FEF3F2;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
                                             </div>
@@ -750,7 +750,7 @@
                         <div class="mega__inner">
                             <div class="mega__group-title">Ready-Made Course Libraries</div>
                             <div style="display:flex;flex-direction:column;gap:2px;">
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('courses').'#packsWrap' }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FEF3F2;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                     </div>
@@ -759,7 +759,7 @@
                                         <div class="mega__link-desc">Stay compliant with pre-built regulatory content</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('courses') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FFF8E6;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                                     </div>
@@ -768,7 +768,7 @@
                                         <div class="mega__link-desc">Reduce incidents with essential safety training</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('courses') }}" class="mega__link">
                                     <div class="mega__icon" style="background:var(--color-primary-light);">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                                     </div>
@@ -777,7 +777,7 @@
                                         <div class="mega__link-desc">Communication, leadership & people skills</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('courses') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#EEF9F5;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V10l6-6 6 6v10"/><rect x="9" y="14" width="6" height="6"/></svg>
                                     </div>
@@ -804,7 +804,7 @@
                     <div class="nav__mega" id="mega-product" role="region" aria-label="Product menu" style="min-width:560px;max-width:640px;">
                         <div class="mega__inner">
                             <div class="mega__grid mega__grid--2" style="gap:var(--space-4);">
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('product.features') }}" class="mega__link">
                                     <div class="mega__icon" style="background:var(--color-primary-light);">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                                     </div>
@@ -813,7 +813,7 @@
                                         <div class="mega__link-desc">Everything the platform can do for you</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('product.integrations') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#F0F0FF;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7M11 18H8a2 2 0 01-2-2V9"/></svg>
                                     </div>
@@ -859,7 +859,7 @@
                         <div class="mega__inner">
                             <div class="mega__group-title" style="margin-bottom:var(--space-3);">Industries We Serve</div>
                             <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;">
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.nonprofit') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FEF3F2;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                                     </div>

@@ -201,242 +201,6 @@
 {{-- ============================================================
      VIDEO SHOWCASE
 ============================================================ --}}
-<!-- <section style="padding-top: 60px;" id="video" aria-label="Product walkthrough video">
-  <div class="container">
-    <div class="hero-showcase">
-      <div class="hero-video-wrap">
-        <div class="hero-video-inner">
-          <span class="hero-video-badge"><span class="live-dot"></span> Live product walkthrough · 2 min</span>
-          <video
-            src="https://kprise.com/wp-content/uploads/2025/10/WhatsApp-Video-2025-10-06-at-12.39.50_fe04276f.mp4"
-            autoplay muted loop playsinline
-            aria-label="MyPass LMS platform walkthrough showing course creation, enrollment automation, and compliance reporting">
-          </video>
-        </div>
-      </div>
-      <div class="hero-stats-bar">
-        <div class="hero-stat-item"><div class="stat-value blue">70%</div><div class="stat-label">Less admin work</div></div>
-        <div class="hero-stat-item"><div class="stat-value green">4x</div><div class="stat-label">Faster courses</div></div>
-        <div class="hero-stat-item"><div class="stat-value amber">+35%</div><div class="stat-label">Compliance rates</div></div>
-        <div class="hero-stat-item"><div class="stat-value purple">35K+</div><div class="stat-label">Active learners</div></div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-{{--
-  ════════════════════════════════════════════════════════════
-  REPLACE your current video section block:
-      <section style="padding-top: 60px;" id="video" ...>
-
-  WITH THIS entire block below.
-
-  Also add the CSS into your <style> tag in home.blade.php
-  (or into app.css — clearly marked below)
-  ════════════════════════════════════════════════════════════
---}}
-
-
-{{-- ============================================================
-     ADD THIS CSS (inside your page <style> block OR app.css)
-============================================================ --}}
-<style>
-
-/* ================================================================
-   VIDEO SHOWCASE — Semrush-style light gradient + stripe background
-================================================================ */
-
-/* The outer wrapper that creates the background */
-.video-showcase-outer {
-    position: relative;
-    overflow: hidden;
-    padding: 0 0 0;
-
-    /*
-     * SEMRUSH-STYLE BACKGROUND:
-     * - Soft mint green top-left glow
-     * - Lavender/purple top-right glow
-     * - Fades clean to white at the bottom
-     */
-    background:
-        radial-gradient(ellipse 90% 65% at 15% 0%,
-            rgba(234, 228, 247, 0.45) 0%,     /* mint green — top left */
-            transparent 65%
-        ),
-        radial-gradient(ellipse 70% 55% at 85% 0%,
-            rgba(196, 181, 253, 0.45) 0%,     /* lavender — top right */
-            transparent 60%
-        ),
-        radial-gradient(ellipse 60% 40% at 50% 20%,
-            rgba(147, 197, 253, 0.20) 0%,     /* soft blue center */
-            transparent 60%
-        ),
-        linear-gradient(180deg,
-            #edfaf4 0%,      /* very light mint at top */
-            #f3f0fe 30%,     /* soft lavender mid */
-            #f0f7ff 60%,     /* light sky blue */
-            #ffffff 100%     /* pure white at bottom */
-        );
-}
-
-
-/* ── LEFT side: vertical stripe bars (like Semrush) ── */
-.video-showcase-outer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-
-    /* Repeating thin vertical lines */
-    background-image: repeating-linear-gradient(
-        90deg,
-        rgba(139, 92, 246, 0.13) 0px,
-        rgba(139, 92, 246, 0.13) 1px,
-        transparent 1px,
-        transparent 20px
-    );
-
-    /* Fade stripes: visible at far left → invisible toward center */
-    mask-image: linear-gradient(
-        to right,
-        rgba(0,0,0, 0.7) 0%,
-        rgba(0,0,0, 0.4) 40%,
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to right,
-        rgba(0,0,0, 0.7) 0%,
-        rgba(0,0,0, 0.4) 40%,
-        transparent 100%
-    );
-}
-
-
-/* ── RIGHT side: vertical stripe bars ── */
-.video-showcase-outer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 220px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-
-    background-image: repeating-linear-gradient(
-        90deg,
-        rgba(99, 102, 241, 0.12) 0px,
-        rgba(99, 102, 241, 0.12) 1px,
-        transparent 1px,
-        transparent 20px
-    );
-
-    /* Fade stripes: visible at far right → invisible toward center */
-    mask-image: linear-gradient(
-        to left,
-        rgba(0,0,0, 0.7) 0%,
-        rgba(0,0,0, 0.4) 40%,
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        to left,
-        rgba(0,0,0, 0.7) 0%,
-        rgba(0,0,0, 0.4) 40%,
-        transparent 100%
-    );
-}
-
-
-/* ── Subtle dot noise texture (optional depth) ── */
-.vso-dots {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background-image: radial-gradient(
-        circle, rgba(99, 102, 241, 0.30) 1px, transparent 1px
-    );
-    background-size: 32px 32px;
-    opacity: 0.045;
-}
-
-
-/* ── Bottom fade — smooth handoff to next section ── */
-.vso-bottom-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 160px;
-    z-index: 4;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
-}
-
-
-/* ── Inner content sits above all overlays ── */
-.vso-content {
-    position: relative;
-    z-index: 5;
-    padding-top: 60px;
-}
-
-
-/* ── The hero-showcase card — light version ── */
-.video-showcase-outer .hero-showcase {
-    position: relative;
-    z-index: 5;
-
-    /* Override the dark background — now uses light card on light bg */
-    background: #0f172a;  /* keep dark so video shows well */
-
-    border-radius: 20px 20px 0 0;
-    border: 1px solid rgba(89, 50, 234, 0.15);
-    border-bottom: none;
-
-    box-shadow:
-        0 -1px 0 rgba(89, 50, 234, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.6),
-        0 24px 64px rgba(15, 23, 42, 0.14),
-        0 8px 24px rgba(89, 50, 234, 0.08);
-}
-
-
-/* ── hero-video-badge: update to match light bg ── */
-.video-showcase-outer .hero-video-badge {
-    background: rgba(0, 0, 0, 0.55);
-    border-color: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-
-/* ── Stats bar at the bottom of the showcase ── */
-.video-showcase-outer .hero-stats-bar {
-    background: #0f172a;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 0;
-}
-
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-    .video-showcase-outer::before,
-    .video-showcase-outer::after {
-        width: 80px;
-    }
-}
-
-</style>
-
-
-{{-- ============================================================
-     REPLACE THE VIDEO SECTION HTML WITH THIS
-============================================================ --}}
 
 <div class="video-showcase-outer" id="video" aria-label="Product walkthrough video">
 
@@ -465,22 +229,6 @@
                     </div>
                 </div>
                 <div class="hero-stats-bar">
-                    <div class="hero-stat-item">
-                        <div class="stat-value blue">70%</div>
-                        <div class="stat-label">Less admin work</div>
-                    </div>
-                    <div class="hero-stat-item">
-                        <div class="stat-value green">4x</div>
-                        <div class="stat-label">Faster courses</div>
-                    </div>
-                    <div class="hero-stat-item">
-                        <div class="stat-value amber">+35%</div>
-                        <div class="stat-label">Compliance rates</div>
-                    </div>
-                    <div class="hero-stat-item">
-                        <div class="stat-value purple">35K+</div>
-                        <div class="stat-label">Active learners</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -491,115 +239,59 @@
 {{-- ============================================================
      PLATFORM SECTION
 ============================================================ --}}
-<section class="section platform-section" id="platform" aria-labelledby="platform-title">
-  <div class="container">
-    <div class="platform-grid">
-      <div class="platform-copy">
-        <div class="tag">The Platform</div>
-        <h2 class="section-title" id="platform-title">One platform for the entire training lifecycle</h2>
-        <p class="section-sub">From course creation to compliance reporting — every step is automated, every insight is instant.</p>
-        <div class="platform-bullets">
-          <div class="platform-bullet">
-            <div class="bullet-icon" style="background:#EEF2FF;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <div>
-              <div class="bullet-title">AI Course Builder</div>
-              <div class="bullet-desc">Upload any file or type a topic — your AI assistant creates a complete, polished course in minutes.</div>
-            </div>
-          </div>
-          <div class="platform-bullet">
-            <div class="bullet-icon" style="background:#D1FAE5;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div>
-              <div class="bullet-title">Smart Auto-Enrollment</div>
-              <div class="bullet-desc">Roles-based rules enroll the right people automatically — no spreadsheets, no manual lists.</div>
-            </div>
-          </div>
-          <div class="platform-bullet">
-            <div class="bullet-icon" style="background:#FEF3C7;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <div>
-              <div class="bullet-title">Instant Compliance Reports</div>
-              <div class="bullet-desc">Ask "Who hasn't completed HIPAA training?" and get a sorted list in seconds.</div>
-            </div>
-          </div>
-          <div class="platform-bullet">
-            <div class="bullet-icon" style="background:#EDE9FE;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            </div>
-            <div>
-              <div class="bullet-title">Enterprise SSO &amp; API</div>
-              <div class="bullet-desc">One-click sign-in with Okta, Azure AD, or any SAML 2.0 provider. Deep API for custom integrations.</div>
-            </div>
-          </div>
-        </div>
-        <div class="platform-ctas">
-          <a href="#" class="btn btn-primary">Explore Platform</a>
-          <a href="#" class="btn btn-outline">Book a Demo</a>
+<section class="platform-sec" id="platform">
+  <div class="sec-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-ew-line"></span>The Platform</div>
+        <h2 class="sec-title">One Platform for the<br><span>Entire Training Lifecycle</span></h2>
+        <p class="sec-sub">Create, deliver, and track training — without switching tools or managing workflows manually. Everything your team needs, in one place.</p>
+        <div class="sec-btns">
+          <a href="https://kp.kprise.com/features" class="btn btn-pri btn-m">Explore Platform</a>
+          <a href="https://calendly.com/onlinesales-kprise/30min" class="btn btn-ghost btn-m">Book a Demo</a>
         </div>
       </div>
+      <div>
+        <div class="platform-dash">
+          <div class="dash-title">Platform at a glance</div>
+          <div class="dash-grid">
+            <div class="dash-item"><div class="dash-n">70%</div><div class="dash-l">Less admin work</div></div>
+            <div class="dash-item"><div class="dash-n">4x</div><div class="dash-l">Faster course creation</div></div>
+            <div class="dash-item"><div class="dash-n">35%</div><div class="dash-l">Higher completion rates</div></div>
+            <div class="dash-item"><div class="dash-n">1 day</div><div class="dash-l">Average time to live</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="platform-visual">
-        <div class="platform-dashboard">
-          <div class="pd-header">
-            <span class="pd-title">Training Overview</span>
-            <span class="pd-badge">Live</span>
-          </div>
-          <div class="pd-stats">
-            <div class="pd-stat"><div class="pd-stat-val">240</div><div class="pd-stat-lbl">Learners</div></div>
-            <div class="pd-stat"><div class="pd-stat-val" style="color:#10B981;">87%</div><div class="pd-stat-lbl">Completion</div></div>
-            <div class="pd-stat"><div class="pd-stat-val" style="color:#F59E0B;">4.9</div><div class="pd-stat-lbl">Avg Rating</div></div>
-          </div>
-          <div class="pd-courses">
-            <div class="pd-course-row">
-              <div class="pd-course-icon" style="background:#EEF2FF;">🛡️</div>
-              <div class="pd-course-name">Cybersecurity Basics</div>
-              <div class="pd-course-prog">
-                <div class="pd-prog-bar"><div class="pd-prog-fill" style="width:92%;background:#10B981;"></div></div>
-                <span>92%</span>
-              </div>
-            </div>
-            <div class="pd-course-row">
-              <div class="pd-course-icon" style="background:#FEF3C7;">📋</div>
-              <div class="pd-course-name">HIPAA Compliance 2024</div>
-              <div class="pd-course-prog">
-                <div class="pd-prog-bar"><div class="pd-prog-fill" style="width:78%;background:#4F46E5;"></div></div>
-                <span>78%</span>
-              </div>
-            </div>
-            <div class="pd-course-row">
-              <div class="pd-course-icon" style="background:#D1FAE5;">🎯</div>
-              <div class="pd-course-name">Sales Enablement Q4</div>
-              <div class="pd-course-prog">
-                <div class="pd-prog-bar"><div class="pd-prog-fill" style="width:65%;background:#F59E0B;"></div></div>
-                <span>65%</span>
-              </div>
-            </div>
-            <div class="pd-course-row">
-              <div class="pd-course-icon" style="background:#EDE9FE;">🤝</div>
-              <div class="pd-course-name">Leadership &amp; Culture</div>
-              <div class="pd-course-prog">
-                <div class="pd-prog-bar"><div class="pd-prog-fill" style="width:54%;background:#7C3AED;"></div></div>
-                <span>54%</span>
-              </div>
-            </div>
-          </div>
+    <div class="platform-grid">
+      <div class="cap-card">
+        <div class="cap-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 7v4l2.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M7 5A7 7 0 0 1 18 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
         </div>
-        <div class="plat-float plat-float-1">
-          <div class="pf-icon" style="background:#D1FAE5;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" width="18" height="18" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div><div class="pf-val">8 hrs</div><div class="pf-lbl">Saved this week</div></div>
+        <div class="cap-title">AI Course Builder</div>
+        <div class="cap-desc">Upload a file or type a topic. MyPass generates a complete, structured course in minutes — including quizzes, summaries, and SCORM packaging. No instructional designer needed.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 22 22"><path d="M4 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0zM2 18c0-3 2.7-5 5-5M13 11l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </div>
-        <div class="plat-float plat-float-2">
-          <div class="pf-icon" style="background:#EEF2FF;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" width="18" height="18"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
-          </div>
-          <div><div class="pf-val">+24</div><div class="pf-lbl">New enrollments</div></div>
+        <div class="cap-title">Smart Auto-Enrollment</div>
+        <div class="cap-desc">Set rules once based on role, department, or group. Users are enrolled in the right courses automatically — no spreadsheets, no manual lists, no ongoing admin effort.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 22 22"><path d="M3 17l4-6 4 3 4-5 4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 5h16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>
         </div>
+        <div class="cap-title">Instant Compliance Reports</div>
+        <div class="cap-desc">Ask a plain-language question and get the answer immediately. "Who has not completed HIPAA training?" returns a sorted, exportable report in seconds — no filters, no exports, no waiting.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-ico">
+          <svg width="20" height="20" fill="none" viewBox="0 0 22 22"><rect x="3" y="8" width="10" height="11" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M6 8V6a5 5 0 0 1 10 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="1.4"></circle></svg>
+        </div>
+        <div class="cap-title">Enterprise SSO and API</div>
+        <div class="cap-desc">One-click sign-in via Okta, Azure AD, or any SAML 2.0 provider. Deep API access for custom integrations with your HRIS, AMS, or existing systems.</div>
       </div>
     </div>
   </div>
@@ -608,69 +300,31 @@
 {{-- ============================================================
      TRUST STRIP
 ============================================================ --}}
-<div class="trust-strip" aria-label="Trusted by companies">
-  <div class="container">
-    <p class="trust-label">Trusted by teams at</p>
-    <div class="marquee-wrap">
-      <div class="marquee-track" aria-hidden="true">
-        @php
-          $logos = [
-            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/1.webp", "alt"=>"MyPass LMS rated on Capterra 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/2.webp", "alt"=>"MyPass LMS listed as GetApp Leader 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://kprise.com/wp-content/uploads/2025/12/3.webp", "alt"=>"MyPass LMS named Software Advice FrontRunner 2024", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://brand-assets.capterra.com/badge/65ccdf80-7500-42bf-8e6f-aaa875f7613c.svg", "alt"=>"MyPass LMS Capterra verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://brand-assets.getapp.com/badge/f7329061-8cc8-4015-8dbd-9c68980f086d.png", "alt"=>"MyPass LMS GetApp verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://brand-assets.softwareadvice.com/badge/6aeb2175-cd8d-4d46-b212-ddd1b623365b.png", "alt"=>"MyPass LMS Software Advice verified badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://elearningindustry.com/content/product-listings/399529/badges/rating", "alt"=>"MyPass LMS eLearning Industry rating badge", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/highly-recommended-winter-2025.png", "alt"=>"SoftwareSuggest Highly Recommended Winter 2025", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/easy-usability-winter-2025.png", "alt"=>"SoftwareSuggest Easy Usability Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://www.softwaresuggest.com/award_logo/best-support-winter-2025.png", "alt"=>"SoftwareSuggest Best Support Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"],
-            ['bg'=>'transparent', "image"=>"https://www.softwareworld.co/customer-choice.png", "alt"=>"SoftwareWorld Customer Choice Award", "loading"=>"lazy", "width"=>"120", "height"=>"80"]
-          ];
-        @endphp
-        @foreach(array_merge($logos, $logos) as $logo)
-          <div class="marquee-item">
-            <div class="marquee-logo" style="background:{{ $logo['bg'] }};">
-              <img src="{{ $logo['image'] }}" alt="{{ $logo['alt'] }}" loading="lazy" width="120" height="80">
-            </div>            
-          </div>
-        @endforeach
+<section class="proof-sec">
+  <div class="proof-inner">
+    <div class="proof-label">Trusted by teams that need training to work</div>
+    <div class="logos-track">
+      <div class="logos-inner" id="logosInner">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&amp;ssl=1" alt="American Board">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&amp;ssl=1" alt="Youth for Understanding">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&amp;ssl=1" alt="Phi Delta Kappan">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&amp;ssl=1" alt="SBCA">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&amp;ssl=1" alt="PDK International">
+        <!-- Duplicate for seamless loop -->
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&amp;ssl=1" alt="American Board">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&amp;ssl=1" alt="Youth for Understanding">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&amp;ssl=1" alt="Phi Delta Kappan">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&amp;ssl=1" alt="SBCA">
+        <img class="logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&amp;ssl=1" alt="PDK International">
       </div>
     </div>
-  </div>
-</div>
-
-{{-- ============================================================
-     PURPOSE SECTION
-============================================================ --}}
-<section class="section" id="purpose" aria-labelledby="purpose-title">
-  <div class="container">
-    <div class="section-header">
-      <div class="tag">Purpose-Built</div>
-      <h2 class="section-title" id="purpose-title">Built for the way you actually train</h2>
-      <p class="section-sub">Not a generic content platform. A purpose-built system designed around how real L&amp;D teams operate.</p>
-    </div>
-    <div class="purpose-grid">
-      <div class="purpose-card">
-        <div class="purpose-num">01</div>
-        <h3 class="purpose-title">Eliminate Admin Overload</h3>
-        <p class="purpose-text">Stop spending hours clicking menus. Describe what you need — the AI executes multi-step workflows instantly.</p>
-      </div>
-      <div class="purpose-card">
-        <div class="purpose-num">02</div>
-        <h3 class="purpose-title">Launch Courses Fast</h3>
-        <p class="purpose-text">Idea to published course in under 10 minutes. AI generates content, quizzes, and SCORM packaging automatically.</p>
-      </div>
-      <div class="purpose-card">
-        <div class="purpose-num">03</div>
-        <h3 class="purpose-title">Never Miss Compliance</h3>
-        <p class="purpose-text">Deadline tracking, escalating reminders, and audit-ready reports built in. Stay compliant without the manual effort.</p>
-      </div>
-      <div class="purpose-card">
-        <div class="purpose-num">04</div>
-        <h3 class="purpose-title">Scale Without Seat Fees</h3>
-        <p class="purpose-text">Credits are consumed per completion — not per login. Add learners freely; only pay for what gets done.</p>
-      </div>
+    <div class="award-row">
+      <img class="award-img" src="https://kprise.com/wp-content/uploads/2025/12/1.webp" alt="Capterra 2024">
+      <img class="award-img" src="https://kprise.com/wp-content/uploads/2025/12/2.webp" alt="GetApp Leader 2024">
+      <img class="award-img" src="https://kprise.com/wp-content/uploads/2025/12/3.webp" alt="Software Advice FrontRunner 2024">
+      <img class="award-img" src="https://brand-assets.capterra.com/badge/65ccdf80-7500-42bf-8e6f-aaa875f7613c.svg" alt="Capterra Verified">
+      <img class="award-img" src="https://brand-assets.getapp.com/badge/f7329061-8cc8-4015-8dbd-9c68980f086d.png" alt="GetApp Verified">
+      <img class="award-img" src="https://brand-assets.softwareadvice.com/badge/6aeb2175-cd8d-4d46-b212-ddd1b623365b.png" alt="Software Advice Verified">
     </div>
   </div>
 </section>
@@ -678,54 +332,81 @@
 {{-- ============================================================
      COMPARISON TABLE
 ============================================================ --}}
-<section class="comparison" id="comparison" aria-labelledby="comparison-heading">
-  <div class="container">
-    <h2 class="section-heading" id="comparison-heading">Why Teams Prefer MyPass LMS Over Traditional LMS</h2>
-    <p class="section-subtext">Quick comparison — see how MyPass LMS speeds up training &amp; reduces admin effort.</p>
-
-    <div class="comparison__table-wrap" role="region" aria-label="Feature comparison table" tabindex="0">
-      <table class="comparison__table">
-        <caption class="sr-only">Why Teams Prefer MyPass LMS Over Traditional LMS</caption>
-        <thead>
-          <tr>
-            <th scope="col" class="comparison__th comparison__th--feature">Feature</th>
-            <th scope="col" class="comparison__th comparison__th--col-a">Traditional LMS</th>
-            <th scope="col" class="comparison__th comparison__th--col-b">
-              <span class="comparison__th-badge">MyPass LMS</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          @php
-            $rows = [
-              ['Course Creation &amp; Assignment', 'Manual — time-consuming', 'Done in minutes — slash admin hours'],
-              ['Task Execution', 'No chat/voice control', 'Natural chat &amp; voice — describe task, MyPass LMS executes'],
-              ['Content → Course', 'Upload only — needs external authoring', 'Upload PPT/PDF/Video — AI auto-creates SCORM'],
-              ['Scheduling &amp; Reminders', 'Manual reminders', 'Automatic scheduling &amp; reminders'],
-              ['Compliance &amp; Deadlines', 'Missed alerts; higher risk', 'Alerting &amp; deadline tracking'],
-              ['Enrollment', 'Manual per team', 'Auto-enroll by roles/groups'],
-              ['Toolset', 'Fragmented tools', 'All-in-one: SCORM, ILT, assessments, SSO, reporting'],
-            ];
-          @endphp
-          @foreach($rows as $row)
-          <tr class="comparison__row">
-            <td class="comparison__td comparison__td--feature">{!! $row[0] !!}</td>
-            <td class="comparison__td comparison__td--col-a">
-              <span class="comparison__neg">{!! $row[1] !!}</span>
-            </td>
-            <td class="comparison__td comparison__td--col-b">
-              <span class="comparison__pos">
-                <svg class="comparison__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                  <circle cx="8" cy="8" r="8" fill="#5932EA" fill-opacity="0.1"/>
-                  <path d="M5 8l2 2 4-4" stroke="#5932EA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                {!! $row[2] !!}
-              </span>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+<section class="purpose-sec">
+  <div class="sec-wrap">
+    <div class="purpose-grid">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-ew-line"></span>Purpose-Built</div>
+        <h2 class="sec-title">Built for How Training<br><span>Actually Works</span></h2>
+        <p class="sec-sub">Not a generic content platform repurposed as an LMS. MyPass is designed around real training workflows — the ones that run daily in operations, compliance, and L&amp;D teams.</p>
+        <div class="purpose-items">
+          <div class="pi">
+            <div class="pi-n">01</div>
+            <div>
+              <div class="pi-title">Eliminate Admin Overload</div>
+              <div class="pi-desc">Automate repetitive tasks — enrollment, reminders, reporting — and give your team back the hours they spend managing instead of delivering.</div>
+            </div>
+          </div>
+          <div class="pi">
+            <div class="pi-n">02</div>
+            <div>
+              <div class="pi-title">Launch Courses Fast</div>
+              <div class="pi-desc">Go from idea to live course in minutes. AI generates content, quizzes, and SCORM packaging automatically from any file or topic.</div>
+            </div>
+          </div>
+          <div class="pi">
+            <div class="pi-n">03</div>
+            <div>
+              <div class="pi-title">Never Miss Compliance</div>
+              <div class="pi-desc">Automated deadline tracking, escalating reminders, and audit-ready reports. Stay compliant without the manual effort every certification cycle requires.</div>
+            </div>
+          </div>
+          <div class="pi">
+            <div class="pi-n">04</div>
+            <div>
+              <div class="pi-title">Scale Without Seat Fees</div>
+              <div class="pi-desc">Unlimited users on every plan. Add seasonal workers, new cohorts, or partner organizations — your plan does not inflate just because your team grows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-eyebrow"><span class="sec-ew-line"></span>Why Teams Prefer MyPass</div>
+        <h3 style="font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;margin-top:12px;letter-spacing:-.3px;">See how MyPass simplifies training compared to traditional LMS platforms.</h3>
+        <p style="font-size:14.5px;color:var(--ink3);margin-bottom:20px;line-height:1.65;">Quick comparison — every row is a problem teams face every week.</p>
+        <div class="compare-table">
+          <div class="ct-head">
+            <div class="ct-h">Area</div>
+            <div class="ct-h">Traditional LMS</div>
+            <div class="ct-h good">MyPass LMS</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-f">Training delivery</div>
+            <div class="ct-old">Manual processes, time-consuming</div>
+            <div class="ct-new">Automated workflows, done in minutes</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-f">Toolset</div>
+            <div class="ct-old">Multiple disconnected tools</div>
+            <div class="ct-new">All-in-one — LMS, ILT, assessments, SSO</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-f">Content creation</div>
+            <div class="ct-old">Upload-only, needs external authoring</div>
+            <div class="ct-new">Convert any file into a course instantly</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-f">Reminders</div>
+            <div class="ct-old">Manual follow-ups every deadline</div>
+            <div class="ct-new">Automated reminders, no manual effort</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-f">Reporting</div>
+            <div class="ct-old">Limited visibility, exports needed</div>
+            <div class="ct-new">Real-time reporting, instant answers</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -733,73 +414,60 @@
 {{-- ============================================================
      COURSES GRID
 ============================================================ --}}
-<section class="section" id="courses" aria-labelledby="courses-title">
-  <div class="container">
-    <div class="section-header">
-      <div class="tag">Popular Courses</div>
-      <h2 class="section-title" id="courses-title">Top-rated courses this month</h2>
-      <p class="section-sub">Curated for impact. Every course is built with AI assistance and reviewed by subject matter experts.</p>
+<section class="courses-sec" id="courses">
+  <div class="sec-wrap">
+    <div class="sec-eyebrow"><span class="sec-ew-line"></span>Ready Courses</div>
+    <h2 class="sec-title">Professionally Built Courses<br><span>Ready for Immediate Use</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Structured for real workplace training. Every course is designed with instructional clarity and deployed the moment you assign it — no setup required.</p>
+    <div class="course-cards">
+      <div class="cc">
+        <div class="cc-img">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="Compliance Training">
+          <div class="cc-img-ov"></div>
+          <span class="cc-cat">Compliance</span>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Corporate Compliance Master Pack</div>
+          <div class="cc-desc">Harassment prevention, data privacy, HIPAA, anti-bribery, workplace safety, and code of conduct — 8 modules, fully SCORM-ready.</div>
+          <div class="cc-foot">
+            <span class="cc-tag">8 Modules</span>
+            <a href="#" class="btn btn-pri btn-s">Preview</a>
+          </div>
+        </div>
+      </div>
+      <div class="cc">
+        <div class="cc-img">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="Leadership Training">
+          <div class="cc-img-ov"></div>
+          <span class="cc-cat">Leadership</span>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">First-Time Manager Certification</div>
+          <div class="cc-desc">Delegation, feedback, coaching, difficult conversations, and leading remote teams. A full certification path for newly promoted managers.</div>
+          <div class="cc-foot">
+            <span class="cc-tag">7 Modules</span>
+            <a href="#" class="btn btn-pri btn-s">Preview</a>
+          </div>
+        </div>
+      </div>
+      <div class="cc">
+        <div class="cc-img">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="AI Training">
+          <div class="cc-img-ov"></div>
+          <span class="cc-cat">AI Readiness</span>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">AI Workforce Readiness Pack</div>
+          <div class="cc-desc">AI literacy, prompt engineering, responsible use, and data security. Practical AI training for teams that use it daily — not just the tech department.</div>
+          <div class="cc-foot">
+            <span class="cc-tag">4 Modules</span>
+            <a href="#" class="btn btn-pri btn-s">Preview</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="courses-grid">
-      <article class="course-card">
-        <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#1E1B4B,#4F46E5);">+</div>
-          <div class="course-thumb-overlay"></div>
-          <span class="course-level level-beginner">Beginner</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">AI &amp; Machine Learning</div>
-          <h3 class="course-title">AI for Non-Developers: Practical Use Cases in 2024</h3>
-          <div class="course-instructor">
-            <div class="course-avatar" style="background:#4F46E5;">SJ</div>
-            <div class="course-instructor-name">by <strong>Sarah Johnson</strong></div>
-          </div>
-          <div class="course-meta">
-            <div class="course-rating"><span class="stars">★★★★★</span> 4.9 <span class="course-students">(2.1k)</span></div>
-            <div class="course-price"><small>$129</small>$79</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="course-card">
-        <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#042F2E,#10B981);">+</div>
-          <div class="course-thumb-overlay"></div>
-          <span class="course-level level-inter">Intermediate</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">Cybersecurity</div>
-          <h3 class="course-title">Cybersecurity Awareness: Zero Trust Architecture Fundamentals</h3>
-          <div class="course-instructor">
-            <div class="course-avatar" style="background:#10B981;">MR</div>
-            <div class="course-instructor-name">by <strong>Marcus Reid</strong></div>
-          </div>
-          <div class="course-meta">
-            <div class="course-rating"><span class="stars">★★★★★</span> 4.8 <span class="course-students">(1.4k)</span></div>
-            <div class="course-price"><small>$99</small>$59</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="course-card">
-        <div class="course-thumb">
-          <div class="course-thumb-bg" style="background:linear-gradient(135deg,#451A03,#F59E0B);">+</div>
-          <div class="course-thumb-overlay"></div>
-          <span class="course-level level-all">All Levels</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">Business &amp; Management</div>
-          <h3 class="course-title">Data-Driven Leadership: Making Better Decisions with Analytics</h3>
-          <div class="course-instructor">
-            <div class="course-avatar" style="background:#F59E0B;">AL</div>
-            <div class="course-instructor-name">by <strong>Aisha Lopez</strong></div>
-          </div>
-          <div class="course-meta">
-            <div class="course-rating"><span class="stars">★★★★½</span> 4.7 <span class="course-students">(987)</span></div>
-            <div class="course-price"><small>$149</small>$89</div>
-          </div>
-        </div>
-      </article>
+    <div class="courses-cta">
+      <a href="#" class="btn btn-ghost btn-m">Explore Full Course Library</a>
     </div>
   </div>
 </section>

@@ -93,7 +93,7 @@
     --transition-slow:   400ms ease;
 
     /* Layout */
-    --container-max:     1200px;
+    --container-max:     1500px;
     --container-pad:     1.5rem;
     --section-gap:       6rem;
     --section-gap-sm:    4rem;
@@ -1147,3 +1147,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
         grid-template-columns: 1fr;
     }
 }
+
+
+    

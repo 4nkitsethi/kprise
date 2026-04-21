@@ -212,7 +212,7 @@ class IndustryController extends Controller
 
     public function nonprofit(): View
     {
-        return view('pages.use-cases.generic', [
+        return view('pages.industries.nonprofits', [
             'seo' => $this->seo->forPage('industries.nonprofit', [
                 'title'       => 'LMS for Non-Profits — Volunteer & Staff Training | MyPass LMS',
                 'description' => 'Train volunteers, staff, and board members affordably. Credit-based pricing means you only pay for what you use — no per-seat fees.',
