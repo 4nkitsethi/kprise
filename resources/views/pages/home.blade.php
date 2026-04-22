@@ -26,7 +26,7 @@
           <div class="slide-badge"><span></span> Nonprofits &amp; Associations</div>
           <h1 class="slide-heading">Training That Works<br>With Your AMS.<br><em>Or Replaces It.</em></h1>
           <p class="slide-sub mobile-my-3">Run certifications, manage members, and deliver training — all in one connected platform. No system overhaul required.</p>
-          <div class="slide-bullets">
+          <div class="slide-bullets hide-on-mobile">
             <div class="sb">
               <div class="sb-check sb-check-dark"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               Integrates directly with your existing AMS
@@ -41,8 +41,8 @@
             </div>
           </div>
           <div class="slide-actions">
-            <a href="#" class="btn btn-white btn-lg">Start Free Trial</a>
-            <a href="#video" class="btn btn-ghost btn-lg hide-on-mobile">
+            <a href="#" class="btn btn-white btn-lg hide-on-mobile">Start Free Trial</a>
+            <a href="#video" class="btn btn-ghost btn-lg">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
               Watch Demo
             </a>
@@ -52,44 +52,40 @@
             <div><div class="slide-stat-val">90 Days</div><div class="slide-stat-label">Free Trial</div></div>
           </div>
         </div>
-        <div class="slide-visual fade-up delay-3" aria-hidden="true">
-          <div style="position:relative;">
-            <div class="slide-card">
-              <div class="slide-card-header">
-                <div class="slide-card-avatar" style="background:linear-gradient(135deg,#6366F1,#06B6D4);">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-                </div>
+        <div class="slide-right">
+          <div class="slide-card sc-dark">
+            <div class="sc-head">
+              <span class="sc-title">AMS Integration Flow</span>
+              <span class="sc-badge sc-badge-ok">Live Sync</span>
+            </div>
+            <div class="ams-flow">
+              <div class="ams-row">
+                <div class="ams-ico ams-ico-brand"><svg width="16" height="16" fill="none" viewBox="0 0 18 18"><rect x="2" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 5V4a4 4 0 0 1 8 0v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
                 <div>
-                  <div class="slide-card-name">My Learning Dashboard</div>
-                  <div class="slide-card-role">Q4 Training Plan — Active</div>
+                  <div class="ams-label">Your Existing AMS</div>
+                  <div class="ams-sub">Impexium, GrowthZone, MemberClicks, or any API</div>
                 </div>
               </div>
-              <div class="slide-card-progress">
-                <div class="progress-row">
-                  <span class="progress-label">Overall Progress</span>
-                  <span class="progress-val">68%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width:68%;background:linear-gradient(90deg,#6366F1,#06B6D4);"></div>
+              <div class="ams-arrow">↕</div>
+              <div class="ams-row">
+                <div class="ams-ico ams-ico-brand"><svg width="16" height="16" fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M9 6v3l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div>
+                  <div class="ams-label">MyPass LMS</div>
+                  <div class="ams-sub">Members, courses, certifications — synced automatically</div>
                 </div>
               </div>
-              <div class="slide-card-modules">
-                <div class="module-chip"><span class="module-dot" style="background:#10B981;"></span>Onboarding</div>
-                <div class="module-chip"><span class="module-dot" style="background:#F59E0B;"></span>Compliance</div>
-                <div class="module-chip"><span class="module-dot" style="background:#6366F1;"></span>AI Skills</div>
-                <div class="module-chip"><span class="module-dot" style="background:#EC4899;"></span>Leadership</div>
+              <div class="ams-arrow">↕</div>
+              <div class="ams-row">
+                <div class="ams-ico ams-ico-ok"><svg width="16" height="16" fill="none" viewBox="0 0 18 18"><path d="M3 9l3.5 3.5L15 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div>
+                  <div class="ams-label">Compliance Reports</div>
+                  <div class="ams-sub">Auto-generated, audit-ready, instant download</div>
+                </div>
               </div>
-            </div>
-            <div class="visual-float-badge vfb-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Auto-assigned to 240 users</span>
-            </div>
-            <div class="visual-float-badge vfb-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Saves 8 hrs/week</span>
             </div>
           </div>
         </div>
+   
       </div>
     </div>
 
@@ -103,7 +99,7 @@
           </div>
           <h1 class="slide-heading">Launch an LMS With<br>Courses Ready to Go<br><em>From Day One.</em></h1>
           <p class="slide-sub mobile-my-3 ">No setup battles. No content creation delays. Start with a fully structured LMS and a library of pre-built courses — assign and go.</p>
-          <div class="slide-bullets">
+          <div class="slide-bullets hide-on-mobile">
             <div class="sb">
               <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               Ready course library — compliance, ethics, leadership, and more
@@ -118,8 +114,8 @@
             </div>
           </div>
           <div class="slide-actions">
-            <a href="#" class="btn btn-white btn-lg">Explore Features</a>
-            <a href="#" class="btn btn-ghost btn-lg hide-on-mobile">See Pricing</a>
+            <a href="#" class="btn btn-white btn-lg hide-on-mobile">Explore Features</a>
+            <a href="#" class="btn btn-ghost btn-lg ">See Pricing</a>
           </div>
           <div class="slide-stats mobile-my-3">
             <div><div class="slide-stat-val">5,000</div><div class="slide-stat-label">Free Credits</div></div>
@@ -127,35 +123,38 @@
             <div><div class="slide-stat-val">99.9%</div><div class="slide-stat-label">Uptime SLA</div></div>
           </div>
         </div>
-        <div class="slide-visual fade-up delay-3" aria-hidden="true">
-          <div style="position:relative;">
-            <div class="slide-card">
-              <div style="margin-bottom:16px;">
-                <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Course Builder AI</div>
-                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;">"Create a 5-module cybersecurity course for new hires with quizzes and a final assessment"</div>
+             <div class="slide-right">
+          <div class="slide-card sc-light">
+            <div class="sc-head">
+              <span class="sc-title">Course Library Preview</span>
+              <span class="sc-badge sc-badge-brand">Ready Now</span>
+            </div>
+            <div class="course-list">
+              <div class="cl-item">
+                <div class="cl-ico"><svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M8 1.5L2 4.5v4c0 2.5 2.5 5 6 5.5 3.5-.5 6-3 6-5.5v-4L8 1.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+                <div class="cl-name">Corporate Compliance Pack</div>
+                <span class="cl-tag">8 modules</span>
               </div>
-              <div style="display:flex;flex-direction:column;gap:8px;">
-                <div style="background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:#6EE7B7;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  5 modules generated
-                </div>
-                <div style="background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.2);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:#A5B4FC;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  SCORM package ready
-                </div>
-                <div style="background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:#FCD34D;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  Built in 3 minutes
-                </div>
+              <div class="cl-item">
+                <div class="cl-ico"><svg width="14" height="14" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+                <div class="cl-name">First-Time Manager Certification</div>
+                <span class="cl-tag">7 modules</span>
+              </div>
+              <div class="cl-item">
+                <div class="cl-ico"><svg width="14" height="14" fill="none" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+                <div class="cl-name">AI Workforce Readiness</div>
+                <span class="cl-tag cl-tag-brand">New</span>
+              </div>
+              <div class="cl-item">
+                <div class="cl-ico"><svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 4.5h10M3 8h8M3 11.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+                <div class="cl-name">Workplace Skills &amp; Communication</div>
+                <span class="cl-tag">5 modules</span>
               </div>
             </div>
-            <div class="visual-float-badge vfb-1" style="right:-12px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span>4.9 avg rating</span>
-            </div>
-            <div class="visual-float-badge vfb-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-              <span>340 enrolled today</span>
+            <div class="sc-stats">
+              <div class="sc-stat"><div class="sc-stat-n">37+</div><div class="sc-stat-l">Modules ready</div></div>
+              <div class="sc-stat"><div class="sc-stat-n">5</div><div class="sc-stat-l">Course packs</div></div>
+              <div class="sc-stat"><div class="sc-stat-n">1 day</div><div class="sc-stat-l">To go live</div></div>
             </div>
           </div>
         </div>
@@ -173,7 +172,7 @@
           <h1 class="slide-heading">Emails. Spreadsheets.<br>PDFs. That Is Not<br><em>a Training System.</em></h1>
           <!-- Roll unused credits forward — zero wastage. -->
           <p class="slide-sub mobile-my-3">If you cannot see who completed what, cannot send reminders automatically, and cannot prove compliance instantly — you are managing risk, not training.</p>  
-          <div class="slide-bullets">
+          <div class="slide-bullets hide-on-mobile">
             <div class="sb">
               <div class="sb-check sb-check-light"><svg width="11" height="11" fill="none" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               No visibility into who has completed training
@@ -188,8 +187,8 @@
             </div>
           </div>        
           <div class="slide-actions">
-            <a href="#" class="btn btn-white btn-lg">Get 5K Free Credits</a>
-            <a href="#comparison" class="btn btn-ghost btn-lg hide-on-mobile ">Compare Plans</a>
+            <a href="#" class="btn btn-white btn-lg hide-on-mobile">Get 5K Free Credits</a>
+            <a href="#comparison" class="btn btn-ghost btn-lg  ">Compare Plans</a>
           </div>
           <div class="slide-stats mobile-my-3">
             <div><div class="slide-stat-val">No</div><div class="slide-stat-label">Per-User Fees</div></div>
@@ -197,27 +196,22 @@
             <div><div class="slide-stat-val">2×</div><div class="slide-stat-label">Faster Decisions</div></div>
           </div>
         </div>
-        <div class="slide-visual fade-up delay-3" aria-hidden="true">
-          <div style="position:relative;">
-            <div class="slide-card">
-              <div style="text-align:center;margin-bottom:16px;">
-                <div style="font-size:40px;font-weight:800;color:#A78BFA;font-family:var(--font-display);">5,000</div>
-                <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Free Credits Included</div>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-                <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#34D399;font-family:var(--font-display);">∞</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;">Admins</div></div>
-                <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#60A5FA;font-family:var(--font-display);">∞</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;">Courses</div></div>
-                <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#FBBF24;font-family:var(--font-display);">AI</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;">Included</div></div>
-                <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#F472B6;font-family:var(--font-display);">SSO</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;">All Plans</div></div>
-              </div>
+        <div class="slide-right">
+          <div class="slide-card sc-light">
+            <div class="sc-head">
+              <span class="sc-title">Before vs After MyPass</span>
+              <span class="sc-badge sc-badge-ok">Live in minutes</span>
             </div>
-            <div class="visual-float-badge vfb-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span>No credit card needed</span>
+            <div class="pv-list">
+              <div class="pv-row pv-bad"><span class="pv-ico">✕</span><span class="pv-txt">Chasing completions by email every week</span></div>
+              <div class="pv-row pv-bad"><span class="pv-ico">✕</span><span class="pv-txt">Compliance reports built in Excel manually</span></div>
+              <div class="pv-row pv-bad"><span class="pv-ico">✕</span><span class="pv-txt">No idea who is behind until it is too late</span></div>
             </div>
-            <div class="visual-float-badge vfb-2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              <span>90-day full access</span>
+            <div class="pv-divider">— Switch to MyPass —</div>
+            <div class="pv-list">
+              <div class="pv-row pv-good"><span class="pv-ico">✓</span><span class="pv-txt">Automated reminders — zero manual follow-up</span></div>
+              <div class="pv-row pv-good"><span class="pv-ico">✓</span><span class="pv-txt">Instant compliance reports — one click, done</span></div>
+              <div class="pv-row pv-good"><span class="pv-ico">✓</span><span class="pv-txt">Real-time dashboards for every learner and team</span></div>
             </div>
           </div>
         </div>
@@ -293,7 +287,7 @@
           <a href="https://calendly.com/onlinesales-kprise/30min" class="btn btn-ghost btn-m">Book a Demo</a>
         </div>
       </div>
-      <div>
+      <div class="hide-on-mobile">
         <div class="platform-dash">
           <div class="dash-title">Platform at a glance</div>
           <div class="dash-grid">

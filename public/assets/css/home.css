@@ -125,7 +125,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .slide-content {
   position: relative; z-index: 2;
-  width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 24px;
+  width: 100%; max-width: 1300px; margin-inline: auto; 
   display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
 }
 
@@ -939,7 +939,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white
 .logos-inner{display:flex;gap:40px;align-items:center;animation:scroll-logos 22s linear infinite;white-space:nowrap;}
 .logos-inner:hover{animation-play-state:paused;}
 @keyframes scroll-logos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.logo-img{height:36px;width:auto;opacity:.55;filter:grayscale(100%);transition:all .2s;flex-shrink:0;}
+.logo-img{height:70px;width:auto;flex-shrink:0;}
 .logo-img:hover{opacity:.9;filter:grayscale(0%);}
 .award-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:36px;padding-top:32px;border-top:1px solid var(--b1);}
 .award-img{height:44px;width:auto;opacity:.7;transition:opacity .2s;}
@@ -1002,10 +1002,11 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white
 .cta-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
 .cta-fine{font-size:12px;color:rgba(255,255,255,.3);}
 
+.slide-right{ display: flex; justify-content: center;    align-items: center;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
-  .nav,.platform-sec,.video-sec,.proof-sec,.purpose-sec,.courses-sec,.final-cta,footer{padding-left:28px;padding-right:28px;}
+  
   .slide{padding:72px 40px 72px;}
   .slide-inner{grid-template-columns:1fr;gap:36px;}
   .slide-right{display:none;}
@@ -1016,8 +1017,11 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white
 }
 @media(max-width:640px){
   .nav-links{display:none;}
-  .slide h1{font-size:34px;}
+  .slide-actions .hide-on-mobile{ display:none; }
+  .slide h1{font-size:24px;}
   .sec-title{font-size:28px;}
+  .slide-bullets{display:none;}
+  .proof-sec {padding: 30px 8px;}  
   .steps-row,.course-cards{grid-template-columns:1fr;}
   .cta-h{font-size:30px;}
   .ft-top{grid-template-columns:1fr;}

@@ -202,4 +202,15 @@ class SolutionController extends Controller
         ]);     
     }
 
+    public function nonprofitVolunteerTraining(): View
+    {
+        return view('pages.solutions.nonprofit_volunteer_training', [
+            'seo' => [
+                'title'       => 'Nonprofit & Volunteer Training — MyPass LMS',
+                'description' => 'Empower your nonprofit staff and volunteers with MyPass LMS. Custom branding, interactive content, and seamless integrations to drive engagement and impact.',
+                'canonical'   => route('solutions.nonprofit-volunteer-training'),
+            ],   
+        ]);     
+    }
+
 }

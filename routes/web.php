@@ -64,7 +64,7 @@ Route::prefix('solutions')->name('solutions.')->group(function () {
     Route::get('/partner-channel-training', [SolutionController::class, 'partnerChannelTraining'])->name('partner-channel-training');
     Route::get('/sales-enablement', [SolutionController::class, 'salesEnablement'])->name('sales-enablement');
     Route::get('/compliance-training', [SolutionController::class, 'complianceTraining'])->name('compliance-training');
-    
+    Route::get("/nonprofit-volunteer-training", [SolutionController::class, 'nonprofitVolunteerTraining'])->name('nonprofit-volunteer-training');
 });
 
 /* ----------------------------------------------------------------
