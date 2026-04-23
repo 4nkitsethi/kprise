@@ -478,7 +478,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Automated reminders before certification deadlines expire</div>
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Funder and board compliance reports ready in seconds on demand</div>
         </div>
-        <a href="https://kp.kprise.com/use-cases/compliance" class="sec-cta">See Compliance Features</a>
+        <a href="{{ route('solutions.compliance-training') }}" class="sec-cta">See Compliance Features</a>
       </div>
     </div>
 
@@ -519,7 +519,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>All courses SCORM-ready and assignable in one click</div>
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Customise any course to match your brand and specific policies</div>
         </div>
-        <a href="https://kp.kprise.com" class="sec-cta">Browse the Course Library</a>
+        <a href="{{ route('courses') }}" class="sec-cta">Browse the Course Library</a>
       </div>
     </div>
 
@@ -687,7 +687,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         <div style="font-size:12px;color:var(--ink4);line-height:1.5;">Works with any SAML 2.0 provider your organisation already relies on</div>
       </div>
     </div>
-    <div style="text-align:center;"><a href="https://kp.kprise.com/about/platform" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a></div>
+    <div style="text-align:center;"><a href="{{ route('product.integrations')}}" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a></div>
   </div>
 </section>
 

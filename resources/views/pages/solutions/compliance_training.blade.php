@@ -342,7 +342,7 @@
         <a href="https://kp.kprise.com" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--b);text-decoration:none;border-bottom:2px solid var(--bl);padding-bottom:1px;transition:border-color .18s;" onmouseover="this.style.borderColor='var(--b)'" onmouseout="this.style.borderColor='var(--bl)'">Browse the full compliance course library <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#4220C8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2 9 6 3 10"/></svg></a>
       </div>
     </div>
-    <div style="text-align:center;"><a href="https://kp.kprise.com/about/platform" class="sec-cta">See All Platform Features</a></div>
+    <div style="text-align:center;"><a href="{{ route('product.features') }}" class="sec-cta">See All Platform Features</a></div>
   </div>
 </section>
 
@@ -373,7 +373,7 @@
             All courses SCORM-ready and assignable immediately after sign-up
           </div>
         </div>
-        <a href="https://kp.kprise.com" class="sec-cta">Browse the Course Library</a>
+        <a href="{{ route('courses') }}" class="sec-cta">Browse the Course Library</a>
       </div>
       <div>
         <div style="display:flex;flex-direction:column;gap:14px;">
@@ -450,7 +450,7 @@
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Filterable reports by team, department, course, individual, or date</div>
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Every record timestamped and exportable for any regulatory submission</div>
         </div>
-        <a href="https://kp.kprise.com/about/platform" class="sec-cta">See Reporting Features</a>
+        <a href="{{ route('product.features') }}" class="sec-cta">See Reporting Features</a>
       </div>
     </div>
 
@@ -487,7 +487,7 @@
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Renewal cycles configured once and running automatically from that point</div>
           <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>All certificates stored in the learner record and auditable at any moment</div>
         </div>
-        <a href="https://kp.kprise.com/about/platform" class="sec-cta">See Certification Features</a>
+        <a href="{{ route('product.features') }}" class="sec-cta">See Certification Features</a>
       </div>
     </div>
 
@@ -616,7 +616,7 @@
 
     </div>
     <div style="text-align:center;">
-      <a href="https://kp.kprise.com/about/platform" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a>
+      <a href="{{ route('product.integrations') }}" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a>
     </div>
   </div>
 </section>

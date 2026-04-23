@@ -262,7 +262,7 @@
         <nav class="bc" aria-label="Breadcrumb">
             <a href="https://kp.kprise.com">Home</a>
             <span class="bc-sep">/</span>
-            <a href="#">Use Cases</a>
+            <a href="#">Solutions</a>
             <span class="bc-sep">/</span>
             <span>Employee Training</span>
         </nav>
@@ -486,7 +486,7 @@
         </div>
         </div>
         <div style="text-align:center;">
-        <a href="https://kp.kprise.com/about/platform" class="sec-cta">See All Platform Features</a>
+        <a href="{{ route('product.features') }}" class="sec-cta">See All Platform Features</a>
         </div>
     </div>
     </section>
@@ -532,7 +532,7 @@
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>SCORM-ready and assignable immediately after sign-up</div>
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Customise any course or use it exactly as built</div>
             </div>
-            <a href="https://kp.kprise.com" class="sec-cta">Browse the Course Library</a>
+            <a href="{{ route('courses') }}" class="sec-cta">Browse the Course Library</a>
         </div>
         </div>
 
@@ -553,7 +553,7 @@
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Automated reminders before certification renewal deadlines</div>
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Dynamic reports filtered by team, course, date, or individual</div>
             </div>
-            <a href="https://kp.kprise.com/use-cases/compliance" class="sec-cta">See Compliance Features</a>
+            <a href="{{ route('solutions.compliance-training') }}" class="sec-cta">See Compliance Features</a>
         </div>
         </div>
 
@@ -574,7 +574,7 @@
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Quizzes and assessments generated automatically</div>
             <div class="fp"><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8"/></svg>Publish and update without any specialist support</div>
             </div>
-            <a href="https://kp.kprise.com/about/platform" class="sec-cta">Learn About Course Creation</a>
+            <a href="{{ route('product.features') }}" class="sec-cta">Learn About Course Creation</a>
         </div>
         </div>
 
@@ -709,7 +709,7 @@
 
         </div>
         <div style="text-align:center;">
-        <a href="https://kp.kprise.com/about/platform" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a>
+        <a href="{{ route('product.integrations') }}" class="sec-cta" style="margin-top:28px;">Check Out All Integrations</a>
         </div>
     </div>
     </section>
@@ -738,7 +738,7 @@
             <span class="ucc-tag">Use Case</span>
             <div class="ucc-t">Compliance Training</div>
             <div class="ucc-d">Stay audit-ready without the manual effort. Automate mandatory training, track certifications, and generate compliance reports in seconds on demand.</div>
-            <a href="https://kp.kprise.com/use-cases/compliance" class="ucc-link">Read more <svg viewBox="0 0 12 12"><polyline points="3 2 9 6 3 10"/></svg></a>
+            <a href="{{ route('solutions.compliance-training') }}" class="ucc-link">Read more <svg viewBox="0 0 12 12"><polyline points="3 2 9 6 3 10"/></svg></a>
             </div>
         </div>
         <div class="ucc">

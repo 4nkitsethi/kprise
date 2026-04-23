@@ -21,4 +21,9 @@ class ProductController extends Controller
     {
         return view('pages.courses');
     }   
+
+    public function aiCapabilities()
+    {
+        return view('pages.product.ai-capabilities');
+    }
 }

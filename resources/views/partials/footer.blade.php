@@ -183,7 +183,7 @@
                 </address>
                 <a href="tel:+12403164903" class="footer__phone">(240) 316-4903</a>
                 
-                <a href="https://www.instagram.com/kprisellc/" class="footer__aws" target="_blank" rel="noopener noreferrer" aria-label="AWS">
+                <a href="{{ route('aws') }}" class="footer__aws" rel="noopener noreferrer" aria-label="AWS">
                     <img class="img-with-animation skip-lazy" data-delay="0"  data-animation="none" src="{{ asset('assets/images/powerByAWS.png') }}" alt="Powered by AWS" />
                 </a>
                 

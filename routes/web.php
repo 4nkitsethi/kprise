@@ -86,6 +86,7 @@ Route::prefix('industries')->name('industries.')->group(function () {
 Route::prefix('product')->name('product.')->group(function () {
     Route::get('/features', [ProductController::class, 'features'])->name('features');
     Route::get('/integrations', [ProductController::class, 'integrations'])->name('integrations');
+    Route::get('/ai-capabilities', [ProductController::class, 'aiCapabilities'])->name('ai-capabilities');
 });
 
 
@@ -96,6 +97,7 @@ Route::prefix('product')->name('product.')->group(function () {
  * 
  */
 Route::get('/courses', [ProductController::class, 'courses'])->name('courses');
+Route::view('/aws', 'pages.aws')->name('aws');
 
 
 

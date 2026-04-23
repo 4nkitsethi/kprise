@@ -516,10 +516,10 @@
             <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
-            <a href="#" class="mobile-nav__sub-link">Compliance Courses</a>
-            <a href="#" class="mobile-nav__sub-link">Workplace Safety</a>
-            <a href="#" class="mobile-nav__sub-link">HR & Soft Skills</a>
-            <a href="#" class="mobile-nav__sub-link">Industry Training</a>
+            <a href="{{ route('courses')}}" class="mobile-nav__sub-link">Compliance Courses</a>
+            <a href="{{ route('courses')}}" class="mobile-nav__sub-link">Workplace Safety</a>
+            <a href="{{ route('courses')}}" class="mobile-nav__sub-link">HR & Soft Skills</a>
+            <a href="{{ route('courses')}}" class="mobile-nav__sub-link">Industry Training</a>
         </div>
     </div>
 
@@ -532,7 +532,7 @@
         <div class="mobile-nav__panel" aria-hidden="true">
             <a href="{{ route('product.features') }}" class="mobile-nav__sub-link">Features</a>            
             <a href="{{ route('product.integrations') }}" class="mobile-nav__sub-link">Integrations</a>
-            <a href="#" class="mobile-nav__sub-link">AI Capabilities</a>
+            <a href="{{ route('product.ai-capabilities') }}" class="mobile-nav__sub-link">AI Capabilities</a>
             <a href="#" class="mobile-nav__sub-link">Mobile Learning</a>
         </div>
     </div>
@@ -589,7 +589,7 @@
 
     {{-- Mobile CTAs --}}
     <div class="mobile-nav__actions">
-        <a href="{{ config('services.lms_login_url', '#') }}" class="btn btn--ghost" target="_blank" rel="noopener" style="justify-content:center;">Sign In</a>
+        <a href="https://mypasslms.us/login#register" class="btn btn--ghost" target="_blank" rel="noopener" style="justify-content:center;">Sign Up</a>
         <a href="{{ config('services.demo_url', '#') }}" class="btn btn--primary" target="_blank" rel="noopener" style="justify-content:center;">Book Demo</a>
     </div>
 
@@ -750,7 +750,7 @@
                         <div class="mega__inner">
                             <div class="mega__group-title">Ready-Made Course Libraries</div>
                             <div style="display:flex;flex-direction:column;gap:2px;">
-                                <a href="{{ route('courses').'#packsWrap' }}" class="mega__link">
+                                <a href="{{ route('courses') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FEF3F2;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                     </div>
@@ -822,7 +822,7 @@
                                         <div class="mega__link-desc">Connect to the tools your team already uses</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('product.ai-capabilities') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#EEF9F5;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.38-1 1.73V7h1a7 7 0 017 7h1a1 1 0 110 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 110-2h1a7 7 0 017-7h1V5.73A2 2 0 0110 4a2 2 0 012-2z"/></svg>
                                     </div>
@@ -1060,10 +1060,10 @@
 
         {{-- Header CTA Buttons --}}
         <div class="header__actions">
-            <a href="{{ config('services.lms_login_url', '#') }}"
+            <a href="https://mypasslms.us/login#register"
                class="btn btn--ghost btn--sm"
                target="_blank" rel="noopener">
-                Sign In
+                Sign Up
             </a>
             <a href="{{ config('services.demo_url', '#') }}"
                class="btn btn--primary btn--sm"
