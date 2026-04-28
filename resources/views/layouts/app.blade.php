@@ -53,8 +53,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 
-    {{-- Styles --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css?v=1.0.1') }}">
+    {{-- Styles — load order matters:
+         1. app.css     → design tokens, reset, base, buttons, sections
+         2. components  → stats bar, pricing cards, dividers
+         3. header      → mega menu, mobile nav
+         4. footer      → bottom bar, social, legal
+         5. page-level  → pushed via @stack('styles') in each view
+    --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/components.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/header.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css?v=1.1') }}">
     @stack('styles')
 </head>
 <body class="{{ $bodyClass ?? '' }}">

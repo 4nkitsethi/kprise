@@ -363,20 +363,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <p class="lb-lbl">Trusted by nonprofits and associations across 15 countries</p>
   <div class="lb-track-wrap">
     <div class="lb-track">
-      <!-- Set 1: real images -->
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="Phi Delta Kappan"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK International"></div>
-      <div class="lb-item"><svg viewBox="0 0 150 40" fill="none" aria-label="Contrario"><rect x="0" y="8" width="8" height="24" rx="4" fill="#4220C8"/><rect x="12" y="8" width="8" height="24" rx="4" fill="#7B5EEA"/><text x="26" y="25" font-family="Arial,sans-serif" font-weight="800" font-size="15" fill="#1a1a2e">Contrario</text></svg></div>
-      <!-- Set 2: duplicate for seamless loop -->
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="Phi Delta Kappan"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA"></div>
-      <div class="lb-item"><img class="client-logo-img" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK International"></div>
-      <div class="lb-item"><svg viewBox="0 0 150 40" fill="none" aria-label="Contrario"><rect x="0" y="8" width="8" height="24" rx="4" fill="#4220C8"/><rect x="12" y="8" width="8" height="24" rx="4" fill="#7B5EEA"/><text x="26" y="25" font-family="Arial,sans-serif" font-weight="800" font-size="15" fill="#1a1a2e">Contrario</text></svg></div>
+          @php 
+              $trustedLogos = config('services.trustedLogos');
+              $trustedLogosClass = 'logo-img lb-item';
+          @endphp
+
+          <x-logo-strip
+              :logos="$trustedLogos"
+              :logo-class="$trustedLogosClass"
+          />
     </div>
   </div>
 </div>

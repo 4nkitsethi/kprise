@@ -15,7 +15,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\CompanyController;
 /* ----------------------------------------------------------------
    Home
 ---------------------------------------------------------------- */
@@ -87,6 +87,17 @@ Route::prefix('product')->name('product.')->group(function () {
     Route::get('/features', [ProductController::class, 'features'])->name('features');
     Route::get('/integrations', [ProductController::class, 'integrations'])->name('integrations');
     Route::get('/ai-capabilities', [ProductController::class, 'aiCapabilities'])->name('ai-capabilities');
+});
+
+
+
+/* ----------------------------------------------------------------
+   Company
+---------------------------------------------------------------- */
+Route::prefix('company')->name('company.')->group(function () {
+    Route::get('/about', [CompanyController::class, 'about'])->name('about');
+    Route::get('/team', [CompanyController::class, 'team'])->name('team');
+    Route::get('/careers', [CompanyController::class, 'careers'])->name('careers');
 });
 
 

@@ -1,0 +1,138 @@
+/* ================================================================
+   MyPass LMS — Footer Styles
+   Extracted from partials/footer.blade.php
+   Depends on design tokens in app.css
+================================================================ */
+
+/* ── Bottom bar ── */
+.lms-footer__bottom {
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.lms-footer__copy {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.lms-footer__copy a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+}
+.lms-footer__copy a:hover { text-decoration: underline; }
+.lms-footer__copy-heart {
+    width: 14px;
+    height: 14px;
+    color: #ff4757;
+    flex-shrink: 0;
+}
+
+.lms-footer__legal {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+.lms-footer__legal a {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+.lms-footer__legal a:hover { color: var(--color-primary); }
+
+.lms-footer__social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.lms-footer__social-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+    text-decoration: none;
+    color: var(--color-text-secondary);
+}
+.lms-footer__social-btn:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+.lms-footer__social-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ── Gradient divider ── */
+.footer-divider {
+    position: relative;
+    height: 1px;
+    margin: 24px 0;
+}
+.footer-divider::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--color-border) 20%,
+        var(--color-border) 80%,
+        transparent 100%
+    );
+}
+
+/* ── AWS badge ── */
+.footer__aws img {
+    margin-top: 2em;
+    background: #f5f5f5;
+    width: 150px;
+    height: auto;
+}
+
+/* ── Brand column tagline ── */
+.footer-brand p {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    max-width: 300px;
+    margin-top: 12px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .lms-footer__main {
+        grid-template-columns: 200px 260px repeat(4, 1fr);
+        gap: 24px;
+        padding: 40px 28px 32px;
+    }
+}
+@media (max-width: 900px) {
+    .lms-footer__main {
+        grid-template-columns: 1fr 1fr;
+        padding: 36px 24px 28px;
+    }
+    .lms-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+    }
+}
+@media (max-width: 540px) {
+    .lms-footer__main  { grid-template-columns: 1fr; }
+    .lms-footer__legal { flex-wrap: wrap; gap: 14px; }
+}

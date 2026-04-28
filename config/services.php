@@ -47,5 +47,27 @@ return [
             'channel'              => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    
+    'trustedLogos' => [
+                    ['src' => '/assets/images/logos/EducatorsRising.png', 'alt' => 'Educators Rising'],
+                    ['src' => '/assets/images/logos/adopt.svg', 'alt' => 'Adopt AI'],
+                    ['src' => '/assets/images/logos/Contrario.svg', 'alt' => 'Contrario'],
+                    ['src' => '/assets/images/logos/DL-Logo.png', 'alt' => 'Development Logics'],
+                    ['src' => '/assets/images/logos/equip_behavioral_health_logo.jpeg', 'alt' => 'Equip Behavioral Health'],
+                    ['src' => '/assets/images/logos/Era.png', 'alt' => 'Era'],
+                    ['src' => '/assets/images/logos/ifp.png', 'alt' => 'IFPO-MENASA'],
+                    ['src' => '/assets/images/logos/Logo-happee-learning.png', 'alt' => 'Happee Learning'],
+                    ['src' => '/assets/images/logos/OT_purple.svg', 'alt' => 'OT'],
+                    ['src' => '/assets/images/logos/PBh.avif', 'alt' => 'PBH'],
+                    ['src' => '/assets/images/logos/T howard.jpg', 'alt' => 'THF'],
+                    ['src' => '/assets/images/logos/Toothce.png', 'alt' => 'Toothce'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&amp;ssl=1', 'alt' => 'American Board'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&amp;ssl=1', 'alt' => 'Youth for Understanding'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&amp;ssl=1', 'alt' => 'Phi Delta Kappan'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&amp;ssl=1', 'alt' => 'SBCA'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&amp;ssl=1', 'alt' => 'PDK International'],
+                    ['src' => 'https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-72.png?fit=198%2C100&ssl=1', 'alt' => 'ICF'],
+                    ['src' => 'https://educatorsrising.org/wp-content/uploads/2025/07/25_slogan.png', 'alt' => 'Educators Rising'],     
+                ],
 
 ];

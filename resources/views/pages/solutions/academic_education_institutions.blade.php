@@ -291,17 +291,15 @@
     <p class="lb-lbl">Trusted by nonprofits, associations, and enterprises across 15 countries</p>
     <div class="lb-track-wrap">
         <div class="lb-track" aria-hidden="true">
-        <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-    <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
+             @php 
+                $trustedLogos = config('services.trustedLogos');
+                $trustedLogosClass = 'logo-img lb-item';
+            @endphp
 
+            <x-logo-strip
+                :logos="$trustedLogos"
+                :logo-class="$trustedLogosClass"
+            />
         </div>
     </div>
     </div>
@@ -433,7 +431,7 @@
         <p class="lead cx">MyPass LMS integrates with the identity, communication, and administrative tools educational institutions already operate — so students and faculty access training through systems they already use every day.</p>
         </div>
         <div class="int-grid"><div class="int-card"><div class="int-icon"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="3" width="9" height="9" rx="2" fill="#4220C8"/><rect x="14" y="3" width="9" height="9" rx="2" fill="#4220C8" opacity=".5"/><rect x="3" y="14" width="9" height="9" rx="2" fill="#4220C8" opacity=".5"/><rect x="14" y="14" width="9" height="9" rx="2" fill="#4220C8"/></svg></div><div class="int-name">Okta SSO</div><div class="int-desc">Single sign-on for student and faculty access</div></div><div class="int-card"><div class="int-icon"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10" stroke="#4220C8" stroke-width="2.5"/><path d="M13 7v6l4 2" stroke="#4220C8" stroke-width="2" stroke-linecap="round"/></svg></div><div class="int-name">Azure AD</div><div class="int-desc">Microsoft identity for institutions on the M365 stack</div></div><div class="int-card"><div class="int-icon"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 3L4 8v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V8L13 3z" stroke="#4220C8" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 13l3 3 5-5" stroke="#4220C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="int-name">SAML 2.0 SSO</div><div class="int-desc">Works with any SAML 2.0 identity provider</div></div><div class="int-card"><div class="int-icon"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="3" y="6" width="20" height="14" rx="3" stroke="#4220C8" stroke-width="2.2"/><path d="M8 12h10M8 16h6" stroke="#4220C8" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="int-name">Zoom</div><div class="int-desc">Blended live sessions alongside structured online modules</div></div><div class="int-card"><div class="int-icon"><svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#4220C8" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke="#4220C8" stroke-width="2"/></svg></div><div class="int-name">SCORM / xAPI</div><div class="int-desc">Import any existing academic content immediately</div></div></div>
-        <div style="text-align:center"><a href="{{ route('product.integerations') }}" class="btn-primary">Check Out All Integrations</a></div>
+        <div style="text-align:center"><a href="{{ route('product.integrations') }}" class="btn-primary">Check Out All Integrations</a></div>
     </div>
     </section><section class="sec sw">
     <div class="wrap">

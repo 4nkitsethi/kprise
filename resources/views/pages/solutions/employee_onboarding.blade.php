@@ -112,8 +112,7 @@
         .lb-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite;}
         .lb-track:hover{animation-play-state:paused;}
         @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        .lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);opacity:.55;transition:opacity .2s,filter .2s;filter:grayscale(1);}
-        .lb-item:hover{opacity:1;filter:grayscale(0);}
+        .lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);}        .lb-item:hover{opacity:1;filter:grayscale(0);}
         .lb-item:last-of-type{border-right:none;}
         .lb-item svg{height:28px;width:auto;display:block;}
 
@@ -251,6 +250,9 @@
         .cta-p{font-size:16px;color:var(--ink3);line-height:1.72;margin-bottom:26px;}
         .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
         .cta-note{font-size:12px;color:var(--ink4);}
+
+        .logo-img       { height: 50px; width: auto; flex-shrink: 0; }
+        .logo-img:hover { opacity: .9; filter: grayscale(0%); }
     </style>
 @endpush
 
@@ -303,134 +305,15 @@
     <p class="lb-lbl">Trusted by 200+ organisations across 15 countries</p>
     <div class="lb-track-wrap">
         <div class="lb-track">
+            @php 
+                $trustedLogos = config('services.trustedLogos');
+                $trustedLogosClass = 'logo-img lb-item';
+            @endphp
 
-        <!-- ── SET 1 ── -->
-
-        <!-- ICF International -->
-        <div class="lb-item">
-            <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICF International">
-            <rect x="0" y="8" width="28" height="24" rx="4" fill="#003087"/>
-            <text x="7" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="13" fill="#fff">ICF</text>
-            <text x="34" y="22" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">International</text>
-            <text x="34" y="35" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">Coaching Federation</text>
-            </svg>
-        </div>
-
-        <!-- PDK International -->
-        <div class="lb-item">
-            <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PDK International">
-            <rect x="0" y="6" width="36" height="28" rx="4" fill="#C8102E"/>
-            <text x="6" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">PDK</text>
-            <text x="42" y="20" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="12" fill="#1a1a2e">International</text>
-            <text x="42" y="34" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">Phi Delta Kappan</text>
-            </svg>
-        </div>
-
-        <!-- Youth for Understanding -->
-        <div class="lb-item">
-            <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youth for Understanding">
-            <circle cx="18" cy="20" r="14" fill="#00843D"/>
-            <text x="10" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="12" fill="#fff">YFU</text>
-            <text x="38" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">Youth for</text>
-            <text x="38" y="32" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">Understanding</text>
-            </svg>
-        </div>
-
-        <!-- American Board -->
-        <div class="lb-item">
-            <svg viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Board">
-            <rect x="0" y="6" width="34" height="28" rx="4" fill="#1B2A6B"/>
-            <text x="5" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="9" fill="#fff">AMERICAN</text>
-            <text x="8" y="30" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="9" fill="#E8B020">BOARD</text>
-            <text x="40" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">American Board</text>
-            <text x="40" y="32" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">for Teacher Excellence</text>
-            </svg>
-        </div>
-
-        <!-- SBCA -->
-        <div class="lb-item">
-            <svg viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SBCA">
-            <rect x="0" y="6" width="42" height="28" rx="4" fill="#E87722"/>
-            <text x="5" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">SBCA</text>
-            <text x="48" y="23" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="13" fill="#1a1a2e">SBCA</text>
-            </svg>
-        </div>
-
-        <!-- SIA -->
-        <div class="lb-item">
-            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SIA">
-            <rect x="0" y="6" width="36" height="28" rx="4" fill="#005587"/>
-            <text x="8" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">SIA</text>
-            <text x="42" y="23" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="13" fill="#1a1a2e">SIA</text>
-            </svg>
-        </div>
-
-        <!-- Contrario -->
-        <div class="lb-item">
-            <svg viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contrario">
-            <rect x="0" y="8" width="8" height="24" rx="4" fill="#4220C8"/>
-            <rect x="12" y="8" width="8" height="24" rx="4" fill="#7B5EEA"/>
-            <text x="26" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="800" font-size="15" fill="#1a1a2e">Contrario</text>
-            </svg>
-        </div>
-
-        <!-- ── SET 2 — exact duplicate for seamless loop ── -->
-
-        <div class="lb-item">
-            <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ICF International">
-            <rect x="0" y="8" width="28" height="24" rx="4" fill="#003087"/>
-            <text x="7" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="13" fill="#fff">ICF</text>
-            <text x="34" y="22" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">International</text>
-            <text x="34" y="35" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">Coaching Federation</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="PDK International">
-            <rect x="0" y="6" width="36" height="28" rx="4" fill="#C8102E"/>
-            <text x="6" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">PDK</text>
-            <text x="42" y="20" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="12" fill="#1a1a2e">International</text>
-            <text x="42" y="34" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">Phi Delta Kappan</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Youth for Understanding">
-            <circle cx="18" cy="20" r="14" fill="#00843D"/>
-            <text x="10" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="12" fill="#fff">YFU</text>
-            <text x="38" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">Youth for</text>
-            <text x="38" y="32" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">Understanding</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="American Board">
-            <rect x="0" y="6" width="34" height="28" rx="4" fill="#1B2A6B"/>
-            <text x="5" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="9" fill="#fff">AMERICAN</text>
-            <text x="8" y="30" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="9" fill="#E8B020">BOARD</text>
-            <text x="40" y="18" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="11" fill="#1a1a2e">American Board</text>
-            <text x="40" y="32" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="500" font-size="9" fill="#555">for Teacher Excellence</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 130 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SBCA">
-            <rect x="0" y="6" width="42" height="28" rx="4" fill="#E87722"/>
-            <text x="5" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">SBCA</text>
-            <text x="48" y="23" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="13" fill="#1a1a2e">SBCA</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SIA">
-            <rect x="0" y="6" width="36" height="28" rx="4" fill="#005587"/>
-            <text x="8" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="900" font-size="14" fill="#fff">SIA</text>
-            <text x="42" y="23" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="700" font-size="13" fill="#1a1a2e">SIA</text>
-            </svg>
-        </div>
-        <div class="lb-item">
-            <svg viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Contrario">
-            <rect x="0" y="8" width="8" height="24" rx="4" fill="#4220C8"/>
-            <rect x="12" y="8" width="8" height="24" rx="4" fill="#7B5EEA"/>
-            <text x="26" y="25" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-weight="800" font-size="15" fill="#1a1a2e">Contrario</text>
-            </svg>
-        </div>
-
+            <x-logo-strip
+                :logos="$trustedLogos"
+                :logo-class="$trustedLogosClass"
+            />                 
         </div>
     </div>
     </div>

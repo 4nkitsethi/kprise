@@ -74,7 +74,7 @@
     .lb-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite}
     .lb-track:hover{animation-play-state:paused}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);opacity:.55;filter:grayscale(1);transition:all .2s}
+    .lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);}
     .lb-item:hover{opacity:1;filter:grayscale(0)}
 
     /* ── STATS ── */
@@ -292,17 +292,15 @@
   <p class="lb-lbl">Trusted by nonprofits, associations, and enterprises across 15 countries</p>
   <div class="lb-track-wrap">
     <div class="lb-track" aria-hidden="true">
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
-<div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px;"></div>
+            @php 
+                $trustedLogos = config('services.trustedLogos');
+                $trustedLogosClass = 'logo-img lb-item';
+            @endphp
 
+            <x-logo-strip
+                :logos="$trustedLogos"
+                :logo-class="$trustedLogosClass"
+            />
     </div>
   </div>
 </div>
@@ -326,7 +324,7 @@
       <h2 class="heading">One Platform. A Branded Environment<br><em>for Every Partner.</em></h2>
       <p>A single shared training environment across all partners creates confusion, data mixing, and a generic experience that no partner values. MyPass LMS gives each partner their own isolated, branded portal — while you manage all content, certifications, and reporting centrally.</p><p>Each portal has the partner's own branding, custom domain, and isolated learner data. Your team pushes content centrally or manages partner-specific content at account level. Partners experience something built specifically for their relationship with your organisation.</p>
       <div class="fpts"><div class="fp"><svg viewBox="0 0 16 16" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>Isolated branded portal per partner with custom domain</div><div class="fp"><svg viewBox="0 0 16 16" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>Central content management with partner-level customisation</div><div class="fp"><svg viewBox="0 0 16 16" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>Partner learner data fully isolated and independently reportable</div></div>
-      <a href="{{ route('proudct.features') }}" class="btn-primary" style="margin-top:18px">See Multi-Tenant Features</a>
+      <a href="{{ route('product.features') }}" class="btn-primary" style="margin-top:18px">See Multi-Tenant Features</a>
     </div>
   </div><div class="frow flip">
     <div class="frow-img">
