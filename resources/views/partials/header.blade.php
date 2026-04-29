@@ -74,12 +74,12 @@
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
             <a href="{{ route('industries.nonprofit') }}" class="mobile-nav__sub-link">Nonprofits</a>
-            <a href="#" class="mobile-nav__sub-link">Healthcare</a>
-            <a href="#" class="mobile-nav__sub-link">Manufacturing</a>
-            <a href="#" class="mobile-nav__sub-link">Finance</a>
-            <a href="#" class="mobile-nav__sub-link">Software</a>
-            <a href="#" class="mobile-nav__sub-link">Consulting</a>
-            <a href="#" class="mobile-nav__sub-link">Retail</a>
+            <a href="{{ route('industries.healthcare') }}" class="mobile-nav__sub-link">Healthcare</a>
+            <a href="{{ route('industries.manufacturing') }}" class="mobile-nav__sub-link">Manufacturing</a>
+            <a href="{{ route('industries.financial') }}" class="mobile-nav__sub-link">Finance</a>
+            <a href="{{ route('industries.software') }}" class="mobile-nav__sub-link">Software</a>
+            <a href="{{ route('industries.consulting') }}" class="mobile-nav__sub-link">Consulting</a>
+            <a href="{{ route('industries.retail') }}" class="mobile-nav__sub-link">Retail</a>
         </div>
     </div>
 
@@ -96,7 +96,7 @@
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
             <a href="{{ route('company.about') }}" class="mobile-nav__sub-link">About Us / Company Overview</a>
-            <a href="#" class="mobile-nav__sub-link">Contact Us</a>
+            <a href="{{ route('company.contact') }}" class="mobile-nav__sub-link">Contact Us</a>
         </div>
     </div>
 
@@ -107,12 +107,12 @@
             <svg class="mobile-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 6 8 10 12 6"/></svg>
         </button>
         <div class="mobile-nav__panel" aria-hidden="true">
-            <a href="#" class="mobile-nav__sub-link">Blog</a>
-            <a href="#" class="mobile-nav__sub-link">Case Studies</a>
-            <a href="#" class="mobile-nav__sub-link">LMS Comparisons</a>
-            <a href="#" class="mobile-nav__sub-link">Learning Insights Hub</a>
-            <a href="#" class="mobile-nav__sub-link">Calculator</a>
-            <a href="#" class="mobile-nav__sub-link" target="_blank" rel="noopener">Help Center</a>
+            <a href="{{ route('resources.blog') }}" class="mobile-nav__sub-link">Blog</a>
+            <a href="{{ route('resources.case-study') }}" class="mobile-nav__sub-link">Case Studies</a>
+            <a href="{{ route('resources.lms-comparisons') }}" class="mobile-nav__sub-link">LMS Comparisons</a>
+            <a href="{{ route('resources.insights') }}" class="mobile-nav__sub-link">Learning Insights Hub</a>
+            <a href="{{ route('resources.calculator') }}" class="mobile-nav__sub-link">Calculator</a>
+            <a href="{{ route('resources.help-center') }}" class="mobile-nav__sub-link" target="_blank" rel="noopener">Help Center</a>
         </div>
     </div>
 
@@ -397,7 +397,7 @@
                                         <div class="mega__link-desc">Flexible training for mission-led orgs</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.healthcare') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#EEF9F5;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                                     </div>
@@ -406,7 +406,7 @@
                                         <div class="mega__link-desc">Compliant training for clinical teams</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.manufacturing') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FFF8E6;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M4 20V10l6-6 6 6v10"/><rect x="9" y="14" width="6" height="6"/></svg>
                                     </div>
@@ -415,7 +415,7 @@
                                         <div class="mega__link-desc">Safety and skills on the factory floor</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.financial') }}" class="mega__link">
                                     <div class="mega__icon" style="background:var(--color-primary-light);">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
                                     </div>
@@ -424,7 +424,7 @@
                                         <div class="mega__link-desc">Regulatory-ready training for finance teams</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.software') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#F0F0FF;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                                     </div>
@@ -433,7 +433,7 @@
                                         <div class="mega__link-desc">Onboard users and train dev teams fast</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.consulting') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#EEF9F5;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                                     </div>
@@ -442,7 +442,7 @@
                                         <div class="mega__link-desc">Sharpen expertise across every engagement</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('industries.retail') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#FFF3EA;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                                     </div>
@@ -486,7 +486,7 @@
                                         <div class="mega__link-desc">Our story, mission, and the team behind the platform</div>
                                     </div>
                                 </a>
-                                <a href="#" class="mega__link">
+                                <a href="{{ route('company.contact') }}" class="mega__link">
                                     <div class="mega__icon" style="background:#EEF9F5;">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.07 9.8 19.79 19.79 0 011.18 1.82 2 2 0 013.16 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7a16 16 0 006 6l.7-.7a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
                                     </div>
@@ -517,7 +517,7 @@
                                 <div>
                                     <div class="mega__group-title">Learn & Explore</div>
                                     <div style="display:flex;flex-direction:column;gap:2px;">
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('resources.blog') }}" class="mega__link">
                                             <div class="mega__icon" style="background:var(--color-primary-light);">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                                             </div>
@@ -526,7 +526,7 @@
                                                 <div class="mega__link-desc">Tips, trends & L&D insights</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('resources.case-study') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FFF8E6;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                                             </div>
@@ -535,7 +535,7 @@
                                                 <div class="mega__link-desc">Real results from real teams</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('resources.insights') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#EEF9F5;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                                             </div>
@@ -550,7 +550,7 @@
                                 <div>
                                     <div class="mega__group-title">Tools & Support</div>
                                     <div style="display:flex;flex-direction:column;gap:2px;">
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('resources.lms-comparisons') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#F0F0FF;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
                                             </div>
@@ -559,7 +559,7 @@
                                                 <div class="mega__link-desc">See how we stack up against the rest</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link">
+                                        <a href="{{ route('resources.calculator') }}" class="mega__link">
                                             <div class="mega__icon" style="background:#FEF3F2;">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="#E04F5F" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
                                             </div>
@@ -568,7 +568,7 @@
                                                 <div class="mega__link-desc">Estimate your ROI in minutes</div>
                                             </div>
                                         </a>
-                                        <a href="#" class="mega__link" target="_blank" rel="noopener">
+                                        <a href="{{ route('resources.help-center') }}" class="mega__link" target="_blank" rel="noopener">
                                             <div class="mega__icon" style="background:var(--color-gray-100);">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                                             </div>

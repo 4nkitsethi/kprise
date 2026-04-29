@@ -12,9 +12,9 @@ class CompanyController extends Controller
         return view('pages.company.aboutUs');
     }
 
-    public function team()
+    public function contact()
     {
-        return view('pages.company.team');
+        return view('pages.company.contact');
     }
 
     public function careers()

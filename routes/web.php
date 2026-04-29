@@ -96,7 +96,7 @@ Route::prefix('product')->name('product.')->group(function () {
 ---------------------------------------------------------------- */
 Route::prefix('company')->name('company.')->group(function () {
     Route::get('/about', [CompanyController::class, 'about'])->name('about');
-    Route::get('/team', [CompanyController::class, 'team'])->name('team');
+    Route::get('/contact', [CompanyController::class, 'contact'])->name('contact');
     Route::get('/careers', [CompanyController::class, 'careers'])->name('careers');
 });
 
@@ -120,6 +120,9 @@ Route::prefix('resources')->name('resources.')->group(function () {
     Route::get('/insights',        [ResourceController::class, 'insights'])->name('insights');
     Route::get('/calculator',      [ResourceController::class, 'calculator'])->name('calculator');
     Route::get('/case-study',      [ResourceController::class, 'caseStudy'])->name('case-study');
+    Route::get('/help-center',      [ResourceController::class, 'helpCenter'])->name('help-center');
+    Route::get('/blog',      [BlogController::class, 'index'])->name('blog');
+    Route::get('blog/{slug}',  [BlogController::class, 'show'])->name('blog.show');
 });
 
 /* ----------------------------------------------------------------
