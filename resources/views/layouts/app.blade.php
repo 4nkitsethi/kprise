@@ -60,10 +60,10 @@
          4. footer      → bottom bar, social, legal
          5. page-level  → pushed via @stack('styles') in each view
     --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/components.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/header.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/footer.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/components.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/header.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer.css?v=1.2') }}">
     @stack('styles')
 </head>
 <body class="{{ $bodyClass ?? '' }}">
