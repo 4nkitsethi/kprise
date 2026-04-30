@@ -202,7 +202,7 @@
       localStorage.setItem("kp_n", name);
       localStorage.setItem("kp_e", email);
 
-      fetch("http://abcte-chat.us-east-1.elasticbeanstalk.com/api/kprise/lead", {
+      fetch("https://chat.kprise.com/api/kprise/lead", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ sessionId: session, tenant: "kprise", name, email })
@@ -288,7 +288,7 @@
       kpUser(msg);
       kpTyping();
 
-      fetch("http://abcte-chat.us-east-1.elasticbeanstalk.com/api/kprise/chat", {
+      fetch("https://chat.kprise.com/api/kprise/chat", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ message: msg, sessionId: session, name, email })
