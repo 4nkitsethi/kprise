@@ -410,10 +410,10 @@
         .lp-hero h1{font-size:54px;font-weight:900;line-height:1.04;letter-spacing:-2.5px;color:var(--ink);margin-bottom:18px}
         .lp-hero h1 em{font-style:normal;background:linear-gradient(135deg,#4220C8,#7B5EEA);-webkit-background-clip:text;background-clip:text;color:transparent}
         .lp-hero-sub{font-size:18px;color:var(--ink3);line-height:1.68;margin-bottom:10px;max-width:480px;font-weight:500}
-        .lp-hero-proof{font-size:13px;color:var(--ink4);margin-bottom:32px;font-weight:500}
+        .lp-hero-proof{font-size:14px;color:var(--ink4);margin-bottom:32px;font-weight:500}
         .lp-hero-btns{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:36px}
         .lp-hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:10px}
-        .lp-trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink4);font-weight:500}
+        .lp-trust-item{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--ink4);font-weight:500}
         .lp-trust-item svg{width:14px;height:14px;fill:var(--ok);flex-shrink:0}
         .lp-hero-img-wrap{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end}
         .lp-hero-img{width:100%;height:100%;min-height:440px;object-fit:cover;object-position:center top;border-radius:16px 16px 0 0;box-shadow:-8px -8px 40px rgba(66,32,200,.1);flex:1}
@@ -421,7 +421,7 @@
         .lp-hero-float-icon{width:38px;height:38px;background:var(--b);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
         .lp-hero-float-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2}
         .lp-hero-float-n{font-size:18px;font-weight:900;color:var(--ink);letter-spacing:-0.5px;line-height:1}
-        .lp-hero-float-l{font-size:11px;color:var(--ink4);font-weight:500;margin-top:2px}
+        .lp-hero-float-l{font-size:12px;color:var(--ink4);font-weight:500;margin-top:2px}
 
         /* ── QUICK START STRIP ───────────────────────────────────────────────────── */
         .qs-strip{background:var(--b);padding:28px 48px}
@@ -643,7 +643,7 @@
         .how-step-tag{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);background:var(--bl);border-radius:6px;padding:3px 10px;display:inline-block;margin-bottom:12px}
         .how-step-h{font-size:20px;font-weight:900;color:var(--ink);line-height:1.28;margin-bottom:10px;letter-spacing:-.4px}
         .how-step-p{font-size:14px;color:var(--ink3);line-height:1.72;margin-bottom:14px}
-        .how-step-proof{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;color:var(--ink4);line-height:1.5;font-weight:500}
+        .how-step-proof{display:flex;align-items:flex-start;gap:7px;font-size:14px;color:var(--ink4);line-height:1.5;font-weight:500}
         .how-step-proof svg{width:14px;height:14px;flex-shrink:0;margin-top:1px}
         /* Mock UI cards */
         .how-step-visual{background:var(--w);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:var(--sh2)}
@@ -690,7 +690,7 @@
         .tl-col-icon.us svg{stroke:#fff;width:18px;height:18px}
         .tl-col-name{font-size:14px;font-weight:800;color:var(--ink)}
         .tl-col.tl-us .tl-col-name{color:#fff}
-        .tl-col-sub{font-size:11.5px;color:var(--ink4);margin-top:1px}
+        .tl-col-sub{font-size:13px;color:var(--ink4);margin-top:1px}
         .tl-col.tl-us .tl-col-sub{color:rgba(255,255,255,.55)}
         .tl-days{padding:8px 0}
         .tl-day{padding:14px 22px;border-bottom:1px solid var(--bdr);display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:start}
