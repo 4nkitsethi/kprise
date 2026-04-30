@@ -730,7 +730,7 @@
         .signup-h{font-size:46px;font-weight:900;line-height:1.1;letter-spacing:-2px;color:var(--ink);margin-bottom:14px}
         .signup-h em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
         .signup-sub{font-size:16px;color:var(--ink3);line-height:1.68;margin-bottom:36px}
-        .signup-card{background:var(--w);border:2px solid var(--b);border-radius:20px;padding:20px 22px;display:flex;align-items:center;gap:0;box-shadow:0 8px 40px rgba(66,32,200,.12);text-align:left;width:800px;margin:auto}
+        .signup-card{background:var(--w);border:2px solid var(--b);border-radius:20px;padding:20px 22px;display:flex;align-items:center;gap:0;box-shadow:0 8px 40px rgba(66,32,200,.12);text-align:left;max-width:800px;margin:auto}
         .signup-field-group{display:flex;flex-direction:column;gap:5px;flex:1.3;min-width:0;padding:0 18px 0 4px}
         .signup-field-lbl{font-size:11.5px;font-weight:700;color:var(--ink4);display:flex;align-items:center;gap:5px}
         .signup-tip{width:16px;height:16px;border-radius:50%;background:var(--bl2);color:var(--ink4);font-size:9.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;cursor:help;flex-shrink:0;border:1px solid var(--bdr)}
@@ -744,9 +744,9 @@
         .signup-email-input{width:100%;border:none;outline:none;font-family:inherit;font-size:15px;font-weight:500;color:var(--ink);background:transparent;padding:0;margin-top:1px}
         .signup-email-input::placeholder{color:var(--ink4)}
         .signup-cta-group{flex-shrink:0;text-align:center;padding-left:4px}
-        .signup-btn{display:inline-flex;align-items:center;justify-content:center;background:#16A34A;color:#fff;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none;box-shadow:0 4px 16px rgba(22,163,74,.28)}
-        .signup-btn:hover{background:#15803D;transform:translateY(-1px);box-shadow:0 6px 22px rgba(22,163,74,.38)}
-        .signup-note{font-size:11px;color:var(--ink4);margin-top:8px}
+        .signup-btn{display:inline-flex;align-items:center;justify-content:center;background:#4220c8;color:#fff;font-family:inherit;font-size:15px;font-weight:800;padding:14px 26px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none;box-shadow:0 4px 6px #4220c8}
+        .signup-btn:hover{background:#4220c8;transform:translateY(-1px);box-shadow:0 6px 10px #4220c8}
+        .signup-note{font-size:11px;color:#000000;margin-top:8px}
         @media(max-width:900px){
           .signup-sec{padding:68px 24px}
           .signup-h{font-size:36px;letter-spacing:-1.5px}
