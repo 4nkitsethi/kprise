@@ -40,7 +40,7 @@
         .hero{position:relative;overflow:hidden;background:#fff;padding:0 56px}
         .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:720px;height:720px;background:radial-gradient(ellipse at center,rgba(66,32,200,0.07) 0%,transparent 65%);pointer-events:none}
         .h-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(66,32,200,0.055) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 85% 50%,black,transparent)}
-        .hero-in{display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;padding:80px 0 72px;position:relative;z-index:1;max-width:1080px;margin:0 auto}
+        .hero-in{display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;padding:80px 0 72px;position:relative;z-index:1;max-width:1580px;margin:0 auto}
         .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-pale);border:1px solid var(--border2);color:var(--brand);font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:26px}
         .eydot{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:blink 2s infinite}
         @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
@@ -79,7 +79,7 @@
 
         /* FILTER BAR — single, no sidebar */
         .fbar{padding:20px 56px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:68px;z-index:200;box-shadow:0 2px 10px rgba(12,10,26,0.04)}
-        .fbar-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+        .fbar-in{max-width:1580px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
         .search-wrap{position:relative;flex:0 0 240px}
         .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--ink4);fill:none;stroke-width:1.8;stroke-linecap:round}
         .s-input{font-family:inherit;width:100%;padding:10px 14px 10px 36px;border:1.5px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--ink);background:#fff;outline:none;transition:border .18s}
@@ -96,7 +96,7 @@
         .res-lbl strong{color:var(--ink2)}
 
         /* PACKS AREA */
-        .packs-wrap{padding:40px 56px 72px;max-width:1080px;margin:0 auto}
+        .packs-wrap{padding:40px 56px 72px;max-width:1580px;margin:0 auto}
 
         /* PACK */
         .pack{border:1.5px solid var(--border);border-radius:var(--rXL);overflow:hidden;margin-bottom:22px;transition:all .22s}
@@ -135,7 +135,7 @@
         /* Course card */
         .cc{background:#fff;border:1.5px solid var(--border);border-radius:var(--rL);overflow:hidden;transition:all .22s;cursor:pointer}
         .cc:hover{border-color:var(--border2);box-shadow:0 12px 32px rgba(66,32,200,0.08);transform:translateY(-3px)}
-        .cc-img{height:120px;position:relative;overflow:hidden}
+        .cc-img{height:12em;position:relative;overflow:hidden}
         .cc-bg{position:absolute;inset:0;transition:transform .3s}
         .cc:hover .cc-bg{transform:scale(1.05)}
         .cc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,26,0.68) 0%,transparent 55%)}
@@ -157,8 +157,8 @@
 
         /* PRICING */
         .pr-section{background:var(--surf2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 56px}
-        .pr-in{max-width:1080px;margin:0 auto}
-        .sec-eye{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+        .pr-in{max-width:1580px;margin:0 auto}
+        .sec-eye{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
         .sec-h{font-size:40px;font-weight:800;color:var(--ink);letter-spacing:-1.8px;line-height:1.1;margin-bottom:14px}
         .sec-sub{font-size:16px;color:var(--ink3);line-height:1.7;max-width:540px;margin-bottom:48px}
         .bundle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}

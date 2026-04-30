@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 /* ── HERO ── */
 .hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:52px 48px 0;overflow:hidden;position:relative}
 .hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:48%;background:linear-gradient(to right,transparent,var(--bl2) 40%);pointer-events:none}
-.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:52px;align-items:center;position:relative;z-index:1}
+.hero-grid{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:52px;align-items:center;position:relative;z-index:1}
 .bc{display:flex;align-items:center;gap:6px;margin-bottom:14px}
 .bc a{font-size:12px;font-weight:600;color:var(--ink4)}
 .bc a:hover{color:var(--b)}
@@ -46,14 +46,14 @@ a{color:inherit;text-decoration:none}
 .htag span{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--b)}
 .hero h1{font-size:44px;font-weight:900;line-height:1.09;letter-spacing:-1.8px;color:var(--ink);margin-bottom:16px}
 .hero h1 em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-sub{font-size:16.5px;line-height:1.74;color:var(--ink3);margin-bottom:28px;max-width:480px}
+.hero-sub{font-size:16.5px;line-height:1.74;color:var(--ink3);margin-bottom:28px;max-width:780px}
 .hero-sub strong{color:var(--ink2);font-weight:700}
 .hbtns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
 .btn-a{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14.5px;font-weight:700;padding:12px 24px;border-radius:10px;background:var(--gr);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(66,32,200,0.26);transition:all .2s}
 .btn-a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(66,32,200,0.36)}
 .btn-b{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14.5px;font-weight:600;padding:11px 22px;border-radius:10px;background:var(--w);color:var(--b);border:1.5px solid var(--bdr2);cursor:pointer;transition:all .2s}
 .btn-b:hover{background:var(--bl)}
-.trust-row{display:flex;gap:16px;flex-wrap:wrap}
+.trust-row{display:flex;gap:16px;flex-wrap:wrap;padding-bottom:20px}
 .tchip{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:var(--ink4)}
 .tchip svg{width:13px;height:13px;stroke:var(--ok);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .hero-img-wrap{position:relative;align-self:flex-end}
@@ -70,15 +70,21 @@ a{color:inherit;text-decoration:none}
 .lb-track-wrap::before,.lb-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
 .lb-track-wrap::before{left:0;background:linear-gradient(to right,var(--w),transparent)}
 .lb-track-wrap::after{right:0;background:linear-gradient(to left,var(--w),transparent)}
-.lb-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite}
+.lb-track {display: flex;align-items: center;width: max-content;opacity: 0;visibility: hidden;animation: marquee 60s linear infinite,showAfterLoad 0.5s ease forwards;animation-delay: 0s,1s; }
+@keyframes showAfterLoad {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .lb-track:hover{animation-play-state:paused}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);opacity:.55;filter:grayscale(1);transition:all .2s}
+.lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:40px;flex-shrink:0;border-right:1px solid var(--bdr);}
 .lb-item:hover{opacity:1;filter:grayscale(0)}
 
 /* ── STATS ── */
 .stats{background:var(--bl2);border-bottom:1px solid var(--bdr)}
-.stats-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stats-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .sc{padding:26px 20px;text-align:center;border-right:1px solid var(--bdr)}
 .sc:last-child{border-right:none}
 .sc-n{font-size:36px;font-weight:900;letter-spacing:-1.5px;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -89,7 +95,7 @@ a{color:inherit;text-decoration:none}
 .sw{background:var(--w)}
 .sbg{background:var(--bg)}
 .stint{background:var(--bl2)}
-.wrap{max-width:1200px;margin:0 auto}
+.wrap{max-width:1400px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px}
 .eyebrow .ew{width:16px;height:2.5px;background:var(--gr);border-radius:2px;flex-shrink:0}
 .heading{font-size:34px;font-weight:800;line-height:1.13;letter-spacing:-1.2px;color:var(--ink);margin-bottom:12px}
@@ -235,23 +241,6 @@ a{color:inherit;text-decoration:none}
 .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 .cta-note{font-size:12px;color:var(--ink4)}
 
-/* ── FOOTER ── */
-.site-footer{background:var(--ink);padding:52px 48px 22px;border-top:1px solid rgba(66,32,200,.2);position:relative}
-.site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--b),var(--bm),var(--b),transparent);opacity:.35}
-.foot-inner{max-width:1200px;margin:0 auto}
-.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
-.foot-brand img{height:32px;width:auto;margin-bottom:12px}
-.foot-brand p{font-size:12px;color:rgba(255,255,255,.32);line-height:1.7;max-width:220px;margin-bottom:10px}
-.foot-addr{font-size:11px;color:rgba(255,255,255,.2);line-height:1.8;margin-top:0}
-.foot-col h4{font-size:9.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.24);margin-bottom:12px}
-.foot-col a{display:block;font-size:12px;color:rgba(255,255,255,.34);margin-bottom:7px;transition:color .16s}
-.foot-col a:hover{color:rgba(255,255,255,.82)}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.07);padding-top:18px}
-.foot-copy{font-size:11px;color:rgba(255,255,255,.2)}
-.foot-links-row{display:flex;gap:16px}
-.foot-links-row a{font-size:11px;color:rgba(255,255,255,.2);transition:color .16s}
-.foot-links-row a:hover{color:rgba(255,255,255,.6)}
-.foot-badge{font-size:10px;font-weight:700;background:rgba(66,32,200,.18);color:#C4B5FD;border:1px solid rgba(66,32,200,.24);border-radius:5px;padding:3px 10px}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -267,7 +256,7 @@ a{color:inherit;text-decoration:none}
   .topnav{padding:0 20px}
   .tn-links{display:none}
   .hero{padding:36px 20px 0}
-  .sec,.courses-band,.hl-band,.cta-sec,.site-footer{padding-left:20px;padding-right:20px}
+  .sec,.courses-band,.hl-band,.cta-sec{padding-left:20px;padding-right:20px}
   .feat-wrap{padding-left:20px;padding-right:20px}
   .hero h1{font-size:32px}
   .vp-grid,.tc-grid,.uc-grid,.res-grid{grid-template-columns:1fr}
@@ -278,7 +267,7 @@ a{color:inherit;text-decoration:none}
 /* ── HERO IMAGE FIX: no gap above image ── */
 .hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:56px 48px 0;overflow:hidden;position:relative;}
 .hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:48%;background:linear-gradient(to right,transparent,var(--bl2) 40%);pointer-events:none;}
-.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:52px;align-items:end;position:relative;z-index:1;}
+.hero-grid{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:52px;align-items:end;position:relative;z-index:1;}
 .hero-img-wrap{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;}
 .hero-img{width:100%;height:100%;min-height:420px;object-fit:cover;object-position:center top;border-radius:14px 14px 0 0;box-shadow:0 -4px 32px rgba(66,32,200,0.1);display:block;flex:1;}
 @media(max-width:1024px){.hero-img{height:320px;min-height:unset;flex:none;}.hero-grid{grid-template-columns:1fr;}}
@@ -322,16 +311,15 @@ a{color:inherit;text-decoration:none}
   <p class="lb-lbl">Trusted by organisations across 15 countries</p>
   <div class="lb-track-wrap">
     <div class="lb-track" aria-hidden="true">
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="PDK International" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
-      <div class="lb-item"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK" height="36" loading="lazy" style="height:36px;width:auto;object-fit:contain;max-width:140px"></div>
+        @php 
+            $trustedLogos = config('services.trustedLogos');
+            $trustedLogosClass = 'lb-item';
+        @endphp
+
+        <x-logo-strip
+            :logos="$trustedLogos"
+            :logo-class="$trustedLogosClass"
+        />
     </div>
   </div>
 </div><div class="stats"><div class="stats-in"><div class="sc"><div class="sc-n">70%</div><div class="sc-l">Less compliance admin after structured automated training deployment</div></div><div class="sc"><div class="sc-n">100%</div><div class="sc-l">Audit-ready evidence available instantly from live completion data</div></div><div class="sc"><div class="sc-n">Day 1</div><div class="sc-l">Mandatory training assigned to every new hire automatically from day one</div></div><div class="sc"><div class="sc-n">0</div><div class="sc-l">Manual reminders needed — CE renewal alerts fire automatically</div></div></div></div><section class="sec sw">
@@ -452,58 +440,7 @@ a{color:inherit;text-decoration:none}
     <p class="cta-note">15-day free trial &middot; No credit card required &middot; Cancel anytime &middot; AWS FedRAMP infrastructure</p>
   </div>
 </section>
-<footer class="site-footer">
-  <div class="foot-inner">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <img src="https://kprise.com/kp/public/assets/images/mypass-logo-white.png" alt="MyPass LMS" width="120" height="32" loading="lazy">
-        <p>MyPass LMS is a training management platform that cuts admin work by up to 70%, built for associations, enterprises, and growing teams.</p>
-        <p class="foot-addr">3905 National Drive, Suite 330<br>Burtonsville MD, 20866<br>(240) 316-4903</p>
-      </div>
-      <div class="foot-col">
-        <h4>Use Cases</h4>
-        <a href="https://kp.kprise.com/use-cases/nonprofit">Nonprofit Training</a>
-        <a href="https://kp.kprise.com/use-cases/onboarding">Employee Onboarding</a>
-        <a href="https://kp.kprise.com/use-cases/compliance">Compliance Training</a>
-        <a href="https://kp.kprise.com/use-cases/upskilling">Continuous Learning</a>
-        <a href="https://kp.kprise.com/use-cases/customer-training">Customer Training</a>
-        <a href="https://kp.kprise.com/use-cases/partner-training">Partner Training</a>
-      </div>
-      <div class="foot-col">
-        <h4>Industries</h4>
-        <a href="https://kp.kprise.com/industries/nonprofit">Non-Profit</a>
-        <a href="https://kp.kprise.com/industries/healthcare">Healthcare</a>
-        <a href="https://kp.kprise.com/industries/manufacturing">Manufacturing</a>
-        <a href="https://kp.kprise.com/industries/financial">Financial Services</a>
-        <a href="https://kp.kprise.com/industries/software">Software &amp; Tech</a>
-      </div>
-      <div class="foot-col">
-        <h4>Resources</h4>
-        <a href="https://kprise.com/learning-insights-hub/" target="_blank" rel="noopener">Learning Insights Hub</a>
-        <a href="https://kprise.com/case-study/" target="_blank" rel="noopener">Case Studies</a>
-        <a href="https://kprise.com/lms-comparisons/" target="_blank" rel="noopener">LMS Comparisons</a>
-        <a href="https://help.kprise.com" target="_blank" rel="noopener">Help Center</a>
-        <a href="https://kp.kprise.com/pricing">Pricing</a>
-      </div>
-      <div class="foot-col">
-        <h4>Company</h4>
-        <a href="https://kprise.com/about-us/">About Us</a>
-        <a href="https://kprise.com/contact-us-2/">Contact Us</a>
-        <a href="https://kprise.com/blog/">Blog</a>
-        <a href="https://mypasslms.us/login#register">Start Free Trial</a>
-        <a href="https://calendly.com/onlinesales-kprise/30min">Book a Demo</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2026 Kprise. All rights reserved.</span>
-      <div class="foot-links-row">
-        <a href="https://kprise.com/privacy-policy/">Privacy Policy</a>
-        <a href="https://kprise.com/terms-conditions/">Terms &amp; Conditions</a>
-      </div>
-      <span class="foot-badge">AWS FedRAMP Authorized</span>
-    </div>
-  </div>
-</footer>
+
 <script>
 (function(){
   document.querySelectorAll('.fi').forEach(function(item){

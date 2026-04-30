@@ -389,14 +389,14 @@ a{color:inherit;text-decoration:none}
 
 /* ── HERO (split layout with image) ─────────────────────────────── */
 .ct-hero{background:var(--w);border-bottom:1px solid var(--bdr);overflow:hidden;position:relative}
-.ct-hero-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;align-items:stretch}
+.ct-hero-grid{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;align-items:stretch}
 .ct-hero-left{padding:52px 52px 52px 48px;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
-.ct-hero-eye{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);background:var(--bl);border:1px solid var(--bdr2);border-radius:100px;padding:4px 14px;margin-bottom:18px}
+.ct-hero-eye{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);background:var(--bl);border:1px solid var(--bdr2);border-radius:100px;padding:4px 14px;margin-bottom:18px;max-width:22em}
 .ct-eye-dot{width:6px;height:6px;border-radius:50%;background:var(--b);animation:ctblk 2s ease-in-out infinite}
 @keyframes ctblk{0%,100%{opacity:1}50%{opacity:.2}}
 .ct-hero h1{font-size:46px;font-weight:900;letter-spacing:-2.2px;line-height:1.06;color:var(--ink);margin-bottom:14px}
 .ct-hero h1 em{font-style:normal;background:linear-gradient(135deg,#4220C8,#7B5EEA);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ct-hero-sub{font-size:16px;color:var(--ink3);line-height:1.72;max-width:440px;margin-bottom:24px}
+.ct-hero-sub{font-size:16px;color:var(--ink3);line-height:1.72;max-width:740px;margin-bottom:24px}
 .ct-hero-img{position:relative;overflow:hidden}
 .ct-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;min-height:420px}
 .ct-hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--w) 0%,transparent 30%);z-index:1;pointer-events:none}
@@ -408,7 +408,7 @@ a{color:inherit;text-decoration:none}
 
 /* ── CHOOSE YOUR PATH strip ──────────────────────────────────────── */
 .ct-path{background:var(--bg);border-bottom:1px solid var(--bdr);padding:0 48px}
-.ct-path-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.ct-path-in{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .ct-path-item{padding:24px 20px;border-right:1px solid var(--bdr);cursor:pointer;transition:all .18s;text-decoration:none;display:flex;align-items:flex-start;gap:12px;position:relative}
 .ct-path-item:last-child{border-right:none}
 .ct-path-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--b),var(--bm));opacity:0;transition:opacity .18s}
@@ -422,7 +422,7 @@ a{color:inherit;text-decoration:none}
 .ct-pi-p{font-size:11.5px;color:var(--ink4);line-height:1.45}
 
 /* ── MAIN 2-COL ──────────────────────────────────────────────────── */
-.ct-main{max-width:1160px;margin:0 auto;padding:48px 48px 80px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;background:var(--bg)}
+.ct-main{max-width:1500px;margin:0 auto;padding:48px 48px 80px;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;background:var(--bg)}
 
 /* ── FORM ────────────────────────────────────────────────────────── */
 .ct-form-card{background:var(--w);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;box-shadow:var(--sh2)}
@@ -490,7 +490,7 @@ a{color:inherit;text-decoration:none}
 
 /* ── FAQ ─────────────────────────────────────────────────────────── */
 .ct-faq-sec{background:var(--w);border-top:1px solid var(--bdr);padding:64px 48px}
-.ct-faq-sec-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+.ct-faq-sec-in{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
 .ct-faq-intro h2{font-size:28px;font-weight:900;letter-spacing:-.7px;color:var(--ink);line-height:1.22;margin-bottom:8px}
 .ct-faq-intro p{font-size:13.5px;color:var(--ink3);line-height:1.7}
 .fi{border:1px solid var(--bdr);border-radius:12px;overflow:hidden;margin-bottom:8px;background:var(--bg);transition:border-color .15s}
@@ -567,7 +567,7 @@ a{color:inherit;text-decoration:none}
         <span>Contact</span>
       </nav>
       <div class="ct-hero-eye"><span class="ct-eye-dot"></span>Kprise — Burtonsville, MD</div>
-      <h1>We'd Love to<br><em>Hear From You.</em></h1>
+      <h1>We'd Love to <em> Hear From You.</em></h1>
       <p class="ct-hero-sub">A real conversation about your training goals — whether you're evaluating platforms, migrating from another system, or have a specific technical question. Choose the best way to reach us below.</p>
       <div class="ct-hero-info">
 

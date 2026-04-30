@@ -88,7 +88,7 @@
         .page-body{
         display:grid;
         grid-template-columns:240px 1fr;
-        max-width:1180px;
+        max-width:1280px;
         margin:0 auto;
         padding:0 44px 100px;
         gap:0;

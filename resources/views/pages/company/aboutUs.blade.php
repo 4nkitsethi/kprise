@@ -35,12 +35,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .btn-p:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(66,32,200,0.38);}
 
 /* ═══════ HERO ═══════ */
-.hero{background:var(--w);padding:88px 52px 72px;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;}
+.hero{background:var(--w);padding:40px 52px 72px;border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:0;right:0;bottom:0;width:42%;background:var(--bl2);clip-path:ellipse(100% 100% at 100% 50%);pointer-events:none;}
-.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:center;position:relative;z-index:1;}
+.hero-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:center;position:relative;z-index:1;}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:16px;}
 .ew{width:18px;height:2.5px;background:var(--gr);border-radius:2px;display:block;}
-.hero h1{font-size:50px;font-weight:900;line-height:1.08;letter-spacing:-2px;color:var(--ink);margin-bottom:20px;}
+.hero h1{font-size:50px;font-weight:900;line-height:1.08;color:var(--ink);margin-bottom:20px;}
 .hero h1 em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .hero-desc{font-size:17px;line-height:1.75;color:var(--ink3);margin-bottom:32px;max-width:500px;}
 .hero-desc strong{color:var(--ink2);font-weight:600;}
@@ -292,10 +292,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .lsb-in{margin:0 auto;}
 .lsb-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:center;margin-bottom:20px;}
 .lsb-track-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);}
-.lsb-track{display:flex;gap:52px;align-items:center;width:max-content;animation:logo-scroll 26s linear infinite;}
+.lsb-track{display:flex;gap:52px;align-items:center;width:max-content;animation:logo-scroll 40s linear infinite;}
 .lsb-track:hover{animation-play-state:paused;}
 @keyframes logo-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.lsb-logo{height:38px;width:auto;opacity:.52;filter:grayscale(100%);transition:opacity .2s,filter .2s;flex-shrink:0;}
+.lsb-logo{height:38px;width:auto;flex-shrink:0;}
 .lsb-logo:hover{opacity:.9;filter:grayscale(0%);}
 .lsb-awards{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid var(--bdr);}
 .lsb-award{height:40px;width:auto;opacity:.62;transition:opacity .2s;}
@@ -389,17 +389,16 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
         <div class="lsb-track-wrap">
         <div class="lsb-track">
             <!-- Set 1 -->
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board for Teacher Excellence">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="Phi Delta Kappan">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK International">
-            <!-- Set 2 — duplicate for seamless loop -->
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-67.png?fit=199%2C100&ssl=1" alt="American Board for Teacher Excellence">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-69.png?fit=197%2C100&ssl=1" alt="Youth for Understanding">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-65.png?fit=197%2C100&ssl=1" alt="Phi Delta Kappan">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-66.png?fit=198%2C100&ssl=1" alt="SBCA">
-            <img class="lsb-logo" src="https://i0.wp.com/kprise.com/wp-content/uploads/2024/10/image-68.png?fit=198%2C99&ssl=1" alt="PDK International">
+            @php 
+                $trustedLogos = config('services.trustedLogos');
+                $trustedLogosClass = 'lsb-logo';
+            @endphp
+
+            <x-logo-strip
+                :logos="$trustedLogos"
+                :logo-class="$trustedLogosClass"
+            />
+            
         </div>
         </div>
         <!-- Award badges row -->

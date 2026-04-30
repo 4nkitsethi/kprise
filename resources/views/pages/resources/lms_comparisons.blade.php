@@ -406,13 +406,13 @@ a{color:inherit;text-decoration:none}
 
 /* QUICK NAV */
 .cmp-nav{background:var(--w);border-bottom:1px solid var(--bdr);padding:18px 48px;position:sticky;top:64px;z-index:200;backdrop-filter:blur(12px)}
-.cmp-nav-in{max-width:1200px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.cmp-nav-in{max-width:1500px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .cmp-nav-label{font-size:11.5px;font-weight:700;color:var(--ink4);margin-right:4px;flex-shrink:0}
 .cmp-nav-pill{font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;border:1.5px solid var(--bdr);color:var(--ink3);cursor:pointer;transition:all .16s;text-decoration:none;display:inline-block}
 .cmp-nav-pill:hover{border-color:var(--bdr2);color:var(--b);background:var(--bl2)}
 
 /* ACCORDION WRAPPER */
-.cmp-wrap{max-width:1160px;margin:0 auto;padding:52px 48px 80px}
+.cmp-wrap{max-width:1460px;margin:0 auto;padding:52px 48px 80px}
 
 /* ACCORDION ITEM */
 .cmp-item{background:var(--w);border:1px solid var(--bdr);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:all .25s;box-shadow:var(--sh)}
@@ -482,7 +482,7 @@ a{color:inherit;text-decoration:none}
 
 /* FEATURE OVERVIEW */
 .feat-overview{background:var(--bg);padding:72px 48px;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
-.feat-overview-wrap{max-width:1160px;margin:0 auto}
+.feat-overview-wrap{max-width:1460px;margin:0 auto}
 .feat-overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .fo-card{background:var(--w);border:1px solid var(--bdr);border-radius:16px;padding:22px;transition:all .22s}
 .fo-card:hover{border-color:var(--bdr2);box-shadow:var(--sh);transform:translateY(-2px)}
@@ -515,7 +515,7 @@ a{color:inherit;text-decoration:none}
 <section class="cmp-hero">
   <div class="cmp-hero-in">
     <div class="cmp-tag">LMS Comparisons — Researched and Updated 2025</div>
-    <h1>MyPass LMS vs<br><em>Every Major Competitor.</em></h1>
+    <h1>MyPass LMS vs <em> Every Major Competitor.</em></h1>
     <p class="cmp-hero-sub">Honest, feature-by-feature comparisons across 14 LMS platforms — so you can make a confident decision based on what each platform actually delivers, not marketing claims.</p>
     <div class="cmp-hero-btns">
       <a href="https://mypasslms.us/login#register" class="btn-a" style="font-size:14.5px;padding:13px 26px">Start Free for 15 Days</a>

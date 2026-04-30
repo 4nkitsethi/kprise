@@ -16,7 +16,7 @@
   pointer-events:none;
 }
 .hero-grid{
-  max-width:1200px;
+  max-width:1500px;
   margin:0 auto;
   display:grid;
   grid-template-columns:1fr 460px;
@@ -27,7 +27,7 @@
 }
 .hero h1{font-size:44px;font-weight:900;line-height:1.09;letter-spacing:-1.8px;color:var(--ink);margin-bottom:16px;}
 .hero h1 em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.hero-sub{font-size:16px;line-height:1.72;color:var(--ink3);margin-bottom:22px;max-width:480px;}
+.hero-sub{font-size:16px;line-height:1.72;color:var(--ink3);margin-bottom:22px;max-width:780px;}
 .hero-sub strong{color:var(--ink2);font-weight:600;}
 .hero-img-wrap{
   position:relative;
@@ -104,10 +104,16 @@ a{color:inherit;text-decoration:none;}
 .lb-track-wrap::before,.lb-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
 .lb-track-wrap::before{left:0;background:linear-gradient(to right,var(--w),transparent);}
 .lb-track-wrap::after{right:0;background:linear-gradient(to left,var(--w),transparent);}
-.lb-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite;}
+.lb-track {display: flex;align-items: center;width: max-content;opacity: 0;visibility: hidden;animation: marquee 60s linear infinite,showAfterLoad 0.5s ease forwards;animation-delay: 0s,1s; }
+@keyframes showAfterLoad {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .lb-track:hover{animation-play-state:paused;}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:56px;flex-shrink:0;border-right:1px solid var(--bdr);opacity:.55;transition:opacity .2s,filter .2s;filter:grayscale(1);}
+.lb-item{display:flex;align-items:center;justify-content:center;padding:0 36px;height:40px;flex-shrink:0;border-right:1px solid var(--bdr);}
 .lb-item:hover{opacity:1;filter:grayscale(0);}
 .lb-item svg{height:28px;width:auto;display:block;}
 

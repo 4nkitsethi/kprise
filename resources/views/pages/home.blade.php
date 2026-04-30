@@ -97,7 +97,7 @@
         .sbg{background:var(--bg)}
         .stint{background:var(--bl2)}
         .wrap{max-width:1200px;margin:0 auto}
-        .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px}
+        .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px}
         .eyebrow .ew{width:16px;height:2.5px;background:var(--gr);border-radius:2px;flex-shrink:0}
         .heading{font-size:34px;font-weight:800;line-height:1.30;color:var(--ink);margin-bottom:12px}
         .heading em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent}
