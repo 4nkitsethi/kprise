@@ -407,7 +407,7 @@
         .lp-hero-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--b);background:var(--bl);border:1px solid var(--bdr2);border-radius:100px;padding:5px 14px;margin-bottom:20px}
         .lp-hero-eyebrow-dot{width:7px;height:7px;background:var(--b);border-radius:50%;animation:pulse2 2s ease-in-out infinite}
         @keyframes pulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-        .lp-hero h1{font-size:54px;font-weight:900;line-height:1.04;letter-spacing:-2.5px;color:var(--ink);margin-bottom:18px}
+        .lp-hero h1{font-size:48px;font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:18px}
         .lp-hero h1 em{font-style:normal;background:linear-gradient(135deg,#4220C8,#7B5EEA);-webkit-background-clip:text;background-clip:text;color:transparent}
         .lp-hero-sub{font-size:18px;color:var(--ink3);line-height:1.68;margin-bottom:10px;max-width:480px;font-weight:500}
         .lp-hero-proof{font-size:14px;color:var(--ink4);margin-bottom:32px;font-weight:500}
