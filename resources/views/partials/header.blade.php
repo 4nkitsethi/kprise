@@ -112,7 +112,7 @@
             <a href="{{ route('resources.lms-comparisons') }}" class="mobile-nav__sub-link">LMS Comparisons</a>
             <a href="{{ route('resources.insights') }}" class="mobile-nav__sub-link">Learning Insights Hub</a>
             <a href="{{ route('resources.calculator') }}" class="mobile-nav__sub-link">Calculator</a>
-            <a href="{{ route('resources.help-center') }}" class="mobile-nav__sub-link" target="_blank" rel="noopener">Help Center</a>
+            <a href="https://help.kprise.com/" class="mobile-nav__sub-link" target="_blank" rel="noopener">Help Center</a>
         </div>
     </div>
 
@@ -568,7 +568,7 @@
                                                 <div class="mega__link-desc">Estimate your ROI in minutes</div>
                                             </div>
                                         </a>
-                                        <a href="{{ route('resources.help-center') }}" class="mega__link" target="_blank" rel="noopener">
+                                        <a href="https://help.kprise.com/" class="mega__link" target="_blank" rel="noopener">
                                             <div class="mega__icon" style="background:var(--color-gray-100);">
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                                             </div>
