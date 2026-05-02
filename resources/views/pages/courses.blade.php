@@ -40,7 +40,7 @@
         .hero{position:relative;overflow:hidden;background:#fff;padding:0 56px}
         .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:720px;height:720px;background:radial-gradient(ellipse at center,rgba(66,32,200,0.07) 0%,transparent 65%);pointer-events:none}
         .h-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(66,32,200,0.055) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 85% 50%,black,transparent)}
-        .hero-in{display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;padding:80px 0 72px;position:relative;z-index:1;max-width:1580px;margin:0 auto}
+        .hero-in{display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;padding:40px 0 72px;position:relative;z-index:1;max-width:1580px;margin:0 auto}
         .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-pale);border:1px solid var(--border2);color:var(--brand);font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:26px}
         .eydot{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:blink 2s infinite}
         @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}

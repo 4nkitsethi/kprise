@@ -65,7 +65,7 @@
 
         /* ── HERO ── */
         .hero{
-        padding:70px 21% 60px;
+        padding:40px 21% 60px;
         background:linear-gradient(150deg,#fff 0%,var(--brand-faint) 100%);
         border-bottom:1px solid var(--bdr);
         }

@@ -37,7 +37,7 @@
     .btn-fill:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(66,32,200,0.36);}
 
     /* HERO */
-    .hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:52px 48px 0;overflow:hidden;position:relative;}
+    .hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:40px 48px 0;overflow:hidden;position:relative;}
     .hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:48%;background:linear-gradient(to right,transparent,var(--bl2) 40%);pointer-events:none;}
     .hero-grid{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:52px;align-items:center;position:relative;z-index:1;}
     .bc{display:flex;align-items:center;gap:6px;margin-bottom:14px;}
@@ -58,7 +58,7 @@
     .btn-a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(66,32,200,0.36);}
     .btn-b{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14.5px;font-weight:600;padding:11px 22px;border-radius:10px;background:var(--w);color:var(--b);border:1.5px solid var(--bdr2);cursor:pointer;transition:all .2s;}
     .btn-b:hover{background:var(--bl);}
-    .trust-row{display:flex;gap:16px;flex-wrap:wrap;}
+    .trust-row{display:flex;gap:16px;flex-wrap:wrap;padding:0 0 30px 0;}
     .tchip{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:var(--ink4);}
     .tchip svg{width:13px;height:13px;stroke:var(--ok);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
     .hero-img-wrap{position:relative;align-self:flex-end;}
@@ -66,11 +66,11 @@
     .h-float{position:absolute;top:18px;left:18px;background:var(--w);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;box-shadow:var(--sh2);display:flex;align-items:center;gap:10px;}
     .hf-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:breathe 2s ease-in-out infinite;}
     .hf-n{font-size:19px;font-weight:900;color:var(--b);letter-spacing:-0.5px;}
-    .hf-l{font-size:11px;color:var(--ink3);margin-top:1px;font-weight:500;}
+    .hf-l{font-size:13px;color:var(--ink3);margin-top:1px;font-weight:500;}
 
     /* LOGO BAR */
     .logo-bar{background:var(--w);border-bottom:1px solid var(--bdr);padding:20px 0;}
-    .lb-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:14px;text-align:center;padding:0 48px;}
+    .lb-lbl{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:14px;text-align:center;padding:0 48px;}
     .lb-track-wrap{overflow:hidden;position:relative;}
     .lb-track-wrap::before,.lb-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
     .lb-track-wrap::before{left:0;background:linear-gradient(to right,var(--w),transparent);}
@@ -91,7 +91,7 @@
 
     /* STATS */
     .stats{background:var(--bl2);border-bottom:1px solid var(--bdr);}
-    .stats-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+    .stats-in{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
     .sc{padding:26px 20px;text-align:center;border-right:1px solid var(--bdr);}
     .sc:last-child{border-right:none;}
     .sc-n{font-size:36px;font-weight:900;letter-spacing:-1.5px;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -102,10 +102,10 @@
     .sw{background:var(--w);}
     .sbg{background:var(--bg);}
     .stint{background:var(--bl2);}
-    .wrap{max-width:1200px;margin:0 auto;}
+    .wrap{max-width:1500px;margin:0 auto;}
     .ew{width:16px;height:2.5px;background:var(--gr);border-radius:2px;flex-shrink:0;}
-    .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px;}
-    .heading{font-size:34px;font-weight:800;line-height:1.13;letter-spacing:-1.2px;color:var(--ink);margin-bottom:12px;}
+    .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px;}
+    .heading{font-size:34px;font-weight:800;line-height:1.30;color:var(--ink);margin-bottom:12px;}
     .heading em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
     .lead{font-size:16px;color:var(--ink3);line-height:1.76;max-width:580px;}
     .cx{text-align:center;}
@@ -136,7 +136,7 @@
 
     /* FEATURE ROWS */
     .feat-block{padding:0 48px 68px;}
-    .feat-wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:72px;}
+    .feat-wrap{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:72px;}
     .frow{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .frow.flip{direction:rtl;}
     .frow.flip>*{direction:ltr;}
@@ -153,7 +153,7 @@
 
     /* AUDIT BAND — light */
     .audit-band{background:var(--bl2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:56px 48px;}
-    .audit-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .audit-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .ab-h{font-size:34px;font-weight:900;line-height:1.12;letter-spacing:-1.2px;color:var(--ink);margin-bottom:14px;}
     .ab-h span{color:var(--ink3);font-weight:700;font-size:30px;}
     .ab-p{font-size:16px;line-height:1.72;color:var(--ink3);margin-bottom:24px;}
@@ -202,7 +202,7 @@
     .ucc:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--bdr2);}
     .ucc img{width:100%;height:148px;object-fit:cover;}
     .ucc-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;}
-    .ucc-tag{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--b);background:var(--bl);padding:2px 8px;border-radius:5px;display:inline-block;margin-bottom:8px;}
+    .ucc-tag{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--b);background:var(--bl);padding:2px 8px;border-radius:5px;display:inline-block;margin-bottom:8px;max-width:fit-content;}
     .ucc-t{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4;}
     .ucc-d{font-size:12.5px;color:var(--ink3);line-height:1.6;margin-bottom:12px;flex:1;}
     .ucc-link{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:700;color:var(--b);}
@@ -213,7 +213,7 @@
     .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
     .rcard{background:var(--w);border:1px solid var(--bdr);border-radius:var(--rad);padding:20px;box-shadow:var(--sh);transition:all .22s;display:flex;flex-direction:column;}
     .rcard:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--bdr2);}
-    .rtype{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--bm);background:var(--bl);padding:2px 8px;border-radius:5px;display:inline-block;margin-bottom:10px;}
+    .rtype{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--bm);background:var(--bl);padding:2px 8px;border-radius:5px;display:inline-block;margin-bottom:10px;max-width:fit-content;}
     .rt{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4;}
     .rd{font-size:12.5px;color:var(--ink3);line-height:1.6;margin-bottom:14px;flex:1;}
     .rlink{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:700;color:var(--b);}
@@ -234,15 +234,16 @@
     .fi-a a{color:var(--b);font-weight:600;}
 
     /* CTA */
-    .cta-sec{background:var(--bl2);border-top:1px solid var(--bdr);padding:68px 48px;text-align:center;position:relative;overflow:hidden;}
-    .cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle 300px at 50% 50%,rgba(66,32,200,0.05),transparent);pointer-events:none;}
-    .cta-in{max-width:600px;margin:0 auto;position:relative;z-index:1;}
-    .cta-tag{display:inline-block;background:var(--b);color:#fff;border-radius:100px;padding:4px 14px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
-    .cta-h{font-size:38px;font-weight:900;letter-spacing:-1.6px;line-height:1.1;color:var(--ink);margin-bottom:12px;}
-    .cta-h em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .cta-p{font-size:16px;color:var(--ink3);line-height:1.72;margin-bottom:26px;}
-    .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
-    .cta-note{font-size:12px;color:var(--ink4);}
+  .cta-sec{background:var(--bl2);border-top:1px solid var(--bdr);padding:68px 48px;text-align:center;position:relative;overflow:hidden;}
+  .cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle 300px at 50% 50%,rgba(66,32,200,0.05),transparent);pointer-events:none;}
+  .cta-in{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+  .cta-tag{display:inline-block;background:var(--b);color:#fff;border-radius:100px;padding:4px 14px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+  .cta-h{font-size:38px;font-weight:900;letter-spacing:-1.30px;color:var(--ink);margin-bottom:12px;}
+  .cta-h em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .cta-p{font-size:16px;color:var(--ink3);line-height:1.72;margin-bottom:26px;}
+  .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+  .cta-note{font-size:14px;color:var(--ink4);}
+
 
 
  </style>
@@ -396,7 +397,7 @@
             <div>
               <div style="font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px;">Anti-Harassment and Workplace Conduct</div>
               <div style="font-size:12.5px;color:var(--ink3);line-height:1.6;">Clear standards for workplace behaviour, conflict of interest, equality, and professional conduct — applicable across all roles and seniority levels.</div>
-              <div style="font-size:11px;font-weight:700;color:var(--b);margin-top:6px;background:var(--bl);display:inline-block;padding:2px 9px;border-radius:5px;">8 Modules · All Levels</div>
+              <div style="font-size:13px;font-weight:700;color:var(--b);margin-top:6px;background:var(--bl);display:inline-block;padding:2px 9px;border-radius:5px;">8 Modules · All Levels</div>
             </div>
           </div>
           <div style="background:var(--w);border:1px solid var(--bdr);border-radius:14px;padding:18px 20px;box-shadow:var(--sh);display:flex;gap:14px;align-items:flex-start;">
@@ -406,7 +407,7 @@
             <div>
               <div style="font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:4px;">Workplace Health and Safety</div>
               <div style="font-size:12.5px;color:var(--ink3);line-height:1.6;">Safety inductions, risk awareness, fire safety, and emergency procedures. Covers both office and operational environments with role-specific tracks available.</div>
-              <div style="font-size:11px;font-weight:700;color:var(--b);margin-top:6px;background:var(--bl);display:inline-block;padding:2px 9px;border-radius:5px;">10 Modules · All Levels</div>
+              <div style="font-size:13px;font-weight:700;color:var(--b);margin-top:6px;background:var(--bl);display:inline-block;padding:2px 9px;border-radius:5px;">10 Modules · All Levels</div>
             </div>
           </div>
         </div>

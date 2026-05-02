@@ -332,7 +332,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 }
 @media(max-width:960px){
   .hero-inner,.two-col,.ams-grid,.uc-pane.active{grid-template-columns:1fr;gap:40px;}
-  .hero{padding:72px 32px 56px;}
+  .hero{padding:40px 32px 56px;}
   .hero-right{order:-1;}
   .hero-right img{height:320px;}
   .hero::before{display:none;}
