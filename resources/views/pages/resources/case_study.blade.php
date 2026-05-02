@@ -389,7 +389,7 @@ a{color:inherit;text-decoration:none}
 :root{--cs-rad:18px}
 
 /* HERO */
-.cs-hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:80px 48px 72px;position:relative;overflow:hidden;text-align:center}
+.cs-hero{background:var(--w);border-bottom:1px solid var(--bdr);padding:40px 48px 72px;position:relative;overflow:hidden;text-align:center}
 .cs-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--bl2),transparent 70%);pointer-events:none}
 .cs-hero-in{max-width:780px;margin:0 auto;position:relative;z-index:1}
 .cs-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);background:var(--bl);border:1px solid var(--bdr2);border-radius:100px;padding:4px 14px;margin-bottom:20px}
@@ -655,7 +655,7 @@ a{color:inherit;text-decoration:none}
 <section class="cs-hero">
   <div class="cs-hero-in">
     <div class="cs-tag"><span class="cs-tag-dot"></span>Customer Success Stories</div>
-    <h1>Real Teams.<br><em>Real Results.</em></h1>
+    <h1>Real Teams. <em> Real Results. </em></h1>
     <p>How organisations replaced manual work, outdated systems, and disconnected tools with one platform that actually delivers measurable outcomes.</p>
     <div class="cs-hero-btns">
       <a href="https://mypasslms.us/login#register" class="btn-a">Start Free for 15 Days</a>
@@ -695,9 +695,9 @@ a{color:inherit;text-decoration:none}
           <div class="cs-mc"><div class="cs-mn">$40–50K</div><div class="cs-ml">Annual cost savings</div></div>
           <div class="cs-mc"><div class="cs-mn">600+</div><div class="cs-ml">Admin hours saved yearly</div></div>
           <div class="cs-mc"><div class="cs-mn">55%</div><div class="cs-ml">Admin cost reduction</div></div>
-        </div>
-        <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
+        </div>        
       </div>
+      <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
     </div>
     <div class="cs-card" data-case="american-board" data-industry="Professional Certification" onclick="openCase('american-board')">
       <div class="cs-card-img"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2026/01/mypass-lms-case-study-3-scaled.jpg?fit=2560%2C1709&ssl=1" alt="American Board" loading="lazy"><div class="cs-card-overlay"></div><div class="cs-card-chips"><span class="chip-ind">Professional Certification</span><span class="chip-uc">Global Expansion</span></div></div>
@@ -709,9 +709,9 @@ a{color:inherit;text-decoration:none}
           <div class="cs-mc"><div class="cs-mn">3×</div><div class="cs-ml">Learner capacity</div></div>
           <div class="cs-mc"><div class="cs-mn">113+</div><div class="cs-ml">Countries reached</div></div>
           <div class="cs-mc"><div class="cs-mn">$60–70K</div><div class="cs-ml">Annual cost savings</div></div>
-        </div>
-        <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
+        </div>        
       </div>
+      <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
     </div>
     <div class="cs-card" data-case="wsp" data-industry="Engineering &amp; Consulting" onclick="openCase('wsp')">
       <div class="cs-card-img"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2026/01/mypass-lms-case-study-2-scaled.jpg?fit=2560%2C1709&ssl=1" alt="WSP Middle East" loading="lazy"><div class="cs-card-overlay"></div><div class="cs-card-chips"><span class="chip-ind">Engineering &amp; Consulting</span><span class="chip-uc">Legacy Migration</span></div></div>
@@ -723,9 +723,9 @@ a{color:inherit;text-decoration:none}
           <div class="cs-mc"><div class="cs-mn">85–90%</div><div class="cs-ml">LMS cost reduction</div></div>
           <div class="cs-mc"><div class="cs-mn">6,000+</div><div class="cs-ml">Users across 20+ countries</div></div>
           <div class="cs-mc"><div class="cs-mn">60%+</div><div class="cs-ml">Admin effort saved</div></div>
-        </div>
-        <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
+        </div>        
       </div>
+      <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
     </div>
     <div class="cs-card" data-case="pdk" data-industry="Education &amp; Nonprofit" onclick="openCase('pdk')">
       <div class="cs-card-img"><img src="https://i0.wp.com/kprise.com/wp-content/uploads/2026/01/mypass-lms-case-study-1-scaled.jpg?fit=2560%2C1707&ssl=1" alt="PDK International" loading="lazy"><div class="cs-card-overlay"></div><div class="cs-card-chips"><span class="chip-ind">Education &amp; Nonprofit</span><span class="chip-uc">Rapid Deployment</span></div></div>
@@ -737,9 +737,9 @@ a{color:inherit;text-decoration:none}
           <div class="cs-mc"><div class="cs-mn">Weeks</div><div class="cs-ml">Time to nationwide launch</div></div>
           <div class="cs-mc"><div class="cs-mn">2,000+</div><div class="cs-ml">Users from day one</div></div>
           <div class="cs-mc"><div class="cs-mn">0</div><div class="cs-ml">Custom dev required</div></div>
-        </div>
-        <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
+        </div>        
       </div>
+      <div class="cs-link" style="cursor:pointer">Read the full story <svg viewBox="0 0 12 12" fill="none" stroke="var(--b)" stroke-width="2.5"><polyline points="3 2 9 6 3 10"/></svg></div>
     </div>
   </div>
 </div>

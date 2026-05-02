@@ -81,12 +81,12 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
 /* ═══════ SHARED SECTION TOKENS ═══════ */
 .sec{padding:88px 52px;}
-.si{max-width:1240px;margin:0 auto;}
+.si{max-width:1540px;margin:0 auto;}
 .sec-w{background:var(--w);}
 .sec-bg{background:var(--bg);}
 .sec-tint{background:var(--bl2);}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--b);margin-bottom:12px;}
-.sh{font-size:38px;font-weight:800;line-height:1.12;letter-spacing:-1.4px;color:var(--ink);margin-bottom:14px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--b);margin-bottom:12px;}
+.sh{font-size:38px;font-weight:800;line-height:1.30;color:var(--ink);margin-bottom:14px;}
 .sh em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .sp{font-size:17px;color:var(--ink3);line-height:1.75;max-width:560px;}
 .center{text-align:center;}
