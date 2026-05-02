@@ -107,7 +107,7 @@
     .eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:10px;}
     .heading{font-size:34px;font-weight:800;line-height:1.30;color:var(--ink);margin-bottom:12px;}
     .heading em{font-style:normal;background:var(--gr);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .lead{font-size:16px;color:var(--ink3);line-height:1.76;max-width:580px;}
+    .lead{font-size:16px;color:var(--ink3);line-height:1.76;max-width:1280px;}
     .cx{text-align:center;}
     .cx .lead{margin:0 auto;}
     .cx .eyebrow{justify-content:center;}
